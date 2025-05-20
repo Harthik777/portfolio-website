@@ -1,103 +1,55 @@
-import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950">
+      {/* Hero Section */}
+      <section className="relative isolate pt-28 pb-16">
+        <div className="py-16 sm:py-24 lg:pb-32">
+          <div className="mx-auto max-w-3xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl mb-4 text-indigo-900 dark:text-indigo-200">
+                HARTHIK MANICHANDRA VANUMU
+              </h1>
+              <p className="text-lg font-semibold text-indigo-700 dark:text-indigo-300 mb-2">
+                B.Tech in Computer Science and Engineering (Artificial Intelligence) @ MIT Bengaluru
+              </p>
+              <p className="mt-4 text-xl leading-8 text-gray-700 dark:text-gray-200 mb-6">
+                Aspiring AI/ML Engineer &bull; Data Science &bull; Research<br />Open to Internships & Collaborations
+              </p>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+                <Link
+                  href="/projects"
+                  className="rounded-lg bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-md hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition"
+                >
+                  View Projects
+                </Link>
+                <Link href="https://www.linkedin.com/in/harthik-mv/" target="_blank" rel="noopener noreferrer" className="text-base font-semibold leading-6 underline underline-offset-2 hover:text-indigo-700 dark:hover:text-indigo-300 transition">
+                  LinkedIn
+                </Link>
+                <Link href="https://github.com/Harthik777" target="_blank" rel="noopener noreferrer" className="text-base font-semibold leading-6 underline underline-offset-2 hover:text-indigo-700 dark:hover:text-indigo-300 transition">
+                  GitHub
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Featured Section */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-2xl font-bold leading-7 text-indigo-700 dark:text-indigo-300 mb-2">What I Do</h2>
+            <p className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-gray-900 dark:text-white">
+              Building the Future with AI, Data, and Automation
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-700 dark:text-gray-200">
+              I specialize in developing machine learning solutions, building intelligent systems, and automating data-driven workflows for impactful results.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
