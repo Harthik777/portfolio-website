@@ -5,7 +5,7 @@ const projects = [
     title: 'Predictive Modelling & Data Augmentation for Cricket Analytics',
     description: 'Developed a machine learning pipeline for predictive modeling in niche sports analytics (WPL cricket), addressing sparse datasets. Applied SMOGN and feature engineering to improve prediction accuracy. Collaborated with faculty and evaluated regression models. Created Python CLI for data scraping and preprocessing.',
     tags: ['Python', 'SMOGN', 'Regression', 'Feature Engineering', 'Sports Analytics'],
-    link: 'https://docs.google.com/document/d/14HNHQ-XNDwT1Xys7s41ylKMKr1kZlo1bni2wmspdM/edit?tab=0',
+    link: 'https://docs.google.com/document/d/14HNHQ-XNDwT1Xysy7s41vyIKMKrlKzlob1ni2wmspdM/edit?tab=t.0',
     date: '10/2024 - 04/2025',
   },
   {
@@ -51,7 +51,7 @@ export default function Projects() {
                       )}
                     </h3>
                     <p className="mt-2 text-xs text-gray-500">{project.date}</p>
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                    <p className="mt-5 text-sm leading-6 text-gray-600 dark:text-gray-300">
                       {project.description}
                     </p>
                   </div>
