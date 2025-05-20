@@ -46,47 +46,38 @@ export default function Navbar() {
           </Link>
         </div>
       </nav>
-      <div className={`lg:hidden`}>
-        {/* Overlay */}
-        {mobileMenuOpen && (
-          <div className="fixed inset-0 z-[100] bg-gray-900/80 transition-opacity duration-300" aria-hidden="true" onClick={() => setMobileMenuOpen(false)} />
-        )}
-        {/* Sliding Menu Panel */}
-        <div
-          className={`fixed inset-y-0 right-0 z-[110] w-72 max-w-full bg-white dark:bg-gray-900 px-6 py-6 shadow-lg transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} sm:ring-1 sm:ring-gray-900/10`}
-          style={{ willChange: 'transform' }}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div className="flex items-center justify-between mb-8">
-            <div />
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 transition"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-label="Close menu"
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-7 w-7" aria-hidden="true" />
-            </button>
-          </div>
-          <nav className="space-y-2">
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-[100] bg-gray-900/95 flex flex-col items-center justify-center space-y-8 transition-opacity duration-300">
+          <button
+            type="button"
+            className="absolute top-6 right-6 text-3xl text-white focus:outline-none"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <XMarkIcon className="h-8 w-8" aria-hidden="true" />
+          </button>
+          <nav className="flex flex-col items-center space-y-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block rounded-lg px-3 py-2 text-lg font-semibold leading-7 text-gray-900 dark:text-white hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:text-indigo-700 dark:hover:text-indigo-300 transition"
+                className="text-2xl font-semibold text-white hover:text-indigo-300 transition"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <Link href="/contact" className="block mt-4 rounded-lg bg-indigo-600 px-4 py-2 text-base font-semibold text-white shadow hover:bg-indigo-500 transition text-center" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/contact"
+              className="mt-4 rounded-lg bg-indigo-600 px-6 py-3 text-lg font-semibold text-white shadow hover:bg-indigo-500 transition text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Contact
             </Link>
           </nav>
         </div>
-      </div>
+      )}
     </header>
   );
 } 
