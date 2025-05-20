@@ -24,9 +24,7 @@ This website serves as a central hub for my professional presence online. Key se
 
 * Clean, professional design
 * Fully responsive (mobile, tablet, desktop)
-* Dark mode support
 * Project and skills showcase
-* Contact form (no direct email shown)
 * Deployed on Vercel
 
 ---
