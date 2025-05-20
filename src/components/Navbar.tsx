@@ -10,6 +10,7 @@ const navigation = [
   { name: 'Projects', href: '/projects' },
   { name: 'Publications', href: '/publications' },
   { name: 'Skills', href: '/skills' },
+  { name: 'Resume', href: '/resume' },
 ];
 
 export default function Navbar() {
