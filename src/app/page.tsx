@@ -12,7 +12,7 @@ export default function Home() {
                 HARTHIK MANICHANDRA VANUMU
               </h1>
               <p className="text-lg font-semibold text-indigo-700 dark:text-indigo-300 mb-2">
-                B.Tech in Computer Science and Engineering (Artificial Intelligence) @ MIT Bengaluru
+                B.Tech in Computer Science and Engineering (Artificial Intelligence) @ Manipal Institute of Technology (MIT) Bengaluru
               </p>
               <p className="mt-4 text-xl leading-8 text-gray-700 dark:text-gray-200 mb-6">
                 Aspiring AI/ML Engineer &bull; Data Science &bull; Research<br />Open to Internships & Collaborations

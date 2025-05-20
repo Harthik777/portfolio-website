@@ -7,7 +7,7 @@ export default function About() {
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">About Me</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                Hi! I&apos;m Harthik Manichandra Vanumu, an aspiring AI/ML engineer passionate about building intelligent systems and solving real-world problems. I am currently pursuing my B.Tech in Artificial Intelligence at MIT Bengaluru.
+                Hi! I&apos;m Harthik Manichandra Vanumu, an aspiring AI/ML engineer passionate about building intelligent systems and solving real-world problems. I am currently pursuing my B.Tech in Artificial Intelligence at Manipal Institute of Technology (MIT) Bengaluru.
               </p>
             </div>
             
@@ -31,7 +31,7 @@ export default function About() {
                     <p className="text-gray-600 dark:text-gray-300">09/2024 - 10/2024</p>
                     <ul className="list-disc list-inside text-sm mt-2">
                       <li>Won MAHE Bengaluru&apos;s university-wide &apos;RoboRun&apos; line follower robotics competition (1st Place).</li>
-                      <li>Selected for the official, institutionally-funded MIT-Bengaluru team at TechTatva (MIT-Manipal&apos;s technical fest).</li>
+                      <li>Selected for the official, institutionally-funded MIT Bengaluru team at TechTatva (MIT-Manipal&apos;s technical fest).</li>
                     </ul>
                   </div>
                 </div>
