@@ -48,7 +48,7 @@ export default function Navbar() {
       </nav>
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-gray-900/95 flex flex-col items-center justify-center space-y-8 transition-opacity duration-300">
+        <div className="fixed inset-0 z-[100] bg-gray-900 flex flex-col items-center justify-start overflow-y-auto py-12 transition-opacity duration-300">
           <button
             type="button"
             className="absolute top-6 right-6 text-3xl text-white focus:outline-none"
@@ -57,7 +57,7 @@ export default function Navbar() {
           >
             <XMarkIcon className="h-8 w-8" aria-hidden="true" />
           </button>
-          <nav className="flex flex-col items-center space-y-6">
+          <nav className="flex flex-col items-center space-y-4 w-full mt-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
