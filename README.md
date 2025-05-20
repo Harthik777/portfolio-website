@@ -48,7 +48,16 @@ Want to connect or collaborate?
 [Contact me here](https://portfolio-website.vercel.app/contact) or reach out on [LinkedIn](https://www.linkedin.com/in/harthik-mv/).
 
 ---
+<<<<<<< HEAD
 
 ## 📝 License
 
 [MIT License](LICENSE)
+=======
+
+## 📝 License
+
+[MIT License](LICENSE)
+
+
+>>>>>>> f948bee110dd0f7cd92431e2d3c4f746dcde4e00
