@@ -8,9 +8,7 @@ A modern, responsive portfolio website built with **Next.js** and **Tailwind CSS
 
 - Clean, professional design
 - Fully responsive (mobile, tablet, desktop)
-- Dark mode support
 - Project and skills showcase
-- Contact form (no direct email shown)
 - Deployed on Vercel
 
 ---
