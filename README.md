@@ -1,40 +1,54 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Harthik Manichandra Vanumu | Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with **Next.js** and **Tailwind CSS** to showcase my skills, projects, and experience in AI/ML, Data Science, and Software Engineering.
 
-First, run the development server:
+---
 
-```bash
+## 🚀 Features
+
+- Clean, professional design
+- Fully responsive (mobile, tablet, desktop)
+- Dark mode support
+- Project and skills showcase
+- Contact form (no direct email shown)
+- Deployed on Vercel
+
+---
+
+## 🛠️ Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React](https://react.dev/)
+
+---
+
+## 📦 Getting Started
+
+```sh
+git clone https://github.com/Harthik777/portfolio-website.git
+cd portfolio-website
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Live Demo
 
-## Learn More
+Check out the live site: [portfolio-website.vercel.app](https://portfolio-website.vercel.app)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Want to connect or collaborate?  
+[Contact me here](https://portfolio-website.vercel.app/contact) or reach out on [LinkedIn](https://www.linkedin.com/in/harthik-mv/).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# portfolio-website
->>>>>>> c025f5587382bfdc06f01616935818bd72f91dce
+[MIT License](LICENSE)

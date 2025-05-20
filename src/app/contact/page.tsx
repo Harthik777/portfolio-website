@@ -31,7 +31,7 @@ export default function Contact() {
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Get in Touch</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
             </div>
             
