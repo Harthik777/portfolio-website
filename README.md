@@ -32,13 +32,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+Open [http://localhost:3000](https://portfolio-website1-harthik-s-projects.vercel.app/) to view the site.
 
 ---
 
 ## 🌐 Live Demo
 
-Check out the live site: [portfolio-website.vercel.app](https://portfolio-website.vercel.app)
+Check out the live site: [portfolio-website.vercel.app](https://portfolio-website1-harthik-s-projects.vercel.app/)
 
 ---
 
