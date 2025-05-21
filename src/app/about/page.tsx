@@ -34,6 +34,13 @@ export default function About() {
                       <li>Selected for the official, institutionally-funded MIT Bengaluru team at TechTatva (MIT-Manipal&apos;s technical fest).</li>
                     </ul>
                   </div>
+                  <div>
+                    <h4 className="font-semibold">MaRRS International Spelling Bee Final Championship Finalist</h4>
+                    <p className="text-gray-600 dark:text-gray-300">05/2015</p>
+                    <ul className="list-disc list-inside text-sm mt-2">
+                      <li>Finalist in the MaRRS International Spelling Bee, which was held in Indian Social and Cultural Center, Abu Dhabi, UAE on 23rd May 2015.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               
