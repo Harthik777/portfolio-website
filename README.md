@@ -81,7 +81,7 @@ To run this project locally:
 
 ## 💨 Deployment
 
-This website is deployed on [Vercel](https://vercel.com/). The deployment process is automated via Git pushes to the main branch.
+This website is deployed on [https://vercel.com/](https://vercel.com/). The deployment process is automated via Git pushes to the main branch.
 
 ---
 
