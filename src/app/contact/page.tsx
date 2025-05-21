@@ -8,21 +8,27 @@ export default function Contact() {
           Get in Touch
         </h1>
         <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
-          Have a question or want to work together? Send me a message!
+          Have a question or want to work together? Reach out via email or LinkedIn!
         </p>
       </div>
 
-      <div className="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfGjLwAHezXi1LT11h61MlfDgUkdeQrPDOXpzJ0jXQ-9awbiQ/viewform?embedded=true"
-          width="100%"
-          height="800"
-          className="rounded-lg border-0"
-          style={{ backgroundColor: 'transparent' }}
-          title="Contact Form"
+      <div className="flex flex-col items-center gap-6 my-16">
+        <a
+          href="mailto:harthik7777@gmail.com"
+          className="text-indigo-600 hover:underline text-xl font-medium"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Loading…
-        </iframe>
+          📧 harthik7777@gmail.com
+        </a>
+        <a
+          href="https://www.linkedin.com/in/harthik-mv/"
+          className="text-indigo-600 hover:underline text-xl font-medium"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💼 LinkedIn
+        </a>
       </div>
     </div>
   );
