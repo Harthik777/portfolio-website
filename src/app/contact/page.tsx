@@ -17,11 +17,9 @@ export default function Contact() {
           src="https://docs.google.com/forms/d/e/1FAIpQLSfGjLwAHezXi1LT11h61MlfDgUkdeQrPDOXpzJ0jXQ-9awbiQ/viewform?embedded=true"
           width="100%"
           height="800"
-          frameBorder="0"
-          marginHeight={0}
-          marginWidth={0}
-          className="rounded-lg"
+          className="rounded-lg border-0"
           style={{ backgroundColor: 'transparent' }}
+          title="Contact Form"
         >
           Loading…
         </iframe>
