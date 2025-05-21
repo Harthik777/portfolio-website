@@ -19,7 +19,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          📧 harthik7777@gmail.com
+          Email
         </a>
         <a
           href="https://www.linkedin.com/in/harthik-mv/"
