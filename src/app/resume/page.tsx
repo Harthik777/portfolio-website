@@ -13,9 +13,12 @@ export default function Resume() {
   };
 
   const handleDownload = () => {
+    // Direct download approach for mobile
+    const url = '/Harthik_Resume.pdf';
     const link = document.createElement('a');
-    link.href = '/Harthik_Resume.pdf';
-    link.download = 'Harthik_Resume.pdf';
+    link.setAttribute('href', url);
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -40,12 +43,13 @@ export default function Resume() {
                 >
                   {isViewing ? 'Opening...' : 'View Resume (PDF)'}
                 </button>
-                <button
-                  onClick={handleDownload}
+                <a
+                  href="/Harthik_Resume.pdf"
+                  download="Harthik_Resume.pdf"
                   className="rounded-md bg-white dark:bg-gray-800 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
                 >
                   Download Resume (PDF)
-                </button>
+                </a>
               </div>
             </div>
 
