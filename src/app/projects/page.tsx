@@ -35,21 +35,25 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="min-h-screen">
-      <div className="relative isolate pt-14">
+    <main className="min-h-screen bg-gradient-to-br from-white via-indigo-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-900">
+      <div className="relative isolate pt-20">
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Projects & Publications</h2>
+            <div className="mx-auto max-w-2xl lg:mx-0 text-center">
+              <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl gradient-text mb-4">Projects & Publications</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                 Here are some of my key projects and publications, demonstrating my skills in AI/ML, data analysis, and software development.
               </p>
             </div>
-            <div className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-10 gap-y-16 sm:mt-24 lg:mx-0 lg:max-w-none lg:grid-cols-3 animate-fade-in">
-              {projects.map((project) => (
-                <article key={project.title} className="card flex flex-col items-start p-7">
+            <div className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:mt-24 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+              {projects.map((project, idx) => (
+                <article
+                  key={project.title}
+                  className={`card flex flex-col items-start p-8 bg-white/80 dark:bg-gray-900/80 shadow-2xl border border-indigo-100 dark:border-indigo-900 hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300 animate-fade-in-up`}
+                  style={{ animationDelay: `${idx * 0.1}s` }}
+                >
                   <div className="group relative w-full">
-                    <h3 className="mt-3 text-xl font-semibold leading-7 text-gray-900 dark:text-white">
+                    <h3 className="mt-3 text-2xl font-bold leading-7 text-gray-900 dark:text-white">
                       {project.link ? (
                         <Link href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                           <span className="absolute inset-0" />
@@ -82,7 +86,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center rounded-md bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-inset ring-indigo-700/10"
+                        className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 px-3 py-1 text-xs font-semibold text-indigo-700 dark:text-indigo-200 shadow"
                       >
                         {tag}
                       </span>
