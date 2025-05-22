@@ -7,7 +7,7 @@ export default function About() {
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">About Me</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                Hi! I&apos;m Harthik Manichandra Vanumu, an aspiring AI/ML engineer passionate about building intelligent systems and solving real-world problems. I am currently pursuing my B.Tech in Artificial Intelligence at Manipal Institute of Technology (MIT) Bengaluru.
+                Hi! I&apos;m Harthik Manichandra Vanumu, an aspiring AI/ML engineer passionate about building intelligent systems and solving real-world problems. I am currently pursuing my B.Tech in Computer Science and Engineering (Artificial Intelligence) at Manipal Institute of Technology (MIT) Bengaluru.
               </p>
             </div>
             
