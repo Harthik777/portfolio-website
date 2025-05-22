@@ -22,9 +22,9 @@ export default function Publications() {
                 Here are my academic publications and manuscripts.
               </p>
             </div>
-            <div className="mx-auto mt-16 max-w-2xl lg:mx-0 lg:max-w-none">
+            <div className="mx-auto mt-20 max-w-2xl lg:mx-0 lg:max-w-none animate-fade-in">
               {publications.map((pub) => (
-                <article key={pub.title} className="mb-10">
+                <article key={pub.title} className="card mb-10 p-7">
                   <h3 className="text-xl font-semibold leading-7">
                     {pub.link ? (
                       <Link href={pub.link} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">

@@ -30,7 +30,7 @@ export default function Resume() {
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             {/* Resume Section */}
-            <div className="mx-auto max-w-2xl lg:mx-0">
+            <div className="mx-auto max-w-2xl lg:mx-0 card p-8 animate-fade-in">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Resume</h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                 View or download my latest resume below. For more details about my experience, skills, and projects, feel free to explore the rest of this portfolio or <Link href="/contact" className="underline underline-offset-2 hover:text-indigo-700 dark:hover:text-indigo-300">contact me</Link>.
@@ -54,7 +54,7 @@ export default function Resume() {
             </div>
 
             {/* Certifications Section */}
-            <div className="mx-auto mt-16 max-w-2xl lg:mx-0">
+            <div className="mx-auto mt-16 max-w-2xl lg:mx-0 card p-8 animate-fade-in">
               <h3 className="text-2xl font-bold tracking-tight sm:text-3xl mb-8">Certifications</h3>
               <div className="space-y-8">
                 {/* Add your certifications here */}

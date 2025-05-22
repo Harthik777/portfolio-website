@@ -45,11 +45,11 @@ export default function Projects() {
                 Here are some of my key projects and publications, demonstrating my skills in AI/ML, data analysis, and software development.
               </p>
             </div>
-            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <div className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-10 gap-y-16 sm:mt-24 lg:mx-0 lg:max-w-none lg:grid-cols-3 animate-fade-in">
               {projects.map((project) => (
-                <article key={project.title} className="flex flex-col items-start rounded-lg p-6 shadow-lg bg-white dark:bg-gray-800/50 ring-1 ring-gray-900/5 hover:shadow-xl transition-shadow duration-300">
+                <article key={project.title} className="card flex flex-col items-start p-7">
                   <div className="group relative w-full">
-                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white">
+                    <h3 className="mt-3 text-xl font-semibold leading-7 text-gray-900 dark:text-white">
                       {project.link ? (
                         <Link href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                           <span className="absolute inset-0" />
@@ -60,7 +60,7 @@ export default function Projects() {
                       )}
                     </h3>
                     <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">{project.date}</p>
-                    <p className="mt-5 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                    <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
                       {project.description}
                     </p>
                   </div>
@@ -78,7 +78,7 @@ export default function Projects() {
                         </Link>
                      </div>
                   )}
-                  <div className="mt-auto pt-4 flex flex-wrap gap-2"> {/* Changed mt-4 to mt-auto pt-4 */}
+                  <div className="mt-auto pt-4 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}

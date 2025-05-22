@@ -28,13 +28,14 @@ export default function Skills() {
                 Here are my technical skills and competencies, as demonstrated in my academic and project work.
               </p>
             </div>
-            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-10 sm:mt-24 lg:mx-0 lg:max-w-none lg:grid-cols-2 animate-fade-in">
               {Object.entries(skills).map(([category, items]) => (
-                <div key={category} className="flex flex-col">
-                  <h3 className="text-xl font-semibold leading-7 tracking-tight text-gray-900 dark:text-white">
+                <div key={category} className="card flex flex-col p-7">
+                  <h3 className="text-xl font-semibold leading-7 tracking-tight text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                    {/* Optionally add icons here for each category */}
                     {category}
                   </h3>
-                  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     {items.map((skill) => (
                       <div
                         key={skill}
