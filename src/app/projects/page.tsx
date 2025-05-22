@@ -36,7 +36,7 @@ const projects = [
 export default function Projects() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-white via-indigo-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-900">
-      <div className="relative isolate pt-28">
+      <div className="relative isolate pt-40">
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0 text-center">
