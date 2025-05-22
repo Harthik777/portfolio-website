@@ -28,7 +28,6 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-grow pt-20">{children}</div>
         <Footer />
-        <p className="text-center text-sm text-gray-500 dark:text-gray-400">Made with ❤️ by Harthik</p>
       </body>
     </html>
   );
