@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -16,12 +16,7 @@ const navigation = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // For active link highlighting
-  // Use window.location.pathname for client-side only, or useRouter if in Next.js 13+ app dir
-  let currentPath = '';
-  if (typeof window !== 'undefined') {
-    currentPath = window.location.pathname;
-  }
+  const pathname = usePathname();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 glass border-b border-gray-200 dark:border-gray-800 shadow-lg backdrop-blur-md">
@@ -45,7 +40,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-base font-medium leading-6 px-3 py-2 rounded transition-colors duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:text-indigo-700 dark:hover:text-indigo-300 ${currentPath === item.href ? 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-semibold' : 'text-gray-900 dark:text-white'}`}
+              className={`text-base font-medium leading-6 px-3 py-2 rounded transition-colors duration-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:text-indigo-700 dark:hover:text-indigo-300 ${pathname === item.href ? 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-semibold' : 'text-gray-900 dark:text-white'}`}
             >
               {item.name}
             </Link>
