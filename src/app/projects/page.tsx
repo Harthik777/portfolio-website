@@ -40,7 +40,9 @@ export default function Projects() {
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0 text-center">
-              <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl gradient-text mb-4">Projects & Publications</h2>
+              <h2 className="relative z-10 text-4xl font-extrabold tracking-tight sm:text-5xl gradient-text mb-4 bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 bg-clip-text text-transparent px-4 py-2 rounded-lg">
+                Projects & Publications
+              </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                 Here are some of my key projects and publications, demonstrating my skills in AI/ML, data analysis, and software development.
               </p>
