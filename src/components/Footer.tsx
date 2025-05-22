@@ -17,7 +17,7 @@ export function Footer() {
           <Linkedin className="h-7 w-7" />
         </a>
       </div>
-      <div className="font-extrabold text-lg gradient-text mb-1">Harthik Manichandra Vanumu</div>
+      <div className="font-extrabold text-lg gradient-text mb-1">Made with <span className="text-red-500">❤️</span> by Harthik</div>
       <div className="text-xs text-gray-400">&copy; {new Date().getFullYear()} Harthik M V. All rights reserved.</div>
     </footer>
   );

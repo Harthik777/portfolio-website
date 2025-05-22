@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 bg-white/30 dark:bg-gray-900/30 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/60 shadow-lg">
       <nav className="flex items-center justify-between px-8 py-4 md:py-5 lg:px-16 relative" aria-label="Global">
         <div className="flex items-center gap-4">
-          <span className="text-2xl font-extrabold tracking-tight gradient-text select-none">HMV</span>
+          <span className="text-2xl font-extrabold tracking-tight gradient-text select-none">Harthik M V</span>
         </div>
         <div className="flex lg:hidden z-50">
           <button
