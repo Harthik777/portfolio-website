@@ -7,7 +7,7 @@ import { Footer } from '@/components/Footer';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Harthik M V | AI/ML Engineer",
+  title: "Harthik M V | Portfolio",
   description: "Portfolio website showcasing my work in AI/ML, software development, and research",
   metadataBase: new URL('https://harthikmv.com'),
   themeColor: [
@@ -28,6 +28,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-grow pt-20">{children}</div>
         <Footer />
+        <p className="text-center text-sm text-gray-500 dark:text-gray-400">Made with ❤️ by Harthik</p>
       </body>
     </html>
   );

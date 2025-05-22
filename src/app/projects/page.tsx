@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: 'Personal Portfolio Website',
-    description: 'Engineered a dynamic and responsive personal portfolio website leveraging Next.js, React, TypeScript, and Tailwind CSS to effectively showcase technical projects, skills (AI/ML, Data Science, Software Engineering), and professional background. Implemented key features including interactive project displays, skills section, and a functional contact form. Successfully deployed on Vercel, demonstrating proficiency in modern web development practices and UI/UX principles.',
+    description: 'Engineered a dynamic and responsive personal portfolio website leveraging Next.js, React, TypeScript, and Tailwind CSS to effectively showcase technical projects, skills (AI/ML, Data Science, Software Engineering), and professional background. Implemented key features including interactive project displays, and a skills section. Successfully deployed on Vercel, demonstrating proficiency in modern web development practices and UI/UX principles.',
     tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'UI/UX', 'Web Development'],
     link: 'https://portfolio-website1-harthik-s-projects.vercel.app/', // Link to the live portfolio
     githubLink: 'https://github.com/Harthik777/portfolio-website', // Link to the GitHub repo
