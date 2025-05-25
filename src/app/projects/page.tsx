@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const projects = [
+
   {
     title: 'Predictive Modelling & Data Augmentation for Cricket Analytics',
     description:
@@ -64,6 +65,26 @@ const projects = [
     githubLink: 'https://github.com/Harthik777/portfolio-website', // Link to the GitHub repo
     date: '05/2025', // Adjust date as per your development timeline
   },
+  {
+    title: 'Explainable AI for Fraud Detection with LLM-Enhanced Interpretability',
+    description:
+      'Leading a 4-member research team at IEEE Computer Society Bangalore Chapter developing an innovative Agentic AI system for interpretable SHAP explanations in financial fraud detection. Architecting a novel self-refinement loop using Langchain and lightweight LLMs (Ollama/Gemini API) to enhance clarity and accessibility of XAI summaries. Driving development of high-performance fraud detection models on IEEE-CIS dataset with deep XAI analysis using SHAP, targeting research paper publication.',
+    tags: [
+      'Research Leadership',
+      'Explainable AI',
+      'LightGBM/XGBoost', 
+      'SHAP',
+      'Langchain',
+      'LLMs',
+      'Fraud Detection',
+      'Python',
+      'IEEE-CIS Dataset'
+    ],
+    link: null, // Research in progress
+    date: '05/2025 - Present',
+    status: 'In Progress - IEEE Computer Society Bangalore Chapter',
+    isResearch: true,
+  },
 ];
 
 export default function Projects() {
@@ -85,9 +106,18 @@ export default function Projects() {
               {projects.map((project, idx) => (
                 <article
                   key={project.title}
-                  className={`card flex animate-fade-in-up flex-col items-start border border-indigo-100 bg-white/80 p-8 shadow-2xl transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80`}
+                  className={`card flex animate-fade-in-up flex-col items-start border ${
+                    project.isResearch 
+                      ? 'border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50 dark:border-yellow-800 dark:from-yellow-900/20 dark:to-orange-900/20' 
+                      : 'border-indigo-100 bg-white/80 dark:border-indigo-900 dark:bg-gray-900/80'
+                  } p-8 shadow-2xl transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl`}
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
+                  {project.isResearch && (
+                    <div className="mb-3 inline-flex items-center rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
+                      🔬 Active Research
+                    </div>
+                  )}
                   <div className="group relative w-full">
                     <h3 className="mt-3 text-2xl font-bold leading-7 text-gray-900 dark:text-white">
                       {project.link ? (
@@ -107,6 +137,11 @@ export default function Projects() {
                     <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
                       {project.date}
                     </p>
+                    {project.status && (
+                      <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                        {project.status}
+                      </p>
+                    )}
                     <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
                       {project.description}
                     </p>

@@ -58,6 +58,79 @@ export default function Resume() {
             Download Resume (PDF)
           </a>
         </div>
+        
+        {/* Experience Section */}
+        <div className="card mx-auto mt-16 animate-fade-in-up border border-indigo-100 bg-white/80 p-8 shadow-xl dark:border-indigo-900 dark:bg-gray-900/80">
+          <h3 className="gradient-text mb-8 text-2xl font-bold tracking-tight sm:text-3xl">
+            Experience
+          </h3>
+          <div className="space-y-8">
+            <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-800">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <svg
+                    className="h-6 w-6 text-indigo-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L7 12.5l2.091 2.091a2.25 2.25 0 01.659 1.591v5.714M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="ml-4 flex-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      Student Intern (Team Lead)
+                    </h4>
+                    <span className="mt-1 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                      05/2025 - Present
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                    IEEE Computer Society Bangalore Chapter
+                  </p>
+                  <div className="mt-3 space-y-2">
+                    <p className="text-gray-600 dark:text-gray-300">
+                      <strong>Research Project:</strong> XFIA 2.0 - Explainable AI for Fraud Detection with LLM-Enhanced Interpretability
+                    </p>
+                    <ul className="list-disc space-y-1 pl-5 text-sm text-gray-600 dark:text-gray-300">
+                      <li>Leading a 4-member research team developing an Agentic AI system for interpretable SHAP explanations in financial fraud detection</li>
+                      <li>Architecting and implementing a novel self-refinement loop using Langchain and lightweight LLMs (Ollama/Gemini API) to enhance clarity and accessibility of XAI summaries</li>
+                      <li>Driving development of high-performance fraud detection models (LightGBM/XGBoost) on IEEE-CIS dataset, conducting deep XAI analysis with SHAP, and spearheading research paper publication</li>
+                      <li>Engineering prompts and orchestrating LLM workflows for automated generation, critique, and refinement of natural language explanations from complex SHAP data</li>
+                    </ul>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
+                        Python
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-200">
+                        LightGBM/XGBoost
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-purple-900/50 dark:text-purple-200">
+                        SHAP/XAI
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-medium text-pink-800 dark:bg-pink-900/50 dark:text-pink-200">
+                        Langchain
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-200">
+                        Ollama/Gemini API
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-200">
+                        Research Leadership
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Certifications Section */}
         <div className="card mx-auto mt-16 animate-fade-in-up border border-indigo-100 bg-white/80 p-8 shadow-xl dark:border-indigo-900 dark:bg-gray-900/80">
           <h3 className="gradient-text mb-8 text-2xl font-bold tracking-tight sm:text-3xl">
