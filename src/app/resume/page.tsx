@@ -80,9 +80,9 @@ export default function Resume() {
                 <a
                   href="/Harthik_Resume.pdf"
                   download="Harthik_Resume.pdf"
-                  className="group relative overflow-hidden rounded-full border-2 border-indigo-600 bg-white/90 px-8 py-4 text-lg font-bold text-indigo-600 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl dark:border-indigo-400 dark:bg-gray-800/90 dark:text-indigo-400"
+                  className="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-indigo-900/20 dark:to-purple-900/20" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-red-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <span className="relative z-10">Download Resume (PDF)</span>
                 </a>
               </div>
