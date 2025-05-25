@@ -40,23 +40,23 @@ export default function Contact() {
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
                 <a
                   href="mailto:harthik7777@gmail.com"
-                  className="mobile-touch-target group relative overflow-hidden w-full rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-center text-base font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto sm:text-lg"
+                  className="group relative overflow-hidden min-h-[48px] w-full max-w-[280px] rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-center text-base font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto sm:max-w-none sm:text-lg"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <Mail className="relative z-10 mr-2 inline h-5 w-5" />
-                  <span className="relative z-10">Email</span>
+                  <Mail className="relative z-10 mr-2 inline h-5 w-5 flex-shrink-0" />
+                  <span className="relative z-10">Send Email</span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/harthik-mv/"
-                  className="mobile-touch-target group relative overflow-hidden w-full rounded-full border-2 border-indigo-600 bg-white/90 px-8 py-4 text-center text-base font-bold text-indigo-600 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl dark:border-indigo-400 dark:bg-gray-800/90 dark:text-indigo-400 sm:w-auto sm:text-lg"
+                  className="group relative overflow-hidden min-h-[48px] w-full max-w-[280px] rounded-full border-2 border-indigo-600 bg-white/90 px-8 py-4 text-center text-base font-bold text-indigo-600 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-indigo-400 dark:bg-gray-800/90 dark:text-indigo-400 sm:w-auto sm:max-w-none sm:text-lg"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-indigo-900/20 dark:to-purple-900/20" />
-                  <Linkedin className="relative z-10 mr-2 inline h-5 w-5" />
-                  <span className="relative z-10">LinkedIn</span>
+                  <Linkedin className="relative z-10 mr-2 inline h-5 w-5 flex-shrink-0" />
+                  <span className="relative z-10">Connect on LinkedIn</span>
                 </a>
               </div>
             </div>
