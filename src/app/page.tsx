@@ -51,6 +51,11 @@ function HeroSection() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-40 -top-40 h-80 w-80 animate-pulse rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-20 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-80 w-80 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-pink-600 opacity-20 blur-3xl" />
+        
+        {/* Additional floating elements for 2025 immersive design */}
+        <div className="absolute right-1/4 top-1/3 h-32 w-32 animate-float rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 opacity-10 blur-2xl" />
+        <div className="absolute left-1/3 bottom-1/4 h-24 w-24 animate-bounce-slow rounded-full bg-gradient-to-br from-pink-400 to-rose-500 opacity-15 blur-xl" />
+        <div className="absolute right-1/3 top-1/4 h-16 w-16 animate-pulse-slow rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 opacity-20 blur-lg" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -65,19 +70,38 @@ function HeroSection() {
             className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl"
           >
             Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <motion.span 
+              className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+              animate={{ 
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ 
+                duration: 8, 
+                repeat: Infinity, 
+                ease: 'linear' 
+              }}
+              style={{ 
+                backgroundSize: '200% 200%' 
+              }}
+            >
               Harthik M V
-            </span>
+            </motion.span>
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
             className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-xl"
           >
-            AI/ML Engineer passionate about creating
-            intelligent solutions that make a difference. Currently pursuing
-            B.Tech in Computer Science (AI) at{' '}
-            <span className="whitespace-nowrap">Manipal Institute of Technology (MIT) Bengaluru.</span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              AI/ML Engineer passionate about creating
+              intelligent solutions that make a difference. Currently pursuing
+              B.Tech in Computer Science (AI) at{' '}
+              <span className="whitespace-nowrap font-semibold text-indigo-600 dark:text-indigo-400">Manipal Institute of Technology (MIT) Bengaluru.</span>
+            </motion.span>
           </motion.p>
 
           <motion.p
@@ -93,21 +117,39 @@ function HeroSection() {
           >
             {/* Main action buttons */}
             <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
-              <Link
-                href="/projects"
-                className="mobile-touch-target group relative inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <CodeBracketIcon className="h-5 w-5" />
-                View My Work
-              </Link>
+                <Link
+                  href="/projects"
+                  className="mobile-touch-target group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                  <CodeBracketIcon className="relative z-10 h-5 w-5" />
+                  <span className="relative z-10">View My Work</span>
+                </Link>
+              </motion.div>
 
-              <Link
-                href="/about"
-                className="mobile-touch-target group inline-flex w-full items-center justify-center gap-2 rounded-full border border-gray-300 bg-white/80 px-8 py-4 text-sm font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800 sm:w-auto"
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <BriefcaseIcon className="h-5 w-5" />
-                Learn more about me
-              </Link>
+                <Link
+                  href="/about"
+                  className="mobile-touch-target group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-gray-300 bg-white/80 px-8 py-4 text-sm font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800 sm:w-auto"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-indigo-900/20 dark:to-purple-900/20"
+                  />
+                  <BriefcaseIcon className="relative z-10 h-5 w-5" />
+                  <span className="relative z-10">Learn more about me</span>
+                </Link>
+              </motion.div>
             </div>
 
             {/* Social links */}
@@ -194,30 +236,52 @@ function SkillsSection() {
           whileInView="animate"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto"
+          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-2 max-w-5xl mx-auto"
         >
           {skills.map((skill, index) => (
             <motion.div
               key={skill.title}
               variants={scaleIn}
-              className="group relative rounded-2xl bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-all hover:scale-105 hover:shadow-xl dark:bg-gray-800/80"
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="group relative overflow-hidden rounded-3xl bg-white/90 p-8 shadow-xl backdrop-blur-sm transition-all hover:shadow-2xl dark:bg-gray-800/90"
             >
-              <div className="mb-4 text-4xl">{skill.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                {skill.title}
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                {skill.description}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {skill.technologies.map(tech => (
-                  <span
-                    key={tech}
-                    className="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              {/* Gradient overlay on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+              
+              <div className="relative z-10">
+                <motion.div 
+                  className="mb-6 text-5xl"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  {skill.icon}
+                </motion.div>
+                
+                <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                  {skill.title}
+                </h3>
+                
+                <p className="mb-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {skill.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {skill.technologies.map((tech, techIndex) => (
+                    <motion.span
+                      key={tech}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: techIndex * 0.1 }}
+                      whileHover={{ scale: 1.05 }}
+                      className="rounded-full bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 px-4 py-2 text-sm font-medium text-indigo-800 shadow-sm transition-all hover:shadow-md dark:from-indigo-900/50 dark:via-purple-900/50 dark:to-pink-900/50 dark:text-indigo-200"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -269,7 +333,16 @@ function CTASection() {
 // Main Home Component
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Scroll Progress Indicator */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 z-50 origin-left"
+        style={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 0.3 }}
+      />
+      
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
         <SkillsSection />
