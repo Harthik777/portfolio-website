@@ -74,9 +74,9 @@ function HeroSection() {
             variants={fadeInUp}
             className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-xl"
           >
-            AI/ML Engineer & Full-Stack Developer passionate about creating
+            AI/ML Engineer passionate about creating
             intelligent solutions that make a difference. Currently pursuing
-            B.Tech in Computer Science (AI) at MIT Bengaluru.
+            B.Tech in Computer Science (AI) at Manipal Institute of Technology (MIT) Bengaluru.
           </motion.p>
 
           <motion.div
@@ -119,12 +119,6 @@ function SkillsSection() {
       technologies: ['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn'],
     },
     {
-      title: 'Full-Stack Development',
-      description: 'Modern web applications with React, Next.js, and Node.js',
-      icon: '💻',
-      technologies: ['React', 'Next.js', 'TypeScript', 'Node.js'],
-    },
-    {
       title: 'Data Science',
       description: 'Data analysis, visualization, and statistical modeling',
       icon: '📊',
@@ -152,7 +146,7 @@ function SkillsSection() {
             variants={fadeInUp}
             className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300"
           >
-            Combining artificial intelligence with modern web development to
+            Leveraging artificial intelligence and data science to
             create innovative solutions
           </motion.p>
         </motion.div>
@@ -162,7 +156,7 @@ function SkillsSection() {
           whileInView="animate"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto"
         >
           {skills.map((skill, index) => (
             <motion.div
