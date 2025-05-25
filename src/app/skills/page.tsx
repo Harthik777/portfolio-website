@@ -37,15 +37,37 @@ export default function Skills() {
       <div className="relative isolate pt-20">
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center lg:mx-0">
+            <div className="card mx-auto max-w-4xl animate-fade-in-up border border-indigo-100 bg-white/80 p-12 text-center shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-600">
+                <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
               <h2 className="gradient-text mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
                 Skills & Competencies
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                Here are my technical skills and competencies, as demonstrated
-                in my academic and project work.
+                Here are my technical skills and competencies, as demonstrated in my 
+                <span className="font-semibold text-indigo-600 dark:text-indigo-400"> academic</span> and 
+                <span className="font-semibold text-purple-600 dark:text-purple-400"> project work</span>, with focus on 
+                <span className="font-semibold text-pink-600 dark:text-pink-400"> AI/ML research</span>.
               </p>
+              <div className="mt-8 flex justify-center space-x-4">
+                <div className="flex items-center space-x-2 rounded-full bg-indigo-100 px-4 py-2 dark:bg-indigo-900/50">
+                  <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
+                  <span className="text-sm font-medium text-indigo-700 dark:text-indigo-300">Programming</span>
+                </div>
+                <div className="flex items-center space-x-2 rounded-full bg-purple-100 px-4 py-2 dark:bg-purple-900/50">
+                  <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Machine Learning</span>
+                </div>
+                <div className="flex items-center space-x-2 rounded-full bg-pink-100 px-4 py-2 dark:bg-pink-900/50">
+                  <div className="h-2 w-2 rounded-full bg-pink-500"></div>
+                  <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Data Analysis</span>
+                </div>
+              </div>
             </div>
+            
             <div className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-10 sm:mt-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
               {Object.entries(skills).map(([category, items], idx) => (
                 <div

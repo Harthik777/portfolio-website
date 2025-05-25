@@ -93,15 +93,38 @@ export default function Projects() {
       <div className="relative isolate pt-20">
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center lg:mx-0">
+            {/* Enhanced Header Section */}
+            <div className="card mx-auto max-w-4xl animate-fade-in-up border border-indigo-100 bg-white/80 p-12 text-center shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-600">
+                <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
               <h2 className="gradient-text mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
                 Projects & Publications
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                Here are some of my key projects and publications, demonstrating
-                my skills in AI/ML, data analysis, and software development.
+                Here are some of my key projects and publications, demonstrating my skills in 
+                <span className="font-semibold text-indigo-600 dark:text-indigo-400"> AI/ML</span>, 
+                <span className="font-semibold text-purple-600 dark:text-purple-400"> data analysis</span>, and 
+                <span className="font-semibold text-pink-600 dark:text-pink-400"> software development</span>.
               </p>
+              <div className="mt-8 flex justify-center space-x-4">
+                <div className="flex items-center space-x-2 rounded-full bg-indigo-100 px-4 py-2 dark:bg-indigo-900/50">
+                  <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
+                  <span className="text-sm font-medium text-indigo-700 dark:text-indigo-300">Research Projects</span>
+                </div>
+                <div className="flex items-center space-x-2 rounded-full bg-purple-100 px-4 py-2 dark:bg-purple-900/50">
+                  <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Publications</span>
+                </div>
+                <div className="flex items-center space-x-2 rounded-full bg-pink-100 px-4 py-2 dark:bg-pink-900/50">
+                  <div className="h-2 w-2 rounded-full bg-pink-500"></div>
+                  <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Web Development</span>
+                </div>
+              </div>
             </div>
+            
             <div className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:mt-24 lg:mx-0 lg:max-w-none lg:grid-cols-3">
               {projects.map((project, idx) => (
                 <article
