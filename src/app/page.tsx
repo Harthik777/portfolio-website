@@ -92,7 +92,7 @@ function HeroSection() {
             className="mt-10 flex flex-col items-center justify-center gap-6"
           >
             {/* Main action buttons */}
-            <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:gap-6">
+            <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
               <Link
                 href="/projects"
                 className="mobile-touch-target group relative inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
@@ -111,7 +111,7 @@ function HeroSection() {
             </div>
 
             {/* Social links */}
-            <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
               <a
                 href="https://www.linkedin.com/in/harthik-mv/"
                 target="_blank"
