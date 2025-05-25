@@ -16,6 +16,7 @@ const navigation = [
     href: '/publications',
     ariaLabel: 'Read my publications',
   },
+  { name: 'Blog', href: '/blog', ariaLabel: 'Read my blog articles' },
   { name: 'Skills', href: '/skills', ariaLabel: 'See my skills' },
   { name: 'Resume', href: '/resume', ariaLabel: 'Download my resume' },
 ];

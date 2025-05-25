@@ -17,17 +17,20 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Ta
 ## 🛠️ Tech Stack
 
 ### Core
+
 - **Framework**: Next.js 15.3.2
 - **Runtime**: React 19.0.0
 - **Language**: TypeScript 5.3.3
 - **Styling**: Tailwind CSS 3.4.1
 
 ### UI & Animation
+
 - **Icons**: Heroicons & Lucide React
 - **Animations**: Framer Motion 11.0.3
 - **Theme**: next-themes 0.2.1
 
 ### Development Tools
+
 - **Linting**: ESLint 8.56.0 with Next.js config
 - **Formatting**: Prettier 3.0.0 with Tailwind plugin
 - **Build**: Next.js with static optimization
@@ -59,23 +62,27 @@ src/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd portfolio-website
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -98,18 +105,22 @@ src/
 ## 🎨 Customization
 
 ### Theme Configuration
+
 The theme system supports:
+
 - **Light Mode**: Clean, professional appearance
 - **Dark Mode**: Modern, eye-friendly design
 - **System Mode**: Automatic based on OS preference
 
 ### Color Scheme
+
 - **Primary**: Indigo (600-700)
 - **Secondary**: Purple (600-700)
 - **Accent**: Pink (400-600)
 - **Neutral**: Gray scale with proper contrast ratios
 
 ### Typography
+
 - **Font**: Inter (Google Fonts)
 - **Weights**: 400, 500, 600, 700, 800
 - **Responsive**: Fluid typography scaling
@@ -117,21 +128,25 @@ The theme system supports:
 ## 🔧 Configuration Files
 
 ### ESLint (`eslint.config.mjs`)
+
 - Next.js recommended rules
 - TypeScript support
 - Custom rules for code quality
 
 ### Prettier (`.prettierrc`)
+
 - Consistent code formatting
 - Tailwind CSS class sorting
 - 80-character line width
 
 ### TypeScript (`tsconfig.json`)
+
 - Strict type checking
 - Path mapping for imports
 - Next.js optimizations
 
 ### Tailwind (`tailwind.config.js`)
+
 - Custom color palette
 - Extended animations
 - Responsive breakpoints
@@ -170,6 +185,7 @@ The theme system supports:
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Connect your GitHub repository
 2. Configure build settings:
    - Build Command: `npm run build`
@@ -177,6 +193,7 @@ The theme system supports:
 3. Deploy automatically on push
 
 ### Other Platforms
+
 - **Netlify**: Configure build command and publish directory
 - **AWS Amplify**: Use the Next.js preset
 - **Docker**: Use the included Dockerfile
@@ -196,6 +213,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Harthik M V**
+
 - Portfolio: [harthikmv.com](https://harthikmv.com)
 - LinkedIn: [linkedin.com/in/harthik-mv](https://linkedin.com/in/harthik-mv)
 - Email: harthik7777@gmail.com
@@ -210,4 +228,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Built with ❤️ using Next.js, TypeScript, and Tailwind CSS
+Made with ❤️ by Harthik
+
+## 🔄 Recent Updates
+
+- **Enhanced Text Rendering**: Fixed gradient text clipping issues for better readability
+- **Improved Footer**: Updated with personalized message
+- **Better Typography**: Enhanced line-height and spacing for all headings
+- **Performance Optimizations**: Improved CSS utilities and animations
+- **Accessibility**: Enhanced focus states and text rendering

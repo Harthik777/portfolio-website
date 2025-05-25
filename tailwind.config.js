@@ -18,6 +18,9 @@ module.exports = {
           900: '#1e3a8a',
         },
       },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      },
       animation: {
         gradient: 'gradient 15s ease infinite',
         'fade-in': 'fadeIn 0.5s ease-in forwards',

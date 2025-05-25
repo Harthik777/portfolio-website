@@ -91,7 +91,7 @@ export function Footer() {
           className="mt-6 border-t border-white/10 pt-6 dark:border-gray-700/20"
         >
           <p className="text-center text-xs text-gray-500 dark:text-gray-500">
-            Built with ❤️ using Next.js, TypeScript, and Tailwind CSS
+            Made with ❤️ by Harthik
           </p>
         </motion.div>
       </div>

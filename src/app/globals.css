@@ -38,6 +38,8 @@
   h5,
   h6 {
     @apply mb-2 font-sans font-bold tracking-tight;
+    line-height: 1.2;
+    overflow: visible;
   }
 
   section {
@@ -50,6 +52,24 @@
       background-color 0.3s ease,
       border-color 0.3s ease,
       color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Enhanced focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-indigo-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+  }
+
+  /* Fix for large gradient text headings */
+  .text-4xl.gradient-text,
+  .text-5xl.gradient-text,
+  .text-6xl.gradient-text,
+  .text-7xl.gradient-text {
+    line-height: 1.1;
+    padding: 0.05em 0 0.1em 0;
+    margin-bottom: 0.5em;
   }
 }
 
@@ -80,10 +100,16 @@
 
   .gradient-text {
     @apply bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-400 bg-clip-text text-transparent;
+    line-height: 1.2;
+    padding: 0.1em 0;
+    display: inline-block;
   }
 
   .gradient-text-dark {
     @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-300 bg-clip-text text-transparent;
+    line-height: 1.2;
+    padding: 0.1em 0;
+    display: inline-block;
   }
 
   .gradient-bg {
@@ -131,6 +157,32 @@
   .animate-bounce-slow {
     animation: bounce 3s infinite;
   }
+
+  /* Additional utility classes for better UX */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-dark {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .backdrop-blur-strong {
+    backdrop-filter: blur(20px);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Improved button styles */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800;
+  }
 }
 
 @keyframes float {
@@ -140,12 +192,5 @@
   }
   50% {
     transform: translateY(-10px);
-  }
-}
-
-/* Enhanced focus styles for accessibility */
-@layer base {
-  *:focus-visible {
-    @apply outline-none ring-2 ring-indigo-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
   }
 }

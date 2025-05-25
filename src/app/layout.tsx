@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { BackToTop } from '@/components/BackToTop';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 
@@ -32,12 +33,28 @@ export const metadata: Metadata = {
     'Next.js',
     'TypeScript',
     'Portfolio',
+    'Software Engineer',
+    'Data Science',
+    'Python',
+    'JavaScript',
   ],
   authors: [{ name: 'Harthik M V', url: 'https://harthikmv.com' }],
   creator: 'Harthik M V',
+  publisher: 'Harthik M V',
   metadataBase: new URL('https://harthikmv.com'),
   alternates: {
     canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
     type: 'website',
@@ -62,18 +79,13 @@ export const metadata: Metadata = {
     description:
       'Portfolio website showcasing my work in AI/ML, software development, and research projects.',
     images: ['/og-image.jpg'],
+    creator: '@harthikmv',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
   },
+  category: 'technology',
 };
 
 export const viewport: Viewport = {
@@ -110,6 +122,7 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
+              <BackToTop />
             </div>
           </ThemeProvider>
         </ErrorBoundary>

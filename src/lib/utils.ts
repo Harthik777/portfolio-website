@@ -11,13 +11,12 @@ export function cn(...inputs: ClassValue[]) {
 /**
  * Format date to a readable string
  */
-export function formatDate(date: Date | string): string {
-  const dateObj = typeof date === 'string' ? new Date(date) : date;
-  return dateObj.toLocaleDateString('en-US', {
+export function formatDate(date: string | Date): string {
+  return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  });
+  }).format(new Date(date));
 }
 
 /**
@@ -31,23 +30,6 @@ export function debounce<T extends (...args: any[]) => any>(
   return (...args: Parameters<T>) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), wait);
-  };
-}
-
-/**
- * Throttle function for performance optimization
- */
-export function throttle<T extends (...args: any[]) => any>(
-  func: T,
-  limit: number
-): (...args: Parameters<T>) => void {
-  let inThrottle: boolean;
-  return (...args: Parameters<T>) => {
-    if (!inThrottle) {
-      func(...args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
   };
 }
 
@@ -114,4 +96,38 @@ export function capitalize(str: string): string {
 export function truncate(text: string, length: number): string {
   if (text.length <= length) return text;
   return text.substring(0, length).trim() + '...';
+}
+
+/**
+ * Utility function to check if user prefers reduced motion
+ */
+export function prefersReducedMotion(): boolean {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+/**
+ * Utility function to smooth scroll to element
+ */
+export function scrollToElement(elementId: string): void {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  }
+}
+
+/**
+ * Utility function to copy text to clipboard
+ */
+export async function copyToClipboard(text: string): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (error) {
+    console.error('Failed to copy text:', error);
+    return false;
+  }
 }
