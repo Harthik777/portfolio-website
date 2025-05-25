@@ -267,11 +267,11 @@
 
   /* Improved button styles with mobile considerations */
   .btn-primary {
-    @apply mobile-touch-target inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-base;
+    @apply mobile-touch-target inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-base;
   }
 
   .btn-secondary {
-    @apply mobile-touch-target inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800 sm:text-base;
+    @apply mobile-touch-target inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-4 text-sm font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800 sm:text-base;
   }
 
   /* Modern button styles */
