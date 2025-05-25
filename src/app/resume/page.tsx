@@ -70,16 +70,20 @@ export default function Resume() {
                 <button
                   onClick={handleView}
                   disabled={isViewing}
-                  className="rounded-full bg-indigo-700 px-8 py-4 text-lg font-bold text-white shadow-xl transition-all duration-200 hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="group relative overflow-hidden rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {isViewing ? 'Opening...' : 'View Resume (PDF)'}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="relative z-10">
+                    {isViewing ? 'Opening...' : 'View Resume (PDF)'}
+                  </span>
                 </button>
                 <a
                   href="/Harthik_Resume.pdf"
                   download="Harthik_Resume.pdf"
-                  className="rounded-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-8 py-4 text-lg font-bold text-indigo-700 shadow transition-all duration-200 hover:scale-105 hover:shadow-xl dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 dark:text-indigo-200"
+                  className="group relative overflow-hidden rounded-full border-2 border-indigo-600 bg-white/90 px-8 py-4 text-lg font-bold text-indigo-600 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl dark:border-indigo-400 dark:bg-gray-800/90 dark:text-indigo-400"
                 >
-                  Download Resume (PDF)
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-indigo-900/20 dark:to-purple-900/20" />
+                  <span className="relative z-10">Download Resume (PDF)</span>
                 </a>
               </div>
             </div>
