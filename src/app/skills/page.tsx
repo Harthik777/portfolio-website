@@ -83,7 +83,7 @@ export default function Skills() {
                     {items.map(skill => (
                       <span
                         key={skill}
-                        className="mb-2 inline-flex items-center rounded-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-3 py-2 text-sm font-semibold text-indigo-700 shadow dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 dark:text-indigo-200"
+                        className="mb-2 inline-flex items-center rounded-full border border-indigo-200 bg-white/90 px-3 py-2 text-sm font-semibold text-indigo-700 shadow backdrop-blur-sm transition-all hover:scale-105 hover:shadow-lg dark:border-indigo-700 dark:bg-gray-800/90 dark:text-indigo-300"
                       >
                         {skill}
                       </span>

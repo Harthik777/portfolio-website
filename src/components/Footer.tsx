@@ -63,7 +63,7 @@ export function Footer() {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:harthik.mv@example.com"
+              href="mailto:harthik7777@gmail.com"
               className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400"
               aria-label="Email Contact"
             >
