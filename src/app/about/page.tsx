@@ -33,104 +33,137 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className="mx-auto mt-16 grid max-w-2xl animate-fade-in-up grid-cols-1 gap-8 text-base leading-7 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-              <div className="card border border-indigo-100 bg-white/80 p-8 shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80">
-                <h3 className="mb-4 border-l-4 border-indigo-600 pl-6 text-xl font-bold">
-                  Education
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold">
-                      Manipal Institute of Technology (MIT) Bengaluru
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      B.Tech in Computer Science and Engineering (Artificial
-                      Intelligence)
-                    </p>
-                    <p className="text-sm text-gray-500">07/2023 - 07/2027</p>
+
+            {/* Enhanced Three-Column Layout */}
+            <div className="mx-auto mt-16 grid max-w-2xl animate-fade-in-up grid-cols-1 gap-8 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+              
+              {/* Education Section */}
+              <div className="group relative overflow-hidden rounded-3xl border border-indigo-200 bg-white/90 p-8 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl dark:border-indigo-800 dark:bg-gray-800/90">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative">
+                  <div className="mb-6 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-600">
+                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Education</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 p-4 dark:from-indigo-900/20 dark:to-purple-900/20">
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                        Manipal Institute of Technology (MIT) Bengaluru
+                      </h4>
+                      <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                        B.Tech in Computer Science and Engineering (Artificial Intelligence)
+                      </p>
+                      <div className="mt-2 flex items-center gap-2">
+                        <svg className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V7a1 1 0 00-1 1v9a1 1 0 001 1h6a1 1 0 001-1V8a1 1 0 00-1-1" />
+                        </svg>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">07/2023 - 07/2027</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="card border border-indigo-100 bg-white/80 p-8 shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80">
-                <h3 className="mb-4 border-l-4 border-indigo-600 pl-6 text-xl font-bold">
-                  Key Achievements
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold">
-                      1st Place, RoboRun Competition & TechTatva Selection
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      09/2024 - 10/2024
-                    </p>
-                    <ul className="mt-2 list-inside list-disc text-sm">
-                      <li>
-                        Won MAHE Bengaluru&apos;s university-wide
-                        &apos;RoboRun&apos; line follower robotics competition
-                        (1st Place).
-                      </li>
-                      <li>
-                        Selected for the official, institutionally-funded MIT
-                        Bengaluru team at TechTatva (MIT-Manipal&apos;s
-                        technical fest).
-                      </li>
-                    </ul>
+
+              {/* Key Achievements Section */}
+              <div className="group relative overflow-hidden rounded-3xl border border-purple-200 bg-white/90 p-8 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl dark:border-purple-800 dark:bg-gray-800/90">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-indigo-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative">
+                  <div className="mb-6 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-600">
+                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Key Achievements</h3>
                   </div>
-                  <div>
-                    <h4 className="font-semibold">
-                      MaRRS International Spelling Bee Final Championship
-                      Finalist
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300">05/2015</p>
-                    <ul className="mt-2 list-inside list-disc text-sm">
-                      <li>
-                        Finalist in the MaRRS International Spelling Bee, which
-                        was held in Indian Social and Cultural Center, Abu
-                        Dhabi, UAE on 23rd May 2015.
-                      </li>
-                    </ul>
+                  
+                  <div className="space-y-6">
+                    <div className="rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 p-4 dark:from-purple-900/20 dark:to-pink-900/20">
+                      <div className="mb-2 flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
+                        <span className="text-xs font-semibold text-yellow-600 dark:text-yellow-400">1ST PLACE</span>
+                      </div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                        RoboRun Competition & TechTatva Selection
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                        09/2024 - 10/2024
+                      </p>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                        Won MAHE Bengaluru's university-wide 'RoboRun' competition and selected for MIT Bengaluru's official TechTatva team.
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 p-4 dark:from-purple-900/20 dark:to-pink-900/20">
+                      <div className="mb-2 flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+                        <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">FINALIST</span>
+                      </div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                        MaRRS International Spelling Bee
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                        05/2015
+                      </p>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                        Finalist in the international competition held in Abu Dhabi, UAE.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="card border border-indigo-100 bg-white/80 p-8 shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80">
-                <h3 className="mb-4 border-l-4 border-indigo-600 pl-6 text-xl font-bold">
-                  Volunteering
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold">
-                      IEEE Student Branch Executive
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      01/2025 - Present
-                    </p>
-                    <ul className="mt-2 list-inside list-disc text-sm">
-                      <li>
-                        Led and managed IEEE Student Branch activities,
-                        including events and workshops, and boosted member
-                        engagement.
-                      </li>
-                      <li>
-                        Served as a liaison between the IEEE Student Branch and
-                        the IEEE CS Society, improving communication and
-                        collaboration efficiency.
-                      </li>
-                    </ul>
+
+              {/* Volunteering Section */}
+              <div className="group relative overflow-hidden rounded-3xl border border-pink-200 bg-white/90 p-8 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl dark:border-pink-800 dark:bg-gray-800/90">
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-indigo-500/5 to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative">
+                  <div className="mb-6 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-indigo-600">
+                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Volunteering</h3>
                   </div>
-                  <div>
-                    <h4 className="font-semibold">
-                      Radar (The Robotics Club of the College) - Outreach Head
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      10/2024 - Present
-                    </p>
-                    <ul className="mt-2 list-inside list-disc text-sm">
-                      <li>
-                        Led a 5-person outreach team, securing
-                        speakers/MOUs/competition entries and organising an
-                        industry visit, and assisted the robotics team.
-                      </li>
-                    </ul>
+                  
+                  <div className="space-y-6">
+                    <div className="rounded-lg bg-gradient-to-r from-pink-50 to-indigo-50 p-4 dark:from-pink-900/20 dark:to-indigo-900/20">
+                      <div className="mb-2 flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                        <span className="text-xs font-semibold text-green-600 dark:text-green-400">CURRENT</span>
+                      </div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                        IEEE Student Branch Executive
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                        01/2025 - Present
+                      </p>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                        Leading IEEE Student Branch activities and serving as liaison with IEEE CS Society.
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg bg-gradient-to-r from-pink-50 to-indigo-50 p-4 dark:from-pink-900/20 dark:to-indigo-900/20">
+                      <div className="mb-2 flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                        <span className="text-xs font-semibold text-green-600 dark:text-green-400">CURRENT</span>
+                      </div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                        Radar Robotics Club - Outreach Head
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                        10/2024 - Present
+                      </p>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                        Leading 5-person outreach team, securing partnerships and organizing industry visits.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

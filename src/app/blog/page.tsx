@@ -35,9 +35,10 @@ export default function Blog() {
               </div>
             </div>
               
-            <div className="mt-16">
-              <div className="card animate-fade-in-up border border-indigo-100 bg-white/80 p-12 shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80">
-                <div className="text-center">
+            <div className="mx-auto mt-20 max-w-4xl sm:mt-24">
+              <div className="group relative overflow-hidden rounded-3xl border border-indigo-200 bg-white/90 p-12 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl dark:border-indigo-800 dark:bg-gray-800/90">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative text-center">
                   <div className="mx-auto mb-6 h-16 w-16 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
                     <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -46,22 +47,11 @@ export default function Blog() {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                     Coming Soon
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-8">
-                    I'm working on creating valuable content about AI/ML, data science, and software development. 
-                    Stay tuned for upcoming articles and tutorials!
-                  </p>
-                  <div className="flex justify-center">
-                    <a
-                      href="https://www.linkedin.com/in/harthik-mv/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-md bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-indigo-500 hover:to-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200"
-                    >
-                      Follow for Updates
-                      <svg className="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </a>
+                  <div className="rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 p-6 dark:from-indigo-900/20 dark:to-purple-900/20">
+                    <p className="text-gray-600 dark:text-gray-300 mb-8">
+                      I'm working on creating valuable content about AI/ML, data science, and software development. 
+                      Stay tuned for upcoming articles and tutorials!
+                    </p>
                   </div>
                 </div>
               </div>

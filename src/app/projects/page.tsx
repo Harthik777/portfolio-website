@@ -129,83 +129,91 @@ export default function Projects() {
               {projects.map((project, idx) => (
                 <article
                   key={project.title}
-                  className={`card flex animate-fade-in-up flex-col items-start border ${
+                  className={`group relative overflow-hidden rounded-3xl border shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl ${
                     project.isResearch 
-                      ? 'border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50 dark:border-yellow-800 dark:from-yellow-900/20 dark:to-orange-900/20' 
-                      : 'border-indigo-100 bg-white/80 dark:border-indigo-900 dark:bg-gray-900/80'
-                  } p-8 shadow-2xl transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl`}
+                      ? 'border-yellow-200 bg-gradient-to-br from-yellow-50/90 to-orange-50/90 dark:border-yellow-800 dark:from-yellow-900/20 dark:to-orange-900/20 dark:bg-gray-800/90' 
+                      : 'border-indigo-200 bg-white/90 dark:border-indigo-800 dark:bg-gray-800/90'
+                  } p-8`}
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
-                  {project.isResearch && (
-                    <div className="mb-3 inline-flex items-center rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
-                      🔬 Active Research
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="relative">
+                    {project.isResearch && (
+                      <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
+                        🔬 Active Research
+                      </div>
+                    )}
+                    <div className="group relative w-full">
+                      <h3 className="mt-3 text-2xl font-bold leading-7 text-gray-900 dark:text-white">
+                        {project.link ? (
+                          <Link
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
+                          >
+                            <span className="absolute inset-0" />
+                            {project.title}
+                          </Link>
+                        ) : (
+                          <span>{project.title}</span>
+                        )}
+                      </h3>
+                      <div className="mt-2 flex items-center gap-2">
+                        <svg className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V7a1 1 0 00-1 1v9a1 1 0 001 1h6a1 1 0 001-1V8a1 1 0 00-1-1" />
+                        </svg>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">{project.date}</span>
+                      </div>
+                      {project.status && (
+                        <div className="mt-2 rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 p-3 dark:from-indigo-900/20 dark:to-purple-900/20">
+                          <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                            {project.status}
+                          </p>
+                        </div>
+                      )}
+                      <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
+                        {project.description}
+                      </p>
                     </div>
-                  )}
-                  <div className="group relative w-full">
-                    <h3 className="mt-3 text-2xl font-bold leading-7 text-gray-900 dark:text-white">
-                      {project.link ? (
+                    {/* GitHub link rendering */}
+                    {project.githubLink && (
+                      <div className="mt-4">
                         <Link
-                          href={project.link}
+                          href={project.githubLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
+                          className="inline-flex items-center gap-x-1.5 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-3 py-2 text-sm font-medium text-gray-700 transition-all hover:from-indigo-100 hover:to-purple-100 hover:text-indigo-600 dark:from-gray-700 dark:to-gray-600 dark:text-gray-300 dark:hover:from-indigo-900/50 dark:hover:to-purple-900/50 dark:hover:text-indigo-400"
                         >
-                          <span className="absolute inset-0" />
-                          {project.title}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="lucide lucide-github"
+                          >
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                          </svg>
+                          View on GitHub
                         </Link>
-                      ) : (
-                        <span>{project.title}</span>
-                      )}
-                    </h3>
-                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                      {project.date}
-                    </p>
-                    {project.status && (
-                      <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
-                        {project.status}
-                      </p>
+                      </div>
                     )}
-                    <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
-                      {project.description}
-                    </p>
-                  </div>
-                  {/* GitHub link rendering */}
-                  {project.githubLink && (
-                    <div className="mt-4">
-                      <Link
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-x-1.5 text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-400"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="lucide lucide-github"
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {project.tags.map(tag => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center rounded-full border border-indigo-200 bg-white/90 px-3 py-1 text-xs font-semibold text-indigo-700 shadow backdrop-blur-sm transition-all hover:scale-105 hover:shadow-lg dark:border-indigo-700 dark:bg-gray-800/90 dark:text-indigo-300"
                         >
-                          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                          <path d="M9 18c-4.51 2-5-2-7-2" />
-                        </svg>
-                        View on GitHub
-                      </Link>
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                  )}
-                  <div className="mt-auto flex flex-wrap gap-2 pt-4">
-                    {project.tags.map(tag => (
-                      <span
-                        key={tag}
-                        className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-3 py-1 text-xs font-semibold text-indigo-700 shadow dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 dark:text-indigo-200"
-                      >
-                        {tag}
-                      </span>
-                    ))}
                   </div>
                 </article>
               ))}

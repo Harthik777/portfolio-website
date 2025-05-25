@@ -53,30 +53,42 @@ export default function Publications() {
               {publications.map((pub, idx) => (
                 <article
                   key={pub.title}
-                  className="card animate-fade-in-up border border-indigo-100 bg-white/80 p-8 shadow-2xl transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80"
+                  className="group relative overflow-hidden rounded-3xl border border-indigo-200 bg-white/90 p-8 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl dark:border-indigo-800 dark:bg-gray-800/90"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
-                  <h3 className="mb-2 text-2xl font-bold leading-7 text-gray-900 dark:text-white">
-                    {pub.link ? (
-                      <Link
-                        href={pub.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline underline-offset-2 transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
-                      >
-                        {pub.title}
-                      </Link>
-                    ) : (
-                      <span>{pub.title}</span>
-                    )}
-                  </h3>
-                  <p className="mb-2 mt-1 text-xs text-gray-500 dark:text-gray-400">
-                    {pub.date} &mdash;{' '}
-                    <span className="italic">{pub.status}</span>
-                  </p>
-                  <p className="mt-3 text-base leading-7 text-gray-600 dark:text-gray-300">
-                    {pub.description}
-                  </p>
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="relative">
+                    <h3 className="mb-2 text-2xl font-bold leading-7 text-gray-900 dark:text-white">
+                      {pub.link ? (
+                        <Link
+                          href={pub.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline underline-offset-2 transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
+                        >
+                          {pub.title}
+                        </Link>
+                      ) : (
+                        <span>{pub.title}</span>
+                      )}
+                    </h3>
+                    <div className="mb-4 flex items-center gap-4">
+                      <div className="flex items-center gap-2">
+                        <svg className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V7a1 1 0 00-1 1v9a1 1 0 001 1h6a1 1 0 001-1V8a1 1 0 00-1-1" />
+                        </svg>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">{pub.date}</span>
+                      </div>
+                      <div className="rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 px-3 py-1 dark:from-indigo-900/50 dark:to-purple-900/50">
+                        <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-300">{pub.status}</span>
+                      </div>
+                    </div>
+                    <div className="rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 p-4 dark:from-indigo-900/20 dark:to-purple-900/20">
+                      <p className="text-base leading-7 text-gray-600 dark:text-gray-300">
+                        {pub.description}
+                      </p>
+                    </div>
+                  </div>
                 </article>
               ))}
             </div>
