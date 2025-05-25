@@ -76,7 +76,8 @@ function HeroSection() {
           >
             AI/ML Engineer passionate about creating
             intelligent solutions that make a difference. Currently pursuing
-            B.Tech in Computer Science (AI) at Manipal Institute of Technology (MIT) Bengaluru.
+            B.Tech in Computer Science (AI) at{' '}
+            <span className="whitespace-nowrap">Manipal Institute of Technology (MIT) Bengaluru.</span>
           </motion.p>
 
           <motion.p
@@ -243,7 +244,7 @@ function CTASection() {
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-100">
             I'm always excited to work on new projects and collaborate with
-            fellow developers and innovators.
+            fellow developers and innovators. Open to internships, research opportunities, and learning experiences.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
