@@ -102,11 +102,11 @@ function HeroSection() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/about"
                 className="group inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-8 py-4 text-sm font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800"
               >
                 <BriefcaseIcon className="h-5 w-5" />
-                Get in Touch
+                Learn more about me
               </Link>
             </div>
 
