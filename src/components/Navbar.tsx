@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
+import { ThemeToggle } from './ThemeToggle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -21,9 +23,16 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/30 dark:bg-gray-900/30 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/60 shadow-lg">
       <nav className="flex items-center justify-between px-8 py-4 md:py-5 lg:px-16 relative" aria-label="Global">
-        <div className="flex items-center gap-4">
-          <span className="text-2xl font-extrabold tracking-tight gradient-text select-none">Harthik M V</span>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-4"
+        >
+          <Link href="/" className="text-2xl font-extrabold tracking-tight gradient-text select-none hover:scale-105 transition-transform">
+            Harthik M V
+          </Link>
+        </motion.div>
         <div className="flex lg:hidden z-50">
           <button
             type="button"
@@ -35,8 +44,13 @@ export default function Navbar() {
             <Bars3Icon className="h-7 w-7" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8 items-center">
-          {navigation.map((item) => (
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="hidden lg:flex lg:gap-x-8 items-center"
+        >
+          {navigation.map((item, index) => (
             <Link
               key={item.name}
               href={item.href}
@@ -48,46 +62,80 @@ export default function Navbar() {
             >
               {item.name}
               {pathname === item.href && (
-                <span className="absolute left-1/2 -bottom-1 w-2/3 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 rounded-full -translate-x-1/2 animate-underline" />
+                <motion.span 
+                  layoutId="underline"
+                  className="absolute left-1/2 -bottom-1 w-2/3 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 rounded-full -translate-x-1/2" 
+                />
               )}
             </Link>
           ))}
-          <Link href="/contact" className="ml-4 rounded-full bg-indigo-700 px-5 py-2 text-base font-semibold text-white shadow hover:bg-indigo-800 transition">
+          <ThemeToggle />
+          <Link 
+            href="/contact" 
+            className="ml-4 rounded-full bg-indigo-700 px-5 py-2 text-base font-semibold text-white shadow hover:bg-indigo-800 transition-all hover:scale-105"
+          >
             Contact
           </Link>
-        </div>
+        </motion.div>
       </nav>
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-gray-900/80 dark:bg-gray-950/90 flex flex-col justify-center items-center min-h-screen w-full transition-opacity duration-300 backdrop-blur-md">
-          <button
-            type="button"
-            className="absolute top-6 right-6 text-3xl text-white focus:outline-none"
-            onClick={() => setMobileMenuOpen(false)}
-            aria-label="Close menu"
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] bg-gray-900/80 dark:bg-gray-950/90 flex flex-col justify-center items-center min-h-screen w-full backdrop-blur-md"
           >
-            <XMarkIcon className="h-8 w-8" aria-hidden="true" />
-          </button>
-          <nav className="flex flex-col items-center space-y-6 w-full">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-2xl font-semibold text-white hover:text-indigo-300 transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="mt-4 rounded-full bg-indigo-700 px-8 py-3 text-lg font-semibold text-white shadow hover:bg-indigo-800 transition text-center"
+            <button
+              type="button"
+              className="absolute top-6 right-6 text-3xl text-white focus:outline-none"
               onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
             >
-              Contact
-            </Link>
-          </nav>
-        </div>
-      )}
+              <XMarkIcon className="h-8 w-8" aria-hidden="true" />
+            </button>
+            <nav className="flex flex-col items-center space-y-6 w-full">
+              {navigation.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    href={item.href}
+                    className="text-2xl font-semibold text-white hover:text-indigo-300 transition"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navigation.length * 0.1 }}
+              >
+                <Link
+                  href="/contact"
+                  className="mt-4 rounded-full bg-indigo-700 px-8 py-3 text-lg font-semibold text-white shadow hover:bg-indigo-800 transition text-center hover:scale-105"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (navigation.length + 1) * 0.1 }}
+              >
+                <ThemeToggle />
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
-} 
+}
