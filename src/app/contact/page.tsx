@@ -40,7 +40,7 @@ export default function Contact() {
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
                 <a
                   href="mailto:harthik7777@gmail.com"
-                  className="group relative overflow-hidden min-h-[48px] w-full max-w-[280px] rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-center text-base font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto sm:max-w-none sm:text-lg"
+                  className="group relative overflow-hidden min-h-[48px] w-full max-w-[280px] rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-center text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto sm:max-w-none"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -50,7 +50,7 @@ export default function Contact() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/harthik-mv/"
-                  className="group relative overflow-hidden min-h-[48px] w-full max-w-[280px] rounded-full border-2 border-indigo-600 bg-white/90 px-8 py-4 text-center text-base font-bold text-indigo-600 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-indigo-400 dark:bg-gray-800/90 dark:text-indigo-400 sm:w-auto sm:max-w-none sm:text-lg"
+                  className="group relative overflow-hidden min-h-[48px] w-full max-w-[280px] rounded-full border-2 border-indigo-600 bg-white/90 px-8 py-4 text-center text-sm font-semibold text-indigo-600 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-indigo-400 dark:bg-gray-800/90 dark:text-indigo-400 sm:w-auto sm:max-w-none"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
