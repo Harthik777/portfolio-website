@@ -35,7 +35,7 @@ export function Footer() {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://github.com/harthikmv"
+              href="https://github.com/Harthik777"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400"
@@ -49,7 +49,7 @@ export function Footer() {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://linkedin.com/in/harthikmv"
+              href="https://www.linkedin.com/in/harthik-mv/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400"
