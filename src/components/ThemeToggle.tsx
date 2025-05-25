@@ -17,7 +17,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="h-10 w-10 animate-pulse rounded-full bg-gray-200 dark:bg-gray-700" />
+      <div className="h-11 w-11 animate-pulse rounded-full bg-gray-200 dark:bg-gray-700" />
     );
   }
 
@@ -36,7 +36,7 @@ export function ThemeToggle() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setShowDropdown(!showDropdown)}
-        className="relative flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-indigo-100 to-purple-100 shadow-lg backdrop-blur-sm transition-all duration-300 hover:from-indigo-200 hover:to-purple-200 hover:shadow-xl dark:border-gray-600/50 dark:from-gray-700 dark:to-gray-600 dark:hover:from-gray-600 dark:hover:to-gray-500"
+        className="relative flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-indigo-100 to-purple-100 shadow-lg backdrop-blur-sm transition-all duration-300 hover:from-indigo-200 hover:to-purple-200 hover:shadow-xl dark:border-gray-600/50 dark:from-gray-700 dark:to-gray-600 dark:hover:from-gray-600 dark:hover:to-gray-500 sm:h-10 sm:w-10"
         aria-label={`Current theme: ${currentTheme.name}. Click to change theme`}
       >
         <motion.div
@@ -77,7 +77,7 @@ export function ThemeToggle() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -10 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="absolute right-0 top-12 z-50 w-48 overflow-hidden rounded-xl border border-gray-200/50 bg-white/95 shadow-2xl backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-800/95"
+              className="absolute right-0 top-12 z-50 w-48 overflow-hidden rounded-xl border border-gray-200/50 bg-white/95 shadow-2xl backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-800/95 sm:top-12 sm:w-48"
             >
               <div className="p-2">
                 {themes.map(themeOption => {
@@ -91,11 +91,12 @@ export function ThemeToggle() {
                     <motion.button
                       key={themeOption.value}
                       whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.98 }}
                       onClick={() => {
                         setTheme(themeOption.value);
                         setShowDropdown(false);
                       }}
-                      className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-all duration-200 ${
+                      className={`flex w-full items-center gap-3 rounded-lg px-3 py-3 text-left transition-all duration-200 sm:py-2.5 ${
                         isActive
                           ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300'
                           : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50'
@@ -103,7 +104,7 @@ export function ThemeToggle() {
                     >
                       <div className="relative">
                         <Icon
-                          className={`h-4 w-4 ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-500 dark:text-gray-400'}`}
+                          className={`h-5 w-5 sm:h-4 sm:w-4 ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-500 dark:text-gray-400'}`}
                         />
                         {isCurrentResolved && theme === 'system' && (
                           <motion.div
@@ -113,7 +114,7 @@ export function ThemeToggle() {
                           />
                         )}
                       </div>
-                      <span className="font-medium">{themeOption.name}</span>
+                      <span className="font-medium text-base sm:text-sm">{themeOption.name}</span>
                       {isActive && (
                         <motion.div
                           layoutId="activeTheme"

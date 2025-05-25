@@ -71,11 +71,47 @@
     padding: 0.05em 0 0.1em 0;
     margin-bottom: 0.5em;
   }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 768px) {
+    /* Ensure minimum touch target size of 44px */
+    button, 
+    a[role="button"],
+    input[type="button"],
+    input[type="submit"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Better mobile spacing for section headers */
+    .card {
+      @apply mx-4 p-6;
+    }
+
+    /* Improved mobile typography */
+    .text-4xl {
+      @apply text-3xl;
+    }
+
+    .text-5xl {
+      @apply text-4xl;
+    }
+
+    /* Mobile-optimized category badges */
+    .flex.justify-center.space-x-4 {
+      @apply flex-wrap gap-2 space-x-0;
+    }
+
+    /* Better mobile button spacing */
+    .flex.flex-col.gap-4.sm\\:flex-row {
+      @apply space-y-3;
+    }
+  }
 }
 
 @layer utilities {
   .section-padding {
-    @apply py-20 md:py-32;
+    @apply py-16 md:py-32;
   }
 
   .container-padding {
@@ -132,6 +168,27 @@
     @apply hover:shadow-xl hover:shadow-indigo-500/30 dark:hover:shadow-indigo-400/25;
   }
 
+  /* Mobile-first responsive utilities */
+  .mobile-touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  .mobile-padding {
+    @apply px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-12;
+  }
+
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+
+  .mobile-subheading {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+
   /* Custom scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     width: 8px;
@@ -175,13 +232,13 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Improved button styles */
+  /* Improved button styles with mobile considerations */
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+    @apply mobile-touch-target inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-base;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800;
+    @apply mobile-touch-target inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800 sm:text-base;
   }
 }
 

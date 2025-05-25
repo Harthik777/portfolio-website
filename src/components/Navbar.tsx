@@ -242,11 +242,14 @@ export default function Navbar() {
                   </div>
 
                   <div className="py-6">
-                    <div className="flex items-center justify-between">
-                      <ThemeToggle />
+                    <div className="flex flex-col space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Theme</span>
+                        <ThemeToggle />
+                      </div>
                       <Link
                         href="/contact"
-                        className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+                        className="w-full inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
                         onClick={closeMobileMenu}
                         aria-label="Contact me"
                       >

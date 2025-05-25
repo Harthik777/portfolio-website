@@ -18,18 +18,18 @@ export default function About() {
                 <span className="font-semibold text-indigo-600 dark:text-indigo-400"> AI/ML Research Intern & Team Lead</span> passionate about building intelligent systems and solving real-world problems. I am currently pursuing my B.Tech in Computer Science and Engineering (Artificial Intelligence) at 
                 <span className="font-semibold text-purple-600 dark:text-purple-400"> Manipal Institute of Technology (MIT) Bengaluru</span>.
               </p>
-              <div className="mt-8 flex justify-center space-x-4">
-                <div className="flex items-center space-x-2 rounded-full bg-indigo-100 px-4 py-2 dark:bg-indigo-900/50">
+              <div className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-4">
+                <div className="flex items-center space-x-2 rounded-full bg-indigo-100 px-3 py-2 sm:px-4 dark:bg-indigo-900/50">
                   <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
-                  <span className="text-sm font-medium text-indigo-700 dark:text-indigo-300">Research Leadership</span>
+                  <span className="text-xs font-medium text-indigo-700 dark:text-indigo-300 sm:text-sm">Research Leadership</span>
                 </div>
-                <div className="flex items-center space-x-2 rounded-full bg-purple-100 px-4 py-2 dark:bg-purple-900/50">
+                <div className="flex items-center space-x-2 rounded-full bg-purple-100 px-3 py-2 sm:px-4 dark:bg-purple-900/50">
                   <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">AI/ML Engineering</span>
+                  <span className="text-xs font-medium text-purple-700 dark:text-purple-300 sm:text-sm">AI/ML Engineering</span>
                 </div>
-                <div className="flex items-center space-x-2 rounded-full bg-pink-100 px-4 py-2 dark:bg-pink-900/50">
+                <div className="flex items-center space-x-2 rounded-full bg-pink-100 px-3 py-2 sm:px-4 dark:bg-pink-900/50">
                   <div className="h-2 w-2 rounded-full bg-pink-500"></div>
-                  <span className="text-sm font-medium text-pink-700 dark:text-pink-300">Data Science</span>
+                  <span className="text-xs font-medium text-pink-700 dark:text-pink-300 sm:text-sm">Data Science</span>
                 </div>
               </div>
             </div>

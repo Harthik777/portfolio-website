@@ -23,35 +23,37 @@ export default function Contact() {
                 <span className="font-semibold text-purple-600 dark:text-purple-400"> research collaborations</span>, or 
                 <span className="font-semibold text-pink-600 dark:text-pink-400"> internship opportunities</span>!
               </p>
-              <div className="mt-8 flex justify-center space-x-4">
-                <div className="flex items-center space-x-2 rounded-full bg-indigo-100 px-4 py-2 dark:bg-indigo-900/50">
+              <div className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-4">
+                <div className="flex items-center space-x-2 rounded-full bg-indigo-100 px-3 py-2 sm:px-4 dark:bg-indigo-900/50">
                   <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
-                  <span className="text-sm font-medium text-indigo-700 dark:text-indigo-300">Project Collaboration</span>
+                  <span className="text-xs font-medium text-indigo-700 dark:text-indigo-300 sm:text-sm">Professional Networking</span>
                 </div>
-                <div className="flex items-center space-x-2 rounded-full bg-purple-100 px-4 py-2 dark:bg-purple-900/50">
+                <div className="flex items-center space-x-2 rounded-full bg-purple-100 px-3 py-2 sm:px-4 dark:bg-purple-900/50">
                   <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Research Opportunities</span>
+                  <span className="text-xs font-medium text-purple-700 dark:text-purple-300 sm:text-sm">Collaboration</span>
                 </div>
-                <div className="flex items-center space-x-2 rounded-full bg-pink-100 px-4 py-2 dark:bg-pink-900/50">
+                <div className="flex items-center space-x-2 rounded-full bg-pink-100 px-3 py-2 sm:px-4 dark:bg-pink-900/50">
                   <div className="h-2 w-2 rounded-full bg-pink-500"></div>
-                  <span className="text-sm font-medium text-pink-700 dark:text-pink-300">General Inquiries</span>
+                  <span className="text-xs font-medium text-pink-700 dark:text-pink-300 sm:text-sm">Let's Connect</span>
                 </div>
               </div>
-              <div className="mt-8 flex flex-col items-center justify-center gap-8 sm:flex-row">
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
                 <a
                   href="mailto:harthik7777@gmail.com"
-                  className="rounded-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-8 py-5 text-lg font-bold text-indigo-700 shadow transition-all duration-200 hover:scale-105 hover:shadow-xl dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 dark:text-indigo-200"
+                  className="mobile-touch-target w-full rounded-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-8 py-4 text-center text-base font-bold text-indigo-700 shadow transition-all duration-200 hover:scale-105 hover:shadow-xl dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 dark:text-indigo-200 sm:w-auto sm:text-lg"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <Mail className="mr-2 inline h-5 w-5" />
                   Email
                 </a>
                 <a
                   href="https://www.linkedin.com/in/harthik-mv/"
-                  className="rounded-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-8 py-5 text-lg font-bold text-indigo-700 shadow transition-all duration-200 hover:scale-105 hover:shadow-xl dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 dark:text-indigo-200"
+                  className="mobile-touch-target w-full rounded-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 px-8 py-4 text-center text-base font-bold text-indigo-700 shadow transition-all duration-200 hover:scale-105 hover:shadow-xl dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900 dark:text-indigo-200 sm:w-auto sm:text-lg"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <Linkedin className="mr-2 inline h-5 w-5" />
                   LinkedIn
                 </a>
               </div>
