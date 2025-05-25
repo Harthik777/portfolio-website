@@ -119,7 +119,7 @@
   }
 
   .card {
-    @apply rounded-2xl bg-white/90 shadow-lg ring-1 ring-gray-900/5 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl dark:bg-gray-800/80 dark:ring-gray-700/20;
+    @apply rounded-3xl bg-white/90 shadow-lg ring-1 ring-gray-900/5 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl dark:bg-gray-800/80 dark:ring-gray-700/20;
   }
 
   .card-hover {
