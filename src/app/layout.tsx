@@ -1,33 +1,89 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 import Navbar from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
-  title: "Harthik M V | AI/ML Engineer",
-  description: "Portfolio website showcasing my work in AI/ML, software development, and research",
+  title: {
+    default: 'Harthik M V | AI/ML Engineer & Full-Stack Developer',
+    template: '%s | Harthik M V',
+  },
+  description:
+    'Portfolio website of Harthik M V - AI/ML Engineer, Full-Stack Developer, and Computer Science student at MIT Bengaluru. Showcasing projects in artificial intelligence, machine learning, and software development.',
+  keywords: [
+    'Harthik M V',
+    'AI Engineer',
+    'ML Engineer',
+    'Full Stack Developer',
+    'MIT Bengaluru',
+    'Computer Science',
+    'Artificial Intelligence',
+    'Machine Learning',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Portfolio',
+  ],
+  authors: [{ name: 'Harthik M V', url: 'https://harthikmv.com' }],
+  creator: 'Harthik M V',
   metadataBase: new URL('https://harthikmv.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: "Harthik M V | AI/ML Engineer",
-    description: "Portfolio website showcasing my work in AI/ML, software development, and research",
+    type: 'website',
+    locale: 'en_US',
     url: 'https://harthikmv.com',
     siteName: 'Harthik M V Portfolio',
-    locale: 'en_US',
-    type: 'website',
+    title: 'Harthik M V | AI/ML Engineer & Full-Stack Developer',
+    description:
+      'Portfolio website showcasing my work in AI/ML, software development, and research projects.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Harthik M V - AI/ML Engineer Portfolio',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Harthik M V | AI/ML Engineer",
-    description: "Portfolio website showcasing my work in AI/ML, software development, and research",
+    title: 'Harthik M V | AI/ML Engineer & Full-Stack Developer',
+    description:
+      'Portfolio website showcasing my work in AI/ML, software development, and research projects.',
+    images: ['/og-image.jpg'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
   ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -36,14 +92,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className={`${inter.className} antialiased min-h-screen font-sans flex flex-col custom-scrollbar theme-transition`}>
-        <ThemeProvider>
-          <Navbar />
-          <main className="flex-grow pt-20">{children}</main>
-          <Footer />
-        </ThemeProvider>
+    <html lang="en" suppressHydrationWarning className={inter.variable}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
+      <body
+        className={`${inter.className} custom-scrollbar theme-transition flex min-h-screen flex-col bg-gradient-to-br from-gray-50 to-gray-100 font-sans antialiased dark:from-gray-900 dark:to-gray-800`}
+      >
+        <ErrorBoundary>
+          <ThemeProvider>
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <main className="flex-1 pt-20" role="main">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

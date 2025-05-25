@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -21,11 +19,11 @@ module.exports = {
         },
       },
       animation: {
-        'gradient': 'gradient 15s ease infinite',
+        gradient: 'gradient 15s ease infinite',
         'fade-in': 'fadeIn 0.5s ease-in forwards',
         'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
         'slide-in': 'slideIn 0.5s ease-out forwards',
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 3s infinite',
         'spin-slow': 'spin 3s linear infinite',
@@ -35,11 +33,11 @@ module.exports = {
         gradient: {
           '0%, 100%': {
             'background-size': '200% 200%',
-            'background-position': 'left center'
+            'background-position': 'left center',
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': 'right center'
+            'background-position': 'right center',
           },
         },
         fadeIn: {
@@ -63,11 +61,11 @@ module.exports = {
         xs: '2px',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(99, 102, 241, 0.3)',
+        glow: '0 0 20px rgba(99, 102, 241, 0.3)',
         'glow-lg': '0 0 30px rgba(99, 102, 241, 0.4)',
         'glow-xl': '0 0 40px rgba(99, 102, 241, 0.5)',
       },
     },
   },
   plugins: [],
-}
+};

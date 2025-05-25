@@ -4,44 +4,52 @@
 
 @layer base {
   html {
-    @apply font-sans antialiased scroll-smooth;
+    @apply scroll-smooth font-sans antialiased;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-attachment: fixed;
   }
-  
+
   html.light {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 4%, #4facfe 100%);
   }
-  
+
   html.dark {
     background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
   }
-  
+
   body {
-    @apply min-h-screen bg-transparent text-gray-900 dark:text-white transition-colors duration-300;
+    @apply min-h-screen bg-transparent text-gray-900 transition-colors duration-300 dark:text-white;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
   }
-  
+
   body.light {
     background: rgba(255, 255, 255, 0.9);
   }
-  
+
   body.dark {
     background: rgba(0, 0, 0, 0.3);
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold mb-2 font-sans tracking-tight;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mb-2 font-sans font-bold tracking-tight;
   }
-  
+
   section {
     @apply mb-20 md:mb-28;
   }
-  
+
   /* Smooth transitions for theme changes */
   * {
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
   }
 }
 
@@ -49,84 +57,85 @@
   .section-padding {
     @apply py-20 md:py-32;
   }
-  
+
   .container-padding {
     @apply px-4 sm:px-8 lg:px-16;
   }
-  
+
   .card {
-    @apply rounded-2xl shadow-lg bg-white/90 dark:bg-gray-800/80 ring-1 ring-gray-900/5 dark:ring-gray-700/20 transition-all duration-300 hover:shadow-2xl backdrop-blur-sm;
+    @apply rounded-2xl bg-white/90 shadow-lg ring-1 ring-gray-900/5 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl dark:bg-gray-800/80 dark:ring-gray-700/20;
   }
-  
+
   .card-hover {
-    @apply hover:scale-[1.02] hover:shadow-2xl hover:bg-white/95 dark:hover:bg-gray-800/90;
+    @apply hover:scale-[1.02] hover:bg-white/95 hover:shadow-2xl dark:hover:bg-gray-800/90;
   }
-  
+
   .glass {
-    @apply bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30;
+    @apply border border-white/20 bg-white/60 backdrop-blur-md dark:border-gray-700/30 dark:bg-gray-900/60;
   }
-  
+
   .glass-strong {
-    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/30 dark:border-gray-700/50;
+    @apply border border-white/30 bg-white/80 backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-900/80;
   }
-  
+
   .gradient-text {
     @apply bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-400 bg-clip-text text-transparent;
   }
-  
+
   .gradient-text-dark {
     @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-300 bg-clip-text text-transparent;
   }
-  
+
   .gradient-bg {
     @apply bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-900;
   }
-  
+
   .gradient-border {
     @apply border border-transparent bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-border;
   }
-  
+
   .theme-transition {
     @apply transition-all duration-500 ease-in-out;
   }
-  
+
   .glow {
     @apply shadow-lg shadow-indigo-500/25 dark:shadow-indigo-400/20;
   }
-  
+
   .glow-hover {
     @apply hover:shadow-xl hover:shadow-indigo-500/30 dark:hover:shadow-indigo-400/25;
   }
-  
+
   /* Custom scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-gray-100 dark:bg-gray-800 rounded-full;
+    @apply rounded-full bg-gray-100 dark:bg-gray-800;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-indigo-300 dark:bg-indigo-600 rounded-full hover:bg-indigo-400 dark:hover:bg-indigo-500;
+    @apply rounded-full bg-indigo-300 hover:bg-indigo-400 dark:bg-indigo-600 dark:hover:bg-indigo-500;
   }
-  
+
   /* Animation utilities */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-pulse-slow {
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-  
+
   .animate-bounce-slow {
     animation: bounce 3s infinite;
   }
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {

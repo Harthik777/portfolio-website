@@ -7,6 +7,7 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 ## 🎨 Dark Mode Features
 
 ### 1. Advanced Theme Toggle
+
 - **Smart Detection**: Automatically detects system preference
 - **Three Modes**: Light, Dark, and System (follows OS preference)
 - **Visual Indicators**: Clear icons and status indicators
@@ -14,6 +15,7 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 - **Persistence**: Remembers user preference across sessions
 
 ### 2. Enhanced Styling System
+
 - **Glass Morphism**: Beautiful glass effects with backdrop blur
 - **Gradient Backgrounds**: Dynamic gradients that adapt to themes
 - **Smooth Transitions**: 300ms transitions for all theme changes
@@ -21,6 +23,7 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 - **Glow Effects**: Subtle glow effects for interactive elements
 
 ### 3. Improved Animations
+
 - **Framer Motion**: Smooth animations throughout the interface
 - **Theme Transitions**: Animated icon changes when switching themes
 - **Hover Effects**: Interactive hover states with scale and glow
@@ -29,6 +32,7 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 ## 🛠 Technical Improvements
 
 ### Theme Provider Configuration
+
 ```typescript
 <ThemeProvider
   attribute="class"
@@ -41,12 +45,14 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 ```
 
 ### CSS Enhancements
+
 - **Custom Properties**: CSS variables for consistent theming
 - **Utility Classes**: Reusable classes for glass effects, gradients, and animations
 - **Responsive Design**: Mobile-first approach with responsive breakpoints
 - **Accessibility**: Focus states and proper contrast ratios
 
 ### Component Architecture
+
 - **Modular Design**: Separate components for theme toggle, provider, and UI elements
 - **TypeScript**: Full type safety throughout the application
 - **Performance**: Optimized re-renders and efficient state management
@@ -54,6 +60,7 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 ## 🎯 Key Features
 
 ### 1. Theme Toggle Component
+
 - Dropdown interface with three theme options
 - Visual feedback for current theme
 - System theme indicator dot
@@ -61,16 +68,19 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 - Accessible keyboard navigation
 
 ### 2. Glass Morphism Effects
+
 - `.glass`: Basic glass effect with backdrop blur
 - `.glass-strong`: Enhanced glass effect for important elements
 - Border and shadow variations for depth
 
 ### 3. Gradient System
+
 - `.gradient-text`: Animated gradient text
 - `.gradient-bg`: Background gradients that adapt to theme
 - `.gradient-border`: Gradient borders for special elements
 
 ### 4. Animation Utilities
+
 - `.animate-float`: Floating animation for decorative elements
 - `.animate-pulse-slow`: Slow pulse for loading states
 - `.glow-hover`: Glow effect on hover
@@ -78,11 +88,13 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 ## 🌈 Color Palette
 
 ### Light Mode
+
 - Primary: Vibrant gradients with indigo, purple, and pink
 - Background: Light gradients with high contrast
 - Text: Dark grays for optimal readability
 
 ### Dark Mode
+
 - Primary: Softer gradients with muted colors
 - Background: Dark gradients with subtle variations
 - Text: Light colors with proper contrast ratios
@@ -112,13 +124,15 @@ This portfolio has been significantly enhanced with a sophisticated dark mode sy
 ## 🔧 Usage
 
 ### Basic Theme Toggle
+
 ```tsx
 import { ThemeToggle } from '@/components/ThemeToggle';
 
-<ThemeToggle />
+<ThemeToggle />;
 ```
 
 ### Using Theme in Components
+
 ```tsx
 import { useTheme } from 'next-themes';
 
@@ -126,8 +140,9 @@ const { theme, setTheme, resolvedTheme } = useTheme();
 ```
 
 ### Applying Theme Classes
+
 ```tsx
-<div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+<div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
   Content that adapts to theme
 </div>
 ```
@@ -160,4 +175,4 @@ The enhanced dark mode system follows these principles:
 
 ---
 
-*This enhanced dark mode system provides a modern, accessible, and beautiful user experience that adapts to user preferences while maintaining excellent performance.* 
+_This enhanced dark mode system provides a modern, accessible, and beautiful user experience that adapts to user preferences while maintaining excellent performance._
