@@ -38,15 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={`${inter.className} antialiased min-h-screen font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body className={`${inter.className} antialiased min-h-screen font-sans flex flex-col custom-scrollbar theme-transition`}>
+        <ThemeProvider>
           <Navbar />
-          <div className="flex-grow pt-20">{children}</div>
+          <main className="flex-grow pt-20">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
