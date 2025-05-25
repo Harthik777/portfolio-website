@@ -319,7 +319,7 @@ function CTASection() {
             </Link>
             <Link
               href="/projects"
-              className="inline-flex min-h-[48px] w-full max-w-[280px] items-center justify-center text-center text-sm font-semibold leading-6 text-white hover:text-indigo-100 transition-colors duration-200 sm:w-auto sm:max-w-none"
+              className="min-h-[48px] w-full max-w-[280px] rounded-full bg-gradient-to-r from-pink-500 to-red-500 px-8 py-4 text-center text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:from-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-indigo-600 sm:w-auto sm:max-w-none"
             >
               View Projects <span aria-hidden="true">→</span>
             </Link>
