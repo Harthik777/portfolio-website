@@ -184,82 +184,51 @@ function HeroSection() {
 // CTA Section Component
 function CTASection() {
   return (
-    <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-32 relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 xs:px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="relative isolate overflow-hidden rounded-xl xs:rounded-2xl sm:rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 text-center shadow-2xl"
+          className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 px-8 py-16 text-center shadow-2xl"
         >
-          {/* Enhanced Neural Network Pattern Overlay for mobile */}
-          <div className="absolute inset-0 opacity-8 xs:opacity-10">
-            <svg width="100%" height="100%" className="absolute inset-0">
-              <defs>
-                <pattern id="neural-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse" className="xs:w-20 xs:h-20 sm:w-24 sm:h-24">
-                  <circle cx="16" cy="16" r="1.5" fill="white" opacity="0.3" className="xs:r-2">
-                    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="64" cy="32" r="1.5" fill="white" opacity="0.3" className="xs:r-2">
-                    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="40" cy="64" r="1.5" fill="white" opacity="0.3" className="xs:r-2">
-                    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite" />
-                  </circle>
-                  <line x1="16" y1="16" x2="64" y2="32" stroke="white" strokeWidth="0.5" opacity="0.15" />
-                  <line x1="64" y1="32" x2="40" y2="64" stroke="white" strokeWidth="0.5" opacity="0.15" />
-                  <line x1="40" y1="64" x2="16" y2="16" stroke="white" strokeWidth="0.5" opacity="0.15" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#neural-pattern)" />
-            </svg>
-          </div>
-
           <motion.h2 
-            className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white relative z-10 leading-tight"
-            whileInView={{ 
-              textShadow: ["0 0 0px rgba(255,255,255,0)", "0 0 20px rgba(255,255,255,0.5)", "0 0 0px rgba(255,255,255,0)"]
-            }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white relative z-10"
           >
             Let's Build Something Amazing Together
           </motion.h2>
           
           <motion.p 
-            className="mx-auto mt-4 xs:mt-5 sm:mt-6 max-w-sm xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl text-sm xs:text-base sm:text-lg md:text-xl leading-6 xs:leading-7 sm:leading-8 text-indigo-100 relative z-10 px-2 xs:px-4"
+            className="mx-auto mt-6 max-w-2xl text-lg text-indigo-100 relative z-10"
             variants={fadeInUp}
           >
             I'm always excited to work on new projects and collaborate with
             fellow developers and innovators. Open to internships, research opportunities, and learning experiences.
           </motion.p>
           
-          <div className="mt-8 xs:mt-9 sm:mt-10 flex flex-col items-center justify-center gap-3 xs:gap-4 sm:flex-row sm:gap-4 md:gap-6 relative z-10">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <motion.div
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255,255,255,0.3)" }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
             >
               <Link
                 href="/contact"
-                className="group min-h-[44px] xs:min-h-[48px] sm:min-h-[52px] w-full max-w-[280px] xs:max-w-[320px] sm:max-w-none rounded-full bg-white px-6 xs:px-8 py-3 xs:py-4 text-center text-sm xs:text-base sm:text-lg font-semibold text-indigo-600 shadow-lg transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 relative overflow-hidden"
+                className="rounded-full bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-lg transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
               >
-                <span className="relative z-10">Get in Touch</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                Get in Touch
               </Link>
             </motion.div>
             
             <motion.div
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(236,72,153,0.3)" }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
             >
               <Link
                 href="/projects"
-                className="group min-h-[44px] xs:min-h-[48px] sm:min-h-[52px] w-full max-w-[280px] xs:max-w-[320px] sm:max-w-none rounded-full bg-gradient-to-r from-pink-500 to-red-500 px-6 xs:px-8 py-3 xs:py-4 text-center text-sm xs:text-base sm:text-lg font-semibold text-white shadow-lg transition-all hover:from-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-indigo-600 relative overflow-hidden"
+                className="rounded-full bg-gradient-to-r from-pink-500 to-red-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:from-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-indigo-600"
               >
-                <span className="relative z-10">View Projects <span aria-hidden="true">→</span></span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                View Projects →
               </Link>
             </motion.div>
           </div>
@@ -269,10 +238,94 @@ function CTASection() {
   );
 }
 
+// What I Do Section Component
+function WhatIDoSection() {
+  return (
+    <section className="py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="text-center mb-12 lg:mb-16"
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4"
+          >
+            What I Do
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="mx-auto max-w-3xl text-lg sm:text-xl text-gray-300"
+          >
+            Leveraging artificial intelligence and data science to create innovative solutions
+          </motion.p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          {/* AI & Machine Learning */}
+          <motion.div
+            variants={fadeInUp}
+            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50"
+          >
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                <span className="text-2xl">🤖</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white">AI & Machine Learning</h3>
+            </div>
+            <p className="text-gray-300 mb-6 text-lg">
+              Exploring Machine Learning, Deep Learning, LLMs, and Agentic AI
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn'].map((tech) => (
+                <span
+                  key={tech}
+                  className="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Data Science */}
+          <motion.div
+            variants={fadeInUp}
+            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50"
+          >
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                <span className="text-2xl">📊</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white">Data Science</h3>
+            </div>
+            <p className="text-gray-300 mb-6 text-lg">
+              Data analysis, visualization, and statistical modeling
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {['Pandas', 'NumPy', 'Matplotlib', 'Jupyter'].map((tech) => (
+                <span
+                  key={tech}
+                  className="px-4 py-2 bg-blue-600/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Main Home Component
 export default function Home() {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Scroll Progress Indicator */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 z-50 origin-left"
@@ -284,6 +337,7 @@ export default function Home() {
       
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
+        <WhatIDoSection />
         <CTASection />
       </Suspense>
     </div>
