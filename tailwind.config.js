@@ -4,6 +4,21 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1920px',
+        // Touch-specific breakpoints
+        'touch': { 'raw': '(hover: none) and (pointer: coarse)' },
+        'no-touch': { 'raw': '(hover: hover) and (pointer: fine)' },
+        // Orientation breakpoints
+        'portrait': { 'raw': '(orientation: portrait)' },
+        'landscape': { 'raw': '(orientation: landscape)' },
+      },
       colors: {
         primary: {
           50: '#eff6ff',
@@ -18,8 +33,35 @@ module.exports = {
           900: '#1e3a8a',
         },
       },
-      fontFamily: {
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '112': '28rem',
+        '128': '32rem',
+        '144': '36rem',
+      },      fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1.1' }],
+        '6xl': ['3.75rem', { lineHeight: '1.1' }],
+        '7xl': ['4.5rem', { lineHeight: '1.1' }],
+        '8xl': ['6rem', { lineHeight: '1.1' }],
+        '9xl': ['8rem', { lineHeight: '1.1' }],
+        // Mobile-optimized sizes
+        'mobile-xs': ['0.8125rem', { lineHeight: '1.125rem' }],
+        'mobile-sm': ['0.9375rem', { lineHeight: '1.375rem' }],
+        'mobile-base': ['1.0625rem', { lineHeight: '1.625rem' }],
+        'mobile-lg': ['1.1875rem', { lineHeight: '1.875rem' }],
+        'mobile-xl': ['1.375rem', { lineHeight: '1.875rem' }],
       },
       animation: {
         gradient: 'gradient 15s ease infinite',

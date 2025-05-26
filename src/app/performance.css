@@ -1,0 +1,72 @@
+/* Performance optimizations for the portfolio website */
+
+/* Reduce motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize rendering performance */
+.optimize-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.optimize-paint {
+  will-change: opacity, transform;
+}
+
+/* Reduce animation complexity on mobile */
+@media (max-width: 768px) {
+  .reduce-animation {
+    transition-duration: 150ms !important;
+    animation-duration: 150ms !important;
+  }
+  
+  .simplify-gradient {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) !important;
+  }
+}
+
+/* Performance class for handling 3D effects */
+.perf-3d {
+  transform-style: flat !important;
+}
+
+@media (min-width: 1024px) {
+  .perf-3d {
+    transform-style: preserve-3d !important;
+  }
+}
+
+/* Optimize backdrop filters for better performance */
+.optimize-backdrop {
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+  .optimize-backdrop {
+    backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Lazy load background images */
+.lazy-bg {
+  background-image: none !important;
+}
+
+.lazy-bg.loaded {
+  transition: background-image 0.3s ease-in;
+}
+
+/* Use passive event listeners for touch events */
+/* Add the following via JavaScript:
+element.addEventListener('touchstart', handler, {passive: true});
+*/

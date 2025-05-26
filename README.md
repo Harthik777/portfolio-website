@@ -232,8 +232,11 @@ Made with ❤️ by Harthik
 
 ## 🔄 Recent Updates
 
+- **Performance Optimizations**: Significantly improved performance on mobile and low-end devices
+- **Enhanced Mobile Experience**: Better animations and interactions on smaller screens
+- **Reduced Animation Load**: Adaptive animations based on device capabilities
+- **Battery-Friendly**: Reduced CPU/GPU usage for better battery life
 - **Enhanced Text Rendering**: Fixed gradient text clipping issues for better readability
 - **Improved Footer**: Updated with personalized message
 - **Better Typography**: Enhanced line-height and spacing for all headings
-- **Performance Optimizations**: Improved CSS utilities and animations
 - **Accessibility**: Enhanced focus states and text rendering

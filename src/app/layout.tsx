@@ -1,11 +1,17 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/Navbar';
+import './performance.css';
+import './tailwind-fixes.css'; // Import fixes for CSS directives
+import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { MobileOptimizer } from '@/components/MobileOptimizer';
+import { SmoothScroll } from '@/components/3D/SmoothScroll';
+import { CustomCursor } from '@/components/3D/CustomCursor';
+import { FuturisticLoader } from '@/components/3D/FuturisticLoader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -96,6 +102,8 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  userScalable: true,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({
@@ -113,17 +121,21 @@ export default function RootLayout({
       </head>
       <body
         className={`${inter.className} custom-scrollbar theme-transition flex min-h-screen flex-col bg-gradient-to-br from-gray-50 to-gray-100 font-sans antialiased dark:from-gray-900 dark:to-gray-800`}
-      >
-        <ErrorBoundary>
+      >        <ErrorBoundary>
           <ThemeProvider>
-            <div className="flex min-h-screen flex-col">
-              <Navbar />
-              <main className="flex-1 pt-20" role="main">
-                {children}
-              </main>
-              <Footer />
-              <BackToTop />
-            </div>
+            <MobileOptimizer />
+            <FuturisticLoader />
+            <CustomCursor />
+            <SmoothScroll>
+              <div className="flex min-h-screen flex-col">
+                <Navbar />
+                <main className="flex-1 pt-16 xs:pt-18 sm:pt-20 safe-top" role="main">
+                  {children}
+                </main>
+                <Footer />
+                <BackToTop />
+              </div>
+            </SmoothScroll>
           </ThemeProvider>
         </ErrorBoundary>
       </body>
