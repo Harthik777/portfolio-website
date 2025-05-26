@@ -184,37 +184,38 @@ function HeroSection() {
 // CTA Section Component
 function CTASection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section className="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 px-8 py-16 text-center shadow-2xl"
+          className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 px-6 py-8 sm:px-8 sm:py-12 lg:py-16 text-center shadow-2xl"
         >
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white relative z-10"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white relative z-10 leading-tight"
           >
             Let's Build Something Amazing Together
           </motion.h2>
           
           <motion.p 
-            className="mx-auto mt-6 max-w-2xl text-lg text-indigo-100 relative z-10"
+            className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-indigo-100 relative z-10 px-2"
             variants={fadeInUp}
           >
             I'm always excited to work on new projects and collaborate with
             fellow developers and innovators. Open to internships, research opportunities, and learning experiences.
           </motion.p>
           
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 relative z-10">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto"
             >
               <Link
                 href="/contact"
-                className="rounded-full bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-lg transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
+                className="block w-full sm:w-auto rounded-full bg-white px-6 py-3 text-base font-semibold text-indigo-600 shadow-lg transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
               >
                 Get in Touch
               </Link>
@@ -223,10 +224,11 @@ function CTASection() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto"
             >
               <Link
                 href="/projects"
-                className="rounded-full bg-gradient-to-r from-pink-500 to-red-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:from-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-indigo-600"
+                className="block w-full sm:w-auto rounded-full bg-gradient-to-r from-pink-500 to-red-500 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all hover:from-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-indigo-600"
               >
                 View Projects →
               </Link>
@@ -241,49 +243,49 @@ function CTASection() {
 // What I Do Section Component
 function WhatIDoSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="text-center mb-12 lg:mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-3 sm:mb-4"
           >
             What I Do
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="mx-auto max-w-3xl text-lg sm:text-xl text-gray-300"
+            className="mx-auto max-w-3xl text-base sm:text-lg lg:text-xl text-gray-300 px-4"
           >
             Leveraging artificial intelligence and data science to create innovative solutions
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* AI & Machine Learning */}
           <motion.div
             variants={fadeInUp}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50"
+            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50"
           >
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-2xl">🤖</span>
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                <span className="text-xl sm:text-2xl">🤖</span>
               </div>
-              <h3 className="text-2xl font-bold text-white">AI & Machine Learning</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white">AI & Machine Learning</h3>
             </div>
-            <p className="text-gray-300 mb-6 text-lg">
+            <p className="text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
               Exploring Machine Learning, Deep Learning, LLMs, and Agentic AI
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-purple-600/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-600/20 text-purple-300 rounded-full text-xs sm:text-sm font-medium border border-purple-500/30"
                 >
                   {tech}
                 </span>
@@ -294,22 +296,22 @@ function WhatIDoSection() {
           {/* Data Science */}
           <motion.div
             variants={fadeInUp}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50"
+            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50"
           >
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-2xl">📊</span>
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                <span className="text-xl sm:text-2xl">📊</span>
               </div>
-              <h3 className="text-2xl font-bold text-white">Data Science</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white">Data Science</h3>
             </div>
-            <p className="text-gray-300 mb-6 text-lg">
+            <p className="text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
               Data analysis, visualization, and statistical modeling
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {['Pandas', 'NumPy', 'Matplotlib', 'Jupyter'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-blue-600/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-600/20 text-blue-300 rounded-full text-xs sm:text-sm font-medium border border-blue-500/30"
                 >
                   {tech}
                 </span>
