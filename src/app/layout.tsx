@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import './performance.css';
 import './tailwind-fixes.css'; // Import fixes for CSS directives
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
