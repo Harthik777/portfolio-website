@@ -34,10 +34,6 @@ function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        
-        {/* Simple background gradient - optimized for both themes */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-indigo-50/30 via-white/20 to-purple-50/30 dark:from-gray-900/60 dark:via-gray-800/40 dark:to-indigo-900/60"></div>
-
         <div className="relative z-30 mx-auto max-w-7xl w-full">
           <motion.div
             initial="initial"
@@ -206,16 +202,6 @@ function WhatIDoSection() {
 export default function Home() {
   return (
     <div className="min-h-screen relative bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Visually prominent glassmorphism animated background */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none select-none">
-        {/* Blurred glass layer for depth */}
-        <div className="absolute inset-0 bg-white/15 dark:bg-[#181926cc] backdrop-blur-2xl transition-colors duration-700" />
-        {/* More visible, larger, animated blobs */}
-        <div className="absolute left-[-10vw] top-[-10vh] w-[60vw] h-[60vw] bg-gradient-to-tr from-blue-400 via-violet-400 to-pink-400 opacity-70 rounded-full filter blur-3xl animate-blob1 mix-blend-screen" />
-        <div className="absolute right-[-12vw] top-[20vh] w-[55vw] h-[55vw] bg-gradient-to-br from-teal-300 via-cyan-400 to-blue-400 opacity-60 rounded-full filter blur-2xl animate-blob2 mix-blend-screen" />
-        <div className="absolute left-[20vw] bottom-[-10vh] w-[50vw] h-[50vw] bg-gradient-to-tr from-pink-400 via-orange-300 to-yellow-200 opacity-50 rounded-full filter blur-2xl animate-blob3 mix-blend-screen" />
-      </div>
-
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
         <WhatIDoSection />
