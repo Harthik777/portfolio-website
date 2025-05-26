@@ -139,7 +139,7 @@ function CTASection() {
 // What I Do Section Component
 function WhatIDoSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-transparent">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 sm:mb-4">
@@ -152,7 +152,7 @@ function WhatIDoSection() {
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* AI & Machine Learning */}
-          <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700/50 hover:border-purple-300 dark:hover:border-purple-500/30 transition-colors shadow-lg dark:shadow-none">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-500 transition-colors shadow-lg">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                 <span className="text-xl sm:text-2xl">🤖</span>
@@ -166,7 +166,7 @@ function WhatIDoSection() {
               {['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-100 dark:bg-purple-600/20 text-purple-700 dark:text-purple-300 rounded-full text-xs sm:text-sm font-medium border border-purple-200 dark:border-purple-500/30"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200 dark:border-gray-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-700 transition-colors"
                 >
                   {tech}
                 </span>
@@ -175,7 +175,7 @@ function WhatIDoSection() {
           </div>
 
           {/* Data Science */}
-          <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-500/30 transition-colors shadow-lg dark:shadow-none">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 transition-colors shadow-lg">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                 <span className="text-xl sm:text-2xl">📊</span>
@@ -189,7 +189,7 @@ function WhatIDoSection() {
               {['Pandas', 'NumPy', 'Matplotlib', 'Jupyter'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-100 dark:bg-blue-600/20 text-blue-700 dark:text-blue-300 rounded-full text-xs sm:text-sm font-medium border border-blue-200 dark:border-blue-500/30"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200 dark:border-gray-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-700 transition-colors"
                 >
                   {tech}
                 </span>
