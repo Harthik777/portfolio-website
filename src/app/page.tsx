@@ -99,7 +99,7 @@ function HeroSection() {
 // CTA Section Component
 function CTASection() {
   return (
-    <section className="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
+    <section className="py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-white dark:bg-transparent">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 px-6 py-8 sm:px-8 sm:py-12 lg:py-16 text-center shadow-2xl">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white relative z-10 leading-tight">
@@ -135,7 +135,7 @@ function CTASection() {
 // What I Do Section Component
 function WhatIDoSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50/50 dark:bg-transparent">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 sm:mb-4">
@@ -148,9 +148,9 @@ function WhatIDoSection() {
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* AI & Machine Learning */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-500 transition-colors shadow-lg">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-500 hover:shadow-xl transition-all duration-300 shadow-lg">
             <div className="flex items-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg">
                 <span className="text-xl sm:text-2xl">🤖</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">AI & Machine Learning</h3>
@@ -171,9 +171,9 @@ function WhatIDoSection() {
           </div>
 
           {/* Data Science */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 transition-colors shadow-lg">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl transition-all duration-300 shadow-lg">
             <div className="flex items-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg">
                 <span className="text-xl sm:text-2xl">📊</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Data Science</h3>
@@ -201,7 +201,7 @@ function WhatIDoSection() {
 // Main Home Component
 export default function Home() {
   return (
-    <div className="min-h-screen relative bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen relative bg-gradient-to-br from-gray-50 via-white to-indigo-50/30 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
         <WhatIDoSection />
