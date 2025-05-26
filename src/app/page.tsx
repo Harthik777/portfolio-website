@@ -9,8 +9,6 @@ import {
   AcademicCapIcon,
   BriefcaseIcon,
 } from '@heroicons/react/24/outline';
-import { ParticleSystem } from '@/components/3D/ParticleSystem';
-import { HolographicSkills } from '@/components/3D/HolographicSkills';
 import { fadeInUp, staggerContainer, scaleIn } from '@/lib/animations';
 
 // Loading component
@@ -29,40 +27,27 @@ function HeroSection() {
       {/* Responsive container with proper padding */}
       <div className="w-full px-4 xs:px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
-        {/* 3D Particle System Background */}
+        {/* Simple animated background pattern - much lighter than ParticleSystem */}
         <div className="absolute inset-0 z-0">
-          <ParticleSystem />
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/30 via-white/20 to-purple-50/30 dark:from-gray-900/60 dark:via-gray-800/40 dark:to-indigo-900/60"></div>
+          <div className="absolute top-10 left-10 h-2 w-2 rounded-full bg-indigo-500/20 animate-pulse"></div>
+          <div className="absolute top-20 right-20 h-1 w-1 rounded-full bg-purple-500/30 animate-bounce"></div>
+          <div className="absolute bottom-32 left-1/4 h-1.5 w-1.5 rounded-full bg-pink-500/25 animate-pulse"></div>
+          <div className="absolute bottom-20 right-1/3 h-1 w-1 rounded-full bg-blue-500/20 animate-bounce"></div>
         </div>
 
         {/* Responsive Background gradient overlay */}
         <div className="absolute inset-0 z-10 bg-gradient-to-br from-indigo-50/50 via-white/30 to-purple-50/50 dark:from-gray-900/80 dark:via-gray-800/60 dark:to-indigo-900/80" />
 
-        {/* Enhanced Responsive Animated background elements */}
+        {/* Simplified Responsive Animated background elements */}
         <div className="absolute inset-0 z-20 overflow-hidden">
-          {/* Desktop screens (1024px+) */}
-          <div className="hidden xl:block absolute -right-40 -top-40 h-80 w-80 animate-pulse rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-20 blur-3xl" />
-          <div className="hidden xl:block absolute -bottom-40 -left-40 h-80 w-80 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-pink-600 opacity-20 blur-3xl" />
+          {/* Desktop only - minimal elements */}
+          <div className="hidden lg:block absolute -right-20 -top-20 h-40 w-40 animate-pulse rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-10 blur-2xl" />
+          <div className="hidden lg:block absolute -bottom-20 -left-20 h-40 w-40 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-pink-600 opacity-10 blur-2xl" />
           
-          {/* Large screens (1024px-1280px) */}
-          <div className="hidden lg:block xl:hidden absolute -right-32 -top-32 h-64 w-64 animate-pulse rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-18 blur-3xl" />
-          <div className="hidden lg:block xl:hidden absolute -bottom-32 -left-32 h-64 w-64 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-pink-600 opacity-18 blur-3xl" />
-          
-          {/* Tablet screens (768px-1024px) */}
-          <div className="hidden md:block lg:hidden absolute -right-20 -top-20 h-48 w-48 animate-pulse rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-15 blur-2xl" />
-          <div className="hidden md:block lg:hidden absolute -bottom-20 -left-20 h-48 w-48 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-pink-600 opacity-15 blur-2xl" />
-          
-          {/* Small tablet (640px-768px) */}
-          <div className="hidden sm:block md:hidden absolute -right-16 -top-16 h-40 w-40 animate-pulse rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-12 blur-xl" />
-          <div className="hidden sm:block md:hidden absolute -bottom-16 -left-16 h-40 w-40 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-pink-600 opacity-12 blur-xl" />
-          
-          {/* Mobile screens (<640px) */}
-          <div className="block sm:hidden absolute -right-8 -top-8 h-32 w-32 animate-pulse rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-10 blur-lg" />
-          <div className="block sm:hidden absolute -bottom-8 -left-8 h-32 w-32 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-pink-600 opacity-10 blur-lg" />
-          
-          {/* Additional responsive floating elements with better scaling */}
-          <div className="absolute right-1/4 top-1/3 h-12 w-12 xs:h-16 xs:w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-32 xl:w-32 animate-float rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 opacity-5 sm:opacity-8 md:opacity-10 lg:opacity-12 blur-lg sm:blur-xl md:blur-2xl" />
-          <div className="absolute left-1/3 bottom-1/4 h-10 w-10 xs:h-12 xs:w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 animate-bounce-slow rounded-full bg-gradient-to-br from-pink-400 to-rose-500 opacity-8 sm:opacity-12 md:opacity-15 lg:opacity-18 blur-md sm:blur-lg md:blur-xl" />
-          <div className="absolute right-1/3 top-1/4 h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 animate-pulse-slow rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 opacity-12 sm:opacity-15 md:opacity-20 lg:opacity-25 blur-sm sm:blur-md md:blur-lg" />
+          {/* Simple floating elements - much reduced */}
+          <div className="absolute right-1/4 top-1/3 h-8 w-8 sm:h-12 sm:w-12 animate-pulse rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 opacity-8 blur-lg" />
+          <div className="absolute left-1/3 bottom-1/4 h-6 w-6 sm:h-10 sm:w-10 animate-bounce rounded-full bg-gradient-to-br from-pink-400 to-rose-500 opacity-10 blur-md" />
         </div>
 
         <div className="relative z-30 mx-auto max-w-7xl w-full">
@@ -222,7 +207,24 @@ function SkillsSection() {
           </motion.p>
         </motion.div>
 
-        <HolographicSkills />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+          {[
+            'React', 'Next.js', 'TypeScript', 'Python', 'AI/ML', 'Node.js',
+            'TailwindCSS', 'MongoDB', 'PostgreSQL', 'Docker', 'AWS', 'Git'
+          ].map((skill, index) => (
+            <motion.div
+              key={skill}
+              variants={scaleIn}
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="group relative overflow-hidden rounded-xl bg-white/50 backdrop-blur-sm p-4 text-center shadow-lg transition-all hover:shadow-xl dark:bg-gray-800/50"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
+              <h3 className="relative z-10 text-sm font-semibold text-gray-900 dark:text-white">
+                {skill}
+              </h3>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

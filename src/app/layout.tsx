@@ -8,9 +8,6 @@ import { BackToTop } from '@/components/BackToTop';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { MobileOptimizer } from '@/components/MobileOptimizer';
-import { SmoothScroll } from '@/components/3D/SmoothScroll';
-import { CustomCursor } from '@/components/3D/CustomCursor';
-import { FuturisticLoader } from '@/components/3D/FuturisticLoader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -123,18 +120,14 @@ export default function RootLayout({
       >        <ErrorBoundary>
           <ThemeProvider>
             <MobileOptimizer />
-            <FuturisticLoader />
-            <CustomCursor />
-            <SmoothScroll>
-              <div className="flex min-h-screen flex-col">
-                <Navbar />
-                <main className="flex-1 pt-16 xs:pt-18 sm:pt-20 safe-top" role="main">
-                  {children}
-                </main>
-                <Footer />
-                <BackToTop />
-              </div>
-            </SmoothScroll>
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <main className="flex-1 pt-16 xs:pt-18 sm:pt-20 safe-top" role="main">
+                {children}
+              </main>
+              <Footer />
+              <BackToTop />
+            </div>
           </ThemeProvider>
         </ErrorBoundary>
       </body>
