@@ -206,14 +206,14 @@ function WhatIDoSection() {
 export default function Home() {
   return (
     <div className="min-h-screen relative bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Best-in-class glassmorphism animated background */}
+      {/* Visually prominent glassmorphism animated background */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none select-none">
         {/* Blurred glass layer for depth */}
-        <div className="absolute inset-0 bg-white/20 dark:bg-[#181926cc] backdrop-blur-2xl transition-colors duration-700" />
-        {/* Animated, organic, premium blobs */}
-        <div className="absolute left-[8vw] top-[8vh] w-[38vw] h-[38vw] bg-gradient-to-tr from-blue-400 via-violet-400 to-pink-400 opacity-50 rounded-full filter blur-3xl animate-blob1 mix-blend-lighten dark:mix-blend-plus-lighter" />
-        <div className="absolute right-[6vw] top-[32vh] w-[34vw] h-[34vw] bg-gradient-to-br from-teal-300 via-cyan-400 to-blue-400 opacity-40 rounded-full filter blur-2xl animate-blob2 mix-blend-lighten dark:mix-blend-plus-lighter" />
-        <div className="absolute left-[28vw] bottom-[6vh] w-[32vw] h-[32vw] bg-gradient-to-tr from-pink-400 via-orange-300 to-yellow-200 opacity-30 rounded-full filter blur-2xl animate-blob3 mix-blend-lighten dark:mix-blend-plus-lighter" />
+        <div className="absolute inset-0 bg-white/15 dark:bg-[#181926cc] backdrop-blur-2xl transition-colors duration-700" />
+        {/* More visible, larger, animated blobs */}
+        <div className="absolute left-[-10vw] top-[-10vh] w-[60vw] h-[60vw] bg-gradient-to-tr from-blue-400 via-violet-400 to-pink-400 opacity-70 rounded-full filter blur-3xl animate-blob1 mix-blend-screen" />
+        <div className="absolute right-[-12vw] top-[20vh] w-[55vw] h-[55vw] bg-gradient-to-br from-teal-300 via-cyan-400 to-blue-400 opacity-60 rounded-full filter blur-2xl animate-blob2 mix-blend-screen" />
+        <div className="absolute left-[20vw] bottom-[-10vh] w-[50vw] h-[50vw] bg-gradient-to-tr from-pink-400 via-orange-300 to-yellow-200 opacity-50 rounded-full filter blur-2xl animate-blob3 mix-blend-screen" />
       </div>
 
       <Suspense fallback={<LoadingSpinner />}>
