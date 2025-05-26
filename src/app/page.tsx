@@ -181,55 +181,6 @@ function HeroSection() {
   );
 }
 
-// Skills Section Component
-function SkillsSection() {
-  return (
-    <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 xl:py-32">
-      <div className="mx-auto max-w-7xl px-4 xs:px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16"
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-gray-900 dark:text-white"
-          >
-            Neural Skill Matrix
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="mx-auto mt-2 xs:mt-3 sm:mt-4 max-w-sm xs:max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-sm xs:text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 px-3 xs:px-4 sm:px-6"
-          >
-            AI-powered expertise visualization with real-time neural network patterns
-          </motion.p>
-        </motion.div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
-          {[
-            'React', 'Next.js', 'TypeScript', 'Python', 'AI/ML', 'Node.js',
-            'TailwindCSS', 'MongoDB', 'PostgreSQL', 'Docker', 'AWS', 'Git'
-          ].map((skill, index) => (
-            <motion.div
-              key={skill}
-              variants={scaleIn}
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="group relative overflow-hidden rounded-xl bg-white/50 backdrop-blur-sm p-4 text-center shadow-lg transition-all hover:shadow-xl dark:bg-gray-800/50"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 opacity-0 transition-opacity group-hover:opacity-100" />
-              <h3 className="relative z-10 text-sm font-semibold text-gray-900 dark:text-white">
-                {skill}
-              </h3>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // CTA Section Component
 function CTASection() {
   return (
@@ -333,7 +284,6 @@ export default function Home() {
       
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
-        <SkillsSection />
         <CTASection />
       </Suspense>
     </div>
