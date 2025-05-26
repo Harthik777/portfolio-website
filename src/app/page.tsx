@@ -35,7 +35,7 @@ function HeroSection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         
-        {/* Simple background gradient - no animations */}
+        {/* Simple background gradient - optimized for both themes */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-indigo-50/30 via-white/20 to-purple-50/30 dark:from-gray-900/60 dark:via-gray-800/40 dark:to-indigo-900/60"></div>
 
         <div className="relative z-30 mx-auto max-w-7xl w-full">
@@ -61,7 +61,7 @@ function HeroSection() {
             >
               AI/ML Engineer passionate about creating intelligent solutions that make a difference. 
               Currently pursuing B.Tech in Computer Science (AI) at{' '}
-              <span className="font-semibold text-indigo-600 dark:text-indigo-400">MIT Bengaluru.</span>
+              <span className="font-semibold text-indigo-600 dark:text-indigo-400">Manipal Institute of Technology (MIT) Bengaluru.</span>
             </motion.p>
 
             <motion.p
@@ -91,7 +91,7 @@ function HeroSection() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mt-12 sm:mt-16">
-              <ArrowDownIcon className="mx-auto h-5 w-5 sm:h-6 sm:w-6 animate-bounce text-gray-400" />
+              <ArrowDownIcon className="mx-auto h-5 w-5 sm:h-6 sm:w-6 animate-bounce text-gray-400 dark:text-gray-500" />
             </motion.div>
           </motion.div>
         </div>
@@ -139,34 +139,34 @@ function CTASection() {
 // What I Do Section Component
 function WhatIDoSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-transparent">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 sm:mb-4">
             What I Do
           </h2>
-          <p className="mx-auto max-w-3xl text-base sm:text-lg lg:text-xl text-gray-300 px-4">
+          <p className="mx-auto max-w-3xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 px-4">
             Leveraging artificial intelligence and data science to create innovative solutions
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* AI & Machine Learning */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 hover:border-purple-500/30 transition-colors">
+          <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700/50 hover:border-purple-300 dark:hover:border-purple-500/30 transition-colors shadow-lg dark:shadow-none">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                 <span className="text-xl sm:text-2xl">🤖</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">AI & Machine Learning</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">AI & Machine Learning</h3>
             </div>
-            <p className="text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
+            <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
               Exploring Machine Learning, Deep Learning, LLMs, and Agentic AI
             </p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-600/20 text-purple-300 rounded-full text-xs sm:text-sm font-medium border border-purple-500/30"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-100 dark:bg-purple-600/20 text-purple-700 dark:text-purple-300 rounded-full text-xs sm:text-sm font-medium border border-purple-200 dark:border-purple-500/30"
                 >
                   {tech}
                 </span>
@@ -175,21 +175,21 @@ function WhatIDoSection() {
           </div>
 
           {/* Data Science */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 hover:border-blue-500/30 transition-colors">
+          <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-500/30 transition-colors shadow-lg dark:shadow-none">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                 <span className="text-xl sm:text-2xl">📊</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">Data Science</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Data Science</h3>
             </div>
-            <p className="text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
+            <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
               Data analysis, visualization, and statistical modeling
             </p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               {['Pandas', 'NumPy', 'Matplotlib', 'Jupyter'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-600/20 text-blue-300 rounded-full text-xs sm:text-sm font-medium border border-blue-500/30"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-100 dark:bg-blue-600/20 text-blue-700 dark:text-blue-300 rounded-full text-xs sm:text-sm font-medium border border-blue-200 dark:border-blue-500/30"
                 >
                   {tech}
                 </span>
@@ -205,7 +205,7 @@ function WhatIDoSection() {
 // Main Home Component
 export default function Home() {
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen relative bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
         <WhatIDoSection />
