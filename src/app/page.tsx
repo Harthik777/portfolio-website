@@ -3,15 +3,24 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import {
-  ArrowDownIcon,
-  CodeBracketIcon,
-  AcademicCapIcon,
-  BriefcaseIcon,
-} from '@heroicons/react/24/outline';
-import { fadeInUp, staggerContainer, scaleIn } from '@/lib/animations';
+import { ArrowDownIcon } from '@heroicons/react/24/outline';
 
-// Loading component
+// Simplified animations for better performance
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.4 }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+// Lightweight loading component
 function LoadingSpinner() {
   return (
     <div className="flex items-center justify-center p-8">
@@ -24,31 +33,10 @@ function LoadingSpinner() {
 function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Responsive container with proper padding */}
-      <div className="w-full px-4 xs:px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         
-        {/* Simple animated background pattern - much lighter than ParticleSystem */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/30 via-white/20 to-purple-50/30 dark:from-gray-900/60 dark:via-gray-800/40 dark:to-indigo-900/60"></div>
-          <div className="absolute top-10 left-10 h-2 w-2 rounded-full bg-indigo-500/20 animate-pulse"></div>
-          <div className="absolute top-20 right-20 h-1 w-1 rounded-full bg-purple-500/30 animate-bounce"></div>
-          <div className="absolute bottom-32 left-1/4 h-1.5 w-1.5 rounded-full bg-pink-500/25 animate-pulse"></div>
-          <div className="absolute bottom-20 right-1/3 h-1 w-1 rounded-full bg-blue-500/20 animate-bounce"></div>
-        </div>
-
-        {/* Responsive Background gradient overlay */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-br from-indigo-50/50 via-white/30 to-purple-50/50 dark:from-gray-900/80 dark:via-gray-800/60 dark:to-indigo-900/80" />
-
-        {/* Simplified Responsive Animated background elements */}
-        <div className="absolute inset-0 z-20 overflow-hidden">
-          {/* Desktop only - minimal elements */}
-          <div className="hidden lg:block absolute -right-20 -top-20 h-40 w-40 animate-pulse rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-10 blur-2xl" />
-          <div className="hidden lg:block absolute -bottom-20 -left-20 h-40 w-40 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-pink-600 opacity-10 blur-2xl" />
-          
-          {/* Simple floating elements - much reduced */}
-          <div className="absolute right-1/4 top-1/3 h-8 w-8 sm:h-12 sm:w-12 animate-pulse rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 opacity-8 blur-lg" />
-          <div className="absolute left-1/3 bottom-1/4 h-6 w-6 sm:h-10 sm:w-10 animate-bounce rounded-full bg-gradient-to-br from-pink-400 to-rose-500 opacity-10 blur-md" />
-        </div>
+        {/* Simple background gradient - no animations */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-indigo-50/30 via-white/20 to-purple-50/30 dark:from-gray-900/60 dark:via-gray-800/40 dark:to-indigo-900/60"></div>
 
         <div className="relative z-30 mx-auto max-w-7xl w-full">
           <motion.div
@@ -59,120 +47,51 @@ function HeroSection() {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight"
             >
               Hi, I'm{' '}
-              <motion.span 
-                className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent block xs:inline mt-1 xs:mt-0"
-                animate={{ 
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                }}
-                transition={{ 
-                  duration: 8, 
-                  repeat: Infinity, 
-                  ease: 'linear' 
-                }}
-                style={{ 
-                  backgroundSize: '200% 200%' 
-                }}
-              >
+              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent block sm:inline mt-1 sm:mt-0">
                 Harthik M V
-              </motion.span>
+              </span>
             </motion.h1>
+            
             <motion.p
               variants={fadeInUp}
-              className="mx-auto mt-3 xs:mt-4 sm:mt-6 max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl leading-5 xs:leading-6 sm:leading-7 md:leading-8 text-gray-600 dark:text-gray-300 px-2 xs:px-3 sm:px-4"
+              className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg md:text-xl leading-6 sm:leading-7 md:leading-8 text-gray-600 dark:text-gray-300"
             >
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              >
-                AI/ML Engineer passionate about creating
-                intelligent solutions that make a difference. Currently pursuing
-                B.Tech in Computer Science (AI) at{' '}
-                <span className="whitespace-nowrap font-semibold text-indigo-600 dark:text-indigo-400">Manipal Institute of Technology (MIT) Bengaluru.</span>
-              </motion.span>
+              AI/ML Engineer passionate about creating intelligent solutions that make a difference. 
+              Currently pursuing B.Tech in Computer Science (AI) at{' '}
+              <span className="font-semibold text-indigo-600 dark:text-indigo-400">MIT Bengaluru.</span>
             </motion.p>
 
             <motion.p
               variants={fadeInUp}
-              className="mx-auto mt-3 xs:mt-4 max-w-2xl xs:max-w-3xl sm:max-w-4xl text-xs xs:text-sm sm:text-base md:text-lg leading-5 xs:leading-6 sm:leading-6 md:leading-7 text-gray-500 dark:text-gray-400 px-3 xs:px-4 sm:px-6"
+              className="mx-auto mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base text-gray-500 dark:text-gray-400"
             >
               Aspiring AI/ML Engineer • Data Science • Research • Open to Internships & Collaborations
             </motion.p>
+            
             <motion.div
               variants={fadeInUp}
-              className="mt-6 xs:mt-8 sm:mt-10 flex flex-col items-center justify-center gap-3 xs:gap-4 sm:gap-6 px-3 xs:px-4 sm:px-6 w-full"
+              className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
             >
-              {/* Enhanced Main action buttons with better mobile optimization */}
-              <div className="flex w-full flex-col items-center gap-3 xs:gap-4 sm:flex-row sm:justify-center sm:gap-4 md:gap-6 max-w-2xl">
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  className="w-full sm:w-auto"
-                >
-                  <Link
-                    href="/projects"
-                    className="group relative inline-flex min-h-[48px] xs:min-h-[52px] sm:min-h-[56px] w-full sm:max-w-none max-w-[320px] xs:max-w-[360px] items-center justify-center gap-2 xs:gap-3 overflow-hidden rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 xs:px-8 sm:px-10 py-3 xs:py-4 text-sm xs:text-base sm:text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                    <CodeBracketIcon className="relative z-10 h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6 flex-shrink-0" />
-                    <span className="relative z-10">View My Work</span>
-                  </Link>
-                </motion.div>
+              <Link
+                href="/projects"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                View My Work
+              </Link>
 
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  className="w-full sm:w-auto"
-                >
-                  <Link
-                    href="/about"
-                    className="group relative inline-flex min-h-[48px] xs:min-h-[52px] sm:min-h-[56px] w-full sm:max-w-none max-w-[320px] xs:max-w-[360px] items-center justify-center gap-2 xs:gap-3 overflow-hidden rounded-full border border-gray-300 bg-white/80 px-6 xs:px-8 sm:px-10 py-3 xs:py-4 text-sm xs:text-base sm:text-lg font-semibold text-gray-900 backdrop-blur-sm transition-all hover:bg-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800"
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-indigo-900/20 dark:to-purple-900/20"
-                    />
-                    <BriefcaseIcon className="relative z-10 h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6 flex-shrink-0" />
-                    <span className="relative z-10">Learn more about me</span>
-                  </Link>
-                </motion.div>
-              </div>
-              {/* Enhanced Responsive Social links with better mobile optimization */}
-              <div className="flex w-full flex-col items-center gap-2 xs:gap-3 sm:flex-row sm:justify-center sm:gap-3 md:gap-4 lg:gap-6 max-w-3xl mx-auto">
-                <a
-                  href="https://www.linkedin.com/in/harthik-mv/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex min-h-[44px] xs:min-h-[48px] sm:min-h-[52px] w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[260px] md:max-w-[280px] items-center justify-center gap-2 xs:gap-3 rounded-full border border-blue-300 bg-blue-50/80 px-4 xs:px-6 sm:px-8 py-3 xs:py-4 text-xs xs:text-sm sm:text-base font-semibold text-blue-700 backdrop-blur-sm transition-all hover:scale-105 hover:bg-blue-100 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-blue-600 dark:bg-blue-900/20 dark:text-blue-400 dark:hover:bg-blue-900/40"
-                >
-                  <svg className="h-4 w-4 xs:h-5 xs:w-5 sm:h-5 sm:w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-                  </svg>
-                  <span className="font-medium">Connect on LinkedIn</span>
-                </a>
-
-                <a
-                  href="https://github.com/Harthik777"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex min-h-[44px] xs:min-h-[48px] sm:min-h-[52px] w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[260px] md:max-w-[280px] items-center justify-center gap-2 xs:gap-3 rounded-full border border-gray-300 bg-gray-50/80 px-4 xs:px-6 sm:px-8 py-3 xs:py-4 text-xs xs:text-sm sm:text-base font-semibold text-gray-700 backdrop-blur-sm transition-all hover:scale-105 hover:bg-gray-100 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-300 dark:hover:bg-gray-700"
-                >
-                  <svg className="h-4 w-4 xs:h-5 xs:w-5 sm:h-5 sm:w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
-                  </svg>
-                  <span className="font-medium">View on GitHub</span>
-                </a>
-              </div>
+              <Link
+                href="/about"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-gray-900 bg-white border border-gray-300 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-white dark:border-gray-600"
+              >
+                Learn About Me
+              </Link>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="mt-12 xs:mt-14 sm:mt-16">
-              <ArrowDownIcon className="mx-auto h-5 w-5 xs:h-6 xs:w-6 animate-bounce text-gray-400" />
+            <motion.div variants={fadeInUp} className="mt-12 sm:mt-16">
+              <ArrowDownIcon className="mx-auto h-5 w-5 sm:h-6 sm:w-6 animate-bounce text-gray-400" />
             </motion.div>
           </motion.div>
         </div>
@@ -186,55 +105,32 @@ function CTASection() {
   return (
     <section className="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 px-6 py-8 sm:px-8 sm:py-12 lg:py-16 text-center shadow-2xl"
-        >
-          <motion.h2 
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white relative z-10 leading-tight"
-          >
+        <div className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 px-6 py-8 sm:px-8 sm:py-12 lg:py-16 text-center shadow-2xl">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white relative z-10 leading-tight">
             Let's Build Something Amazing Together
-          </motion.h2>
+          </h2>
           
-          <motion.p 
-            className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-indigo-100 relative z-10 px-2"
-            variants={fadeInUp}
-          >
+          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-indigo-100 relative z-10 px-2">
             I'm always excited to work on new projects and collaborate with
             fellow developers and innovators. Open to internships, research opportunities, and learning experiences.
-          </motion.p>
+          </p>
           
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 relative z-10">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto block rounded-full bg-white px-6 py-3 text-base font-semibold text-indigo-600 shadow-lg transition-all hover:bg-gray-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
             >
-              <Link
-                href="/contact"
-                className="block w-full sm:w-auto rounded-full bg-white px-6 py-3 text-base font-semibold text-indigo-600 shadow-lg transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-              >
-                Get in Touch
-              </Link>
-            </motion.div>
+              Get in Touch
+            </Link>
             
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
+            <Link
+              href="/projects"
+              className="w-full sm:w-auto block rounded-full bg-gradient-to-r from-pink-500 to-red-500 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all hover:from-pink-600 hover:to-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-indigo-600"
             >
-              <Link
-                href="/projects"
-                className="block w-full sm:w-auto rounded-full bg-gradient-to-r from-pink-500 to-red-500 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all hover:from-pink-600 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-indigo-600"
-              >
-                View Projects →
-              </Link>
-            </motion.div>
+              View Projects →
+            </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -245,33 +141,18 @@ function WhatIDoSection() {
   return (
     <section className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="text-center mb-8 sm:mb-12 lg:mb-16"
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-3 sm:mb-4"
-          >
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-3 sm:mb-4">
             What I Do
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="mx-auto max-w-3xl text-base sm:text-lg lg:text-xl text-gray-300 px-4"
-          >
+          </h2>
+          <p className="mx-auto max-w-3xl text-base sm:text-lg lg:text-xl text-gray-300 px-4">
             Leveraging artificial intelligence and data science to create innovative solutions
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* AI & Machine Learning */}
-          <motion.div
-            variants={fadeInUp}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50"
-          >
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 hover:border-purple-500/30 transition-colors">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                 <span className="text-xl sm:text-2xl">🤖</span>
@@ -291,13 +172,10 @@ function WhatIDoSection() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Data Science */}
-          <motion.div
-            variants={fadeInUp}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50"
-          >
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 hover:border-blue-500/30 transition-colors">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
                 <span className="text-xl sm:text-2xl">📊</span>
@@ -317,7 +195,7 @@ function WhatIDoSection() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
@@ -328,15 +206,6 @@ function WhatIDoSection() {
 export default function Home() {
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      {/* Scroll Progress Indicator */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 z-50 origin-left"
-        style={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: false, amount: 0.1 }}
-        transition={{ duration: 0.3 }}
-      />
-      
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
         <WhatIDoSection />
