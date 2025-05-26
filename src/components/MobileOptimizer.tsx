@@ -8,6 +8,9 @@ import { useEffect } from 'react';
  */
 export function MobileOptimizer() {
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     // Prevent zoom on double-tap for better UX
     let lastTouchEnd = 0;
     const preventZoom = (e: TouchEvent) => {
@@ -35,7 +38,7 @@ export function MobileOptimizer() {
       
       // Use a slightly different viewport setting based on device type
       const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      const isTablet = /iPad/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 0 && window.innerWidth >= 768 && window.innerWidth < 1200);
+      const isTablet = /iPad/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 0 && typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1200);
       
       if (isMobileDevice) {
         // Mobile phones - optimize for speed
@@ -64,7 +67,7 @@ export function MobileOptimizer() {
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       );
-      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
       
       if (isMobile) {
         html.classList.add('is-mobile');
@@ -100,7 +103,9 @@ export function MobileOptimizer() {
     const handleOrientationChange = () => {
       // Small delay to ensure proper viewport adjustment
       setTimeout(() => {
-        window.scrollTo(0, 0);
+        if (typeof window !== 'undefined') {
+          window.scrollTo(0, 0);
+        }
       }, 100);
     };
 
@@ -109,7 +114,9 @@ export function MobileOptimizer() {
     // Cleanup
     return () => {
       document.removeEventListener('touchend', preventZoom);
-      window.removeEventListener('orientationchange', handleOrientationChange);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('orientationchange', handleOrientationChange);
+      }
     };
   }, []);
 
@@ -119,6 +126,9 @@ export function MobileOptimizer() {
 // Hook for mobile detection
 export function useIsMobile() {
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     const checkIsMobile = () => {
       return window.innerWidth < 768;
     };
@@ -164,7 +174,8 @@ export function MobileOptimizedImage({
   mobileSrc,
   desktopSrc,
 }: MobileOptimizedImageProps) {
-  const imageSrc = window.innerWidth < 768 && mobileSrc ? mobileSrc : desktopSrc || src;
+  // Default to desktop/regular src during SSR
+  const imageSrc = typeof window !== 'undefined' && window.innerWidth < 768 && mobileSrc ? mobileSrc : desktopSrc || src;
 
   return (
     <img

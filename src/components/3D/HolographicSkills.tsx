@@ -24,38 +24,63 @@ const skills: Skill[] = [
 ];
 
 export function HolographicSkills() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [springConfig, setSpringConfig] = useState({ stiffness: 300, damping: 30 });
+  const [rotateRanges, setRotateRanges] = useState({
+    rotateXRange: [5, -5] as [number, number],
+    rotateYRange: [-5, 5] as [number, number]
+  });
+  const containerRef = useRef<HTMLDivElement>(null);
   const { resolvedTheme } = useTheme();
-    const mouseX = useMotionValue(0);
+  const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
-  // Reduce motion on mobile for better performance
-  const springConfig = typeof window !== 'undefined' && window.innerWidth < 768 
-    ? { stiffness: 80, damping: 20 }  // Even less stiffness for mobile
-    : window.innerWidth < 1024
-      ? { stiffness: 200, damping: 25 }  // Medium settings for tablets
-      : { stiffness: 300, damping: 30 };  // Full settings for desktop
-  
-  // Reduce transformation amount on mobile
-  const rotateXRange = typeof window !== 'undefined' && window.innerWidth < 768 ? [3, -3] : [5, -5];
-  const rotateYRange = typeof window !== 'undefined' && window.innerWidth < 768 ? [-3, 3] : [-5, 5];
-  
-  const rotateX = useSpring(useTransform(mouseY, [-300, 300], rotateXRange), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [-300, 300], rotateYRange), springConfig);
-
-  // Detect mobile devices
+  // Initialize device-specific settings
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
+    const updateDeviceSettings = () => {
+      const isMobileDevice = window.innerWidth < 768;
+      const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+      
+      // Set mobile state
+      setIsMobile(isMobileDevice);
+      
+      // Update spring config based on device
+      if (isMobileDevice) {
+        setSpringConfig({ stiffness: 80, damping: 20 });
+        setRotateRanges({
+          rotateXRange: [3, -3],
+          rotateYRange: [-3, 3]
+        });
+      } else if (isTablet) {
+        setSpringConfig({ stiffness: 200, damping: 25 });
+        setRotateRanges({
+          rotateXRange: [5, -5],
+          rotateYRange: [-5, 5]
+        });
+      } else {
+        setSpringConfig({ stiffness: 300, damping: 30 });
+        setRotateRanges({
+          rotateXRange: [5, -5],
+          rotateYRange: [-5, 5]
+        });
+      }
     };
 
-    checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
+    // Initial call
+    updateDeviceSettings();
     
-    return () => window.removeEventListener('resize', checkIsMobile);
+    // Listen for resize events
+    window.addEventListener('resize', updateDeviceSettings);
+    
+    return () => window.removeEventListener('resize', updateDeviceSettings);
   }, []);
+  
+  const rotateX = useSpring(useTransform(mouseY, [-300, 300], rotateRanges.rotateXRange), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [-300, 300], rotateRanges.rotateYRange), springConfig);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -69,12 +94,17 @@ export function HolographicSkills() {
       mouseY.set(e.clientY - centerY);
     };
 
-    if (!isMobile) {
+    if (!isMobile && typeof window !== 'undefined') {
       window.addEventListener('mousemove', handleMouseMove);
     }
     
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
   }, [mouseX, mouseY, isMobile]);
+
   return (
     <section className="py-16 md:py-32 relative overflow-hidden" data-reveal>
       {/* Background Effects - Responsive */}

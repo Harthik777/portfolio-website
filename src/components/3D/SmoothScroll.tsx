@@ -12,7 +12,11 @@ if (typeof window !== 'undefined') {
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis>();
   
-  useEffect(() => {    // Enhanced device detection with more accurate performance checks
+  useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
+    // Enhanced device detection with more accurate performance checks
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
       || window.innerWidth < 768;
     const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;

@@ -110,6 +110,7 @@ export function prefersReducedMotion(): boolean {
  * Utility function to smooth scroll to element
  */
 export function scrollToElement(elementId: string): void {
+  if (typeof window === 'undefined') return;
   const element = document.getElementById(elementId);
   if (element) {
     element.scrollIntoView({
@@ -123,6 +124,7 @@ export function scrollToElement(elementId: string): void {
  * Utility function to copy text to clipboard
  */
 export async function copyToClipboard(text: string): Promise<boolean> {
+  if (typeof window === 'undefined' || !navigator.clipboard) return false;
   try {
     await navigator.clipboard.writeText(text);
     return true;

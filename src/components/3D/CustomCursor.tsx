@@ -32,6 +32,9 @@ export function CustomCursor() {
   // Detect mobile devices and performance capabilities
   useEffect(() => {
     const checkDeviceCapabilities = () => {
+      // Only run on client side
+      if (typeof window === 'undefined') return;
+      
       // Check if mobile
       const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
         || window.innerWidth < 768 
@@ -46,9 +49,15 @@ export function CustomCursor() {
     };
 
     checkDeviceCapabilities();
-    window.addEventListener('resize', checkDeviceCapabilities);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', checkDeviceCapabilities);
+    }
     
-    return () => window.removeEventListener('resize', checkDeviceCapabilities);
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', checkDeviceCapabilities);
+      }
+    };
   }, []);
 
   useEffect(() => {

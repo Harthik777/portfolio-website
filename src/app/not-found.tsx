@@ -35,7 +35,11 @@ export default function NotFound() {
             Go Home
           </Link>
           <button
-            onClick={() => window.history.back()}
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.history.back();
+              }
+            }}
             className="btn-secondary"
           >
             <ArrowLeftIcon className="h-5 w-5" />

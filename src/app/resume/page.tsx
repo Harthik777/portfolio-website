@@ -8,7 +8,10 @@ export default function Resume() {
 
   const handleView = () => {
     setIsViewing(true);
-    window.open('/Harthik_Resume.pdf', '_blank');
+    // Only run on client side
+    if (typeof window !== 'undefined') {
+      window.open('/Harthik_Resume.pdf', '_blank');
+    }
     setIsViewing(false);
   };
 

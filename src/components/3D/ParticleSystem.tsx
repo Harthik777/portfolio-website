@@ -76,7 +76,7 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
   }, []);
 
   useEffect(() => {
-    if (!mountRef.current) return;
+    if (!mountRef.current || typeof window === 'undefined') return;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -220,7 +220,7 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
       material.uniforms.time.value = time;
 
       // Skip frames on mobile for better performance
-      const isMobile = window.innerWidth < 768;
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
       const frameSkipRate = isMobile ? 2 : 1; // Skip every other frame on mobile
       
       if (time % frameSkipRate === 0) {
@@ -243,8 +243,10 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
 
     // Cleanup
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('resize', handleResize);
+      }
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
       }

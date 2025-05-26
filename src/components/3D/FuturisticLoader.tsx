@@ -29,6 +29,9 @@ export function FuturisticLoader() {
   // Detect device capabilities and preferences
   useEffect(() => {
     const checkDeviceCapabilities = () => {
+      // Only run on client side
+      if (typeof window === 'undefined') return;
+      
       // Check for mobile/tablet
       const mobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       const tablet = window.innerWidth >= 768 && window.innerWidth < 1024;
@@ -54,9 +57,15 @@ export function FuturisticLoader() {
     };
 
     checkDeviceCapabilities();
-    window.addEventListener('resize', checkDeviceCapabilities);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', checkDeviceCapabilities);
+    }
     
-    return () => window.removeEventListener('resize', checkDeviceCapabilities);
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', checkDeviceCapabilities);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -86,7 +95,7 @@ export function FuturisticLoader() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || typeof window === 'undefined') return;
 
     const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true });
     if (!ctx) return;
@@ -293,6 +302,9 @@ export function FuturisticLoader() {
     let resizeTimeout: NodeJS.Timeout | null = null;
 
     const handleResize = () => {
+      // Only run on client side
+      if (typeof window === 'undefined') return;
+      
       // Throttle resize for better performance
       if (resizeTimeout) {
         clearTimeout(resizeTimeout);
@@ -308,13 +320,17 @@ export function FuturisticLoader() {
       }, 200);
     };
 
-    window.addEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+    }
 
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-      window.removeEventListener('resize', handleResize);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
     };
   }, [resolvedTheme, isMobile, isTablet, isLowEndDevice]);
 
