@@ -14,8 +14,8 @@ const projects = [
       'Sports Analytics',
       'Machine Learning',
     ],
-    link: 'https://docs.google.com/document/d/14HNHQ-XNDwT1Xysy7s41vyIKMKrlKzlob1ni2wmspdM/edit?tab=t.0',
-    date: '10/2024 - 04/2025',
+    link: '/SMOGN_Cricket_Analytics_Research_Paper.pdf',
+    date: '10/2024 - 05/2025',
   },
   {
     title: 'RBI NEFT Data Analysis and Visualization Platform',

@@ -5,10 +5,10 @@ const publications = [
     title:
       'A Validated Machine Learning Framework for Data-Scarce Regression: SMOGN Augmentation in Cricket Performance Prediction',
     description:
-      'Manuscript Draft Completed, Pending Submission. This work presents a validated ML framework using SMOGN for regression in cricket performance prediction. See the main project for more details.',
-    status: 'Pending Submission',
-    link: 'https://docs.google.com/document/d/14HNHQ-XNDwT1Xysy7s41vyIKMKrlKzlob1ni2wmspdM/edit?tab=t.0',
-    date: '10/2024 - 04/2025',
+      'Manuscript Draft Completed, Submitted for Review (IEEE TENCON 2025). This work presents a validated ML framework using SMOGN for regression in cricket performance prediction. See the main project for more details.',
+    status: 'Pending Review',
+    link: '/SMOGN_Cricket_Analytics_Research_Paper.pdf',
+    date: '10/2024 - 05/2025',
   },
 ];
 
