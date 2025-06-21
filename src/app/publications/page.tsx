@@ -3,7 +3,7 @@ import Link from 'next/link';
 const publications = [
   {
     title:
-      'A Validated Machine Learning Framework for Data-Scarce Regression: SMOGN Augmentation in Cricket Performance Prediction',
+      'A Machine Learning Framework for Data-Scarce Regression using SMOGN with Joint Hyperparameter Optimization: A Case Study with Cricket Performance Prediction',
     description:
       'Manuscript Draft Completed, Submitted for Review (IEEE TENCON 2025). This work presents a validated ML framework using SMOGN for regression in cricket performance prediction. See the main project for more details.',
     status: 'Pending Review',
