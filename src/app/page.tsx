@@ -201,7 +201,7 @@ function WhatIDoSection() {
 // Main Home Component
 export default function Home() {
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-gray-50 via-white to-indigo-50/30 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen relative bg-gradient-to-br from-white via-indigo-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-900">
       <Suspense fallback={<LoadingSpinner />}>
         <HeroSection />
         <WhatIDoSection />
