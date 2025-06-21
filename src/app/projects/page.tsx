@@ -35,18 +35,19 @@ const projects = [
   },
   {
     title:
-      'A Validated Machine Learning Framework for Data-Scarce Regression: SMOGN Augmentation in Cricket Performance Prediction',
+      'A Machine Learning Framework for Data-Scarce Regression using SMOGN with Joint Hyperparameter Optimization: A Case Study with Cricket Performance Prediction',
     description:
-      'Manuscript Draft Completed, Pending Submission. This research focuses on applying SMOGN for data augmentation in regression tasks within data-scarce sports analytics, specifically cricket performance prediction, to enhance model accuracy and reliability.',
+      'Manuscript Draft Completed, Submitted for Review (IEEE TENCON 2025). This research focuses on applying SMOGN for data augmentation in regression tasks within data-scarce sports analytics, specifically cricket performance prediction, to enhance model accuracy and reliability.',
     tags: [
       'Publication',
       'SMOGN',
       'Regression',
       'Machine Learning',
       'Research',
+      'LaTeX',
     ],
-    link: 'https://docs.google.com/document/d/14HNHQ-XNDwT1Xysy7s41vyIKMKrlKzlob1ni2wmspdM/edit?tab=t.0', // No direct link if it's part of another project's documentation
-    date: '10/2024 - 04/2025',
+    link: '/SMOGN_Cricket_Analytics_Research_Paper.pdf', // Direct link to hosted PDF
+    date: '10/2024 - 05/2025',
   },
   {
     title: 'Personal Portfolio Website',
