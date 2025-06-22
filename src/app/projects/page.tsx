@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'Agentic-XAI: Full-Stack Platform for Interpretable AI',
+    title: 'Agentic-XAI: Explainable Agentic AI Engine.',
     description:
       'Architected and engineered a full-stack, interpretable AI platform leveraging Python, FastAPI, React, and TypeScript to solve the "black box" problem in AI decision-making. Developed a novel Explainable AI (XAI) engine to generate feature-importance attributions, step-by-step reasoning traces, and calibrated confidence scores for model outputs. Successfully deployed the production-ready application on Vercel, demonstrating expertise in both applied machine learning and end-to-end software development.',
     tags: [
@@ -11,8 +11,8 @@ const projects = [
       'Full-Stack Development',
       'Python',
       'FastAPI',
-      'React',
-      'TypeScript',
+      'Agentic AI',
+      'Hugging Face API',
       'System Architecture',
       'Model Interpretability',
       'REST APIs',
@@ -98,8 +98,8 @@ const projects = [
       'Langchain',
       'LLMs',
       'Fraud Detection',
-      'Python',
-      'IEEE-CIS Dataset'
+      'Python'
+      
     ],
     link: null, // Research in progress
     date: '05/2025 - Present',
