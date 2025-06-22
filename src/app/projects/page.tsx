@@ -1,7 +1,27 @@
 import Link from 'next/link';
 
 const projects = [
-
+  {
+    title: 'Agentic-XAI: Full-Stack Platform for Interpretable AI',
+    description:
+      'Architected and engineered a full-stack, interpretable AI platform leveraging Python, FastAPI, React, and TypeScript to solve the "black box" problem in AI decision-making. Developed a novel Explainable AI (XAI) engine to generate feature-importance attributions, step-by-step reasoning traces, and calibrated confidence scores for model outputs. Successfully deployed the production-ready application on Vercel, demonstrating expertise in both applied machine learning and end-to-end software development.',
+    tags: [
+      'Explainable AI (XAI)',
+      'Applied Machine Learning',
+      'Full-Stack Development',
+      'Python',
+      'FastAPI',
+      'React',
+      'TypeScript',
+      'System Architecture',
+      'Model Interpretability',
+      'REST APIs',
+      'Vercel',
+    ],
+    link: 'https://agentic-xai-harthik-s-projects.vercel.app/',
+    githubLink: 'https://github.com/Harthik777/Agentic-XAI',
+    date: '06/2025',
+  },
   {
     title: 'Predictive Modelling & Data Augmentation for Cricket Analytics',
     description:
