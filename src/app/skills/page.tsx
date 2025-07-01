@@ -30,13 +30,13 @@ const skills = {
   },
   'Machine Learning & AI': {
     items: [
-      'Machine Learning Model Development & Evaluation',
+      'ML Model Development',
       'Feature Engineering',
-      'Data Augmentation (SMOGN)',
-      'Regression',
+      'SMOGN Data Augmentation',
+      'Regression Analysis',
       'Ensemble Learning',
       'Scikit-learn',
-      'LLM',
+      'Large Language Models',
       'Generative AI',
     ],
     icon: (
@@ -90,6 +90,25 @@ const skills = {
     bgGradient: 'from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20',
     border: 'border-orange-200 dark:border-orange-800'
   },
+};
+
+const ProficiencyBadge = ({ level }: { level: string }) => {
+  const getBadgeStyle = (level: string) => {
+    switch (level) {
+      case 'Advanced':
+        return 'bg-green-100 text-green-800 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800';
+      case 'Intermediate':
+        return 'bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900/20 dark:text-yellow-300 dark:border-yellow-800';
+      default:
+        return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-900/20 dark:text-gray-300 dark:border-gray-800';
+    }
+  };
+
+  return (
+    <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${getBadgeStyle(level)}`}>
+      {level}
+    </span>
+  );
 };
 
 export default function Skills() {
@@ -148,11 +167,11 @@ export default function Skills() {
                     
                     <div className="space-y-3">
                       <div className={`rounded-lg bg-gradient-to-r ${skillData.bgGradient} p-4`}>
-                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                          {skillData.items.map(skill => (
+                        <div className="flex flex-wrap gap-2">
+                          {skillData.items.map((skill, skillIdx) => (
                             <span
                               key={skill}
-                              className="inline-flex items-center rounded-full border border-indigo-200 bg-white/90 px-3 py-2 text-sm font-semibold text-indigo-700 shadow backdrop-blur-sm transition-all hover:scale-105 hover:shadow-lg dark:border-indigo-700 dark:bg-gray-800/90 dark:text-indigo-300"
+                              className="inline-flex items-center rounded-lg bg-white/80 px-3 py-2 text-sm font-medium text-gray-800 shadow-sm border border-gray-200/50 transition-all duration-200 hover:bg-white hover:shadow-md hover:scale-105 dark:bg-gray-700/80 dark:text-gray-200 dark:border-gray-600/50 dark:hover:bg-gray-700"
                             >
                               {skill}
                             </span>
