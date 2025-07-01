@@ -2,6 +2,28 @@ import Link from 'next/link';
 
 const projects = [
   {
+    title: 'MarketSense - Financial Market Sentiment Analysis Platform (Work in Progress)',
+    description:
+      'Production-grade AI-powered platform for financial market sentiment analysis using TensorFlow.js and real-time financial news from free RSS feeds. Features advanced sentiment analysis with ML models, batch processing capabilities, interactive market dashboard with Chart.js visualizations, and portfolio risk assessment. Built with React 18 + TypeScript, deployed on Vercel with zero API costs using RSS feeds from Yahoo Finance, MarketWatch, CNN Business, and Reuters.',
+    tags: [
+      'TypeScript', 
+      'TensorFlow.js',
+      'Financial Analysis',
+      'Sentiment Analysis',
+      'RSS Feeds',
+      'Chart.js',
+      'Tailwind CSS',
+      'Vite',
+      'Vercel',
+      'Machine Learning'
+    ],
+    link: 'https://project2-ten-iota.vercel.app/',
+    githubLink: 'https://github.com/Harthik777/Project2',
+    date: '07/2025 - Present',
+    status: 'Work in Progress - Financial AI Platform',
+    isResearch: false,
+  },
+  {
     title: 'Agentic-XAI: Explainable Agentic AI Engine (In Progress)',
     description:
       'Architected and engineered a full-stack, interpretable AI platform leveraging Python, FastAPI, React, and TypeScript to solve the "black box" problem in AI decision-making. Developed a novel Explainable AI (XAI) engine to generate feature-importance attributions, step-by-step reasoning traces, and calibrated confidence scores for model outputs. Successfully deployed the production-ready application on Vercel, demonstrating expertise in both applied machine learning and end-to-end software development.',
