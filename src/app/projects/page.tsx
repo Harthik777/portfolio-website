@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'Agentic-XAI: Explainable Agentic AI Engine.',
+    title: 'Agentic-XAI: Explainable Agentic AI Engine (In Progress)',
     description:
       'Architected and engineered a full-stack, interpretable AI platform leveraging Python, FastAPI, React, and TypeScript to solve the "black box" problem in AI decision-making. Developed a novel Explainable AI (XAI) engine to generate feature-importance attributions, step-by-step reasoning traces, and calibrated confidence scores for model outputs. Successfully deployed the production-ready application on Vercel, demonstrating expertise in both applied machine learning and end-to-end software development.',
     tags: [
@@ -10,12 +10,10 @@ const projects = [
       'Applied Machine Learning',
       'Full-Stack Development',
       'Python',
-      'FastAPI',
       'Agentic AI',
       'Hugging Face API',
       'System Architecture',
       'Model Interpretability',
-      'REST APIs',
       'Vercel',
     ],
     link: 'https://agentic-xai-harthik-s-projects.vercel.app/',
@@ -101,8 +99,7 @@ const projects = [
       'Python'
       
     ],
-    link: null, // Research in progress
-    date: '05/2025 - Present',
+    link: null, // Research in progress    date: '06/2025 - Present',
     status: 'In Progress - IEEE Computer Society Bangalore Chapter',
     isResearch: true,
   },
