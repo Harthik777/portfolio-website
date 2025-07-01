@@ -97,11 +97,11 @@ const projects = [
       'LLMs',
       'Fraud Detection',
       'Python'
-      
     ],
     link: null, // Research in progress    date: '06/2025 - Present',
     status: 'In Progress - IEEE Computer Society Bangalore Chapter',
     isResearch: true,
+    date: '07/2025 - Present',
   },
 ];
 
