@@ -40,7 +40,7 @@ const projects = [
     ],
     link: 'https://agentic-xai-harthik-s-projects.vercel.app/',
     githubLink: 'https://github.com/Harthik777/Agentic-XAI',
-    date: '06/2025',
+    date: '06/2025 - Present',
   },
   {
     title: 'Predictive Modelling & Data Augmentation for Cricket Analytics',
