@@ -46,7 +46,7 @@ function HeroSection() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight"
             >
               Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent block sm:inline mt-1 sm:mt-0">
+              <span className="text-shimmer block sm:inline mt-1 sm:mt-0">
                 Harthik M V
               </span>
             </motion.h1>
@@ -73,17 +73,19 @@ function HeroSection() {
             >
               <Link
                 href="/projects"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="w-full sm:w-auto btn-gradient hover-lift"
               >
                 View My Work
               </Link>
 
-              <Link
-                href="/about"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-gray-900 bg-white border border-gray-300 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-white dark:border-gray-600"
-              >
-                Learn About Me
-              </Link>
+              <div className="w-full sm:w-auto btn-gradient-outline hover-lift">
+                <Link
+                  href="/about"
+                  className="btn-gradient-outline-inner block w-full"
+                >
+                  Learn About Me
+                </Link>
+              </div>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mt-12 sm:mt-16">
@@ -114,14 +116,14 @@ function CTASection() {
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 relative z-10">
             <Link
               href="/contact"
-              className="w-full sm:w-auto block rounded-full bg-white px-6 py-3 text-base font-semibold text-indigo-600 shadow-lg transition-all hover:bg-gray-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
+              className="w-full sm:w-auto btn-glass hover-lift text-white backdrop-blur-lg"
             >
               Get in Touch
             </Link>
             
             <Link
               href="/projects"
-              className="w-full sm:w-auto block rounded-full bg-gradient-to-r from-pink-500 to-red-500 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all hover:from-pink-600 hover:to-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-indigo-600"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl gradient-sunset text-white font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
             >
               View Projects →
             </Link>
@@ -135,25 +137,47 @@ function CTASection() {
 // What I Do Section Component
 function WhatIDoSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50/50 dark:bg-transparent">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 sm:mb-4">
+    <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-indigo-50/20 to-purple-50/30 dark:from-blue-950/20 dark:via-indigo-950/10 dark:to-purple-950/20"></div>
+      <div className="absolute inset-0 bg-dots opacity-30"></div>
+      
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+          className="text-center mb-8 sm:mb-12"
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 sm:mb-4"
+          >
             What I Do
-          </h2>
-          <p className="mx-auto max-w-3xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 px-4">
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="mx-auto max-w-3xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 px-4"
+          >
             Leveraging artificial intelligence and data science to create innovative solutions
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+          className="grid md:grid-cols-2 gap-6 lg:gap-8"
+        >
           {/* AI & Machine Learning */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-500 hover:shadow-xl transition-all duration-300 shadow-lg">
+          <motion.div 
+            variants={fadeInUp}
+            className="card-interactive-premium hover-lift group"
+          >
             <div className="flex items-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 gradient-secondary rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg group-hover:animate-bounce-gentle">
                 <span className="text-xl sm:text-2xl">🤖</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">AI & Machine Learning</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-glow">AI & Machine Learning</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
               Exploring Machine Learning, Deep Learning, LLMs, and Agentic AI
@@ -162,21 +186,24 @@ function WhatIDoSection() {
               {['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200 dark:border-gray-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-700 transition-colors"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 glass text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:bg-secondary-50 dark:hover:bg-secondary-900/20 hover:text-secondary-700 dark:hover:text-secondary-300 hover:border-secondary-200 dark:hover:border-secondary-700 transition-all duration-300 hover:scale-105"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Data Science */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl transition-all duration-300 shadow-lg">
+          <motion.div 
+            variants={fadeInUp}
+            className="card-interactive-premium hover-lift group"
+          >
             <div className="flex items-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 gradient-ocean rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg group-hover:animate-bounce-gentle">
                 <span className="text-xl sm:text-2xl">📊</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Data Science</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-glow">Data Science</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
               Data analysis, visualization, and statistical modeling
@@ -185,14 +212,14 @@ function WhatIDoSection() {
               {['Pandas', 'NumPy', 'Matplotlib', 'Jupyter'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200 dark:border-gray-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-700 transition-colors"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 glass text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-700 dark:hover:text-primary-300 hover:border-primary-200 dark:hover:border-primary-700 transition-all duration-300 hover:scale-105"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -705,6 +705,183 @@
   animation: holographic-scan 3s linear infinite;
 }
 
-.animate-matrix-rain {
-  animation: matrix-rain 4s linear infinite;
-}
+  .animate-matrix-rain {
+    animation: matrix-rain 4s linear infinite;
+  }
+
+  /* Glass Frosted Effect */
+  .glass-frosted {
+    @apply border border-white/25 bg-white/10 backdrop-blur-2xl backdrop-saturate-150 dark:border-gray-600/30 dark:bg-gray-800/20;
+  }
+
+  /* Enhanced Button System */
+  .btn-glass {
+    @apply glass-frosted px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-white/20 dark:hover:bg-gray-700/30 active:scale-95;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:from-primary-600 hover:to-secondary-600 hover:scale-105 shadow-lg hover:shadow-xl active:scale-95;
+  }
+
+  .btn-gradient-outline {
+    @apply relative bg-gradient-to-r from-primary-500 to-secondary-500 p-[1px] rounded-xl transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-gradient-outline-inner {
+    @apply bg-white dark:bg-gray-900 text-primary-600 dark:text-primary-400 px-6 py-3 rounded-[11px] font-medium transition-all duration-300;
+  }
+
+  /* Enhanced Text Effects */
+  .text-shimmer {
+    @apply bg-gradient-to-r from-primary-600 via-secondary-500 to-primary-600 bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: textShimmer 2.5s ease-in-out infinite;
+  }
+
+  .text-glow {
+    @apply text-primary-500 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)];
+  }
+
+  /* Enhanced Card Variations */
+  .card-premium {
+    @apply glass-ultra border border-primary-200/50 dark:border-primary-800/50 shadow-glass-lg hover:shadow-glow-lg;
+  }
+
+  .card-interactive-premium {
+    @apply card-premium transition-all duration-300 hover:scale-[1.02] hover:shadow-glow-xl cursor-pointer active:scale-[0.98];
+  }
+
+  /* Background Patterns */
+  .bg-mesh {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(148 163 184 / 0.05)'%3e%3cpath d='m0 .5 32 32M0 .5 32 32'/%3e%3c/svg%3e");
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(circle at 25px 25px, rgb(148 163 184 / 0.1) 2px, transparent 0);
+    background-size: 50px 50px;
+  }
+
+  .bg-grid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(148 163 184 / 0.05)'%3e%3cpath d='m0 .5h32m-32 32h32'/%3e%3c/svg%3e");
+  }
+
+  /* Enhanced Gradient System */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+  }
+
+  .gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600;
+  }
+
+  .gradient-rainbow {
+    @apply bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500;
+  }
+
+  .gradient-sunset {
+    @apply bg-gradient-to-r from-orange-400 via-red-500 to-pink-500;
+  }
+
+  .gradient-ocean {
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600;
+  }
+
+  .gradient-forest {
+    @apply bg-gradient-to-r from-green-400 via-green-500 to-emerald-600;
+  }
+
+  /* Enhanced Animation Utilities */
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-gentle {
+    animation: pulseGentle 2s ease-in-out infinite;
+  }
+
+  /* Enhanced Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:scale-105 hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow-lg;
+  }
+
+  .hover-rotate {
+    @apply transition-transform duration-300 hover:rotate-3;
+  }
+
+  .hover-tilt {
+    @apply transition-transform duration-300 hover:rotate-1 hover:scale-105;
+  }
+
+  /* Additional keyframes for new animations */
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounceGentle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulseGentle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }

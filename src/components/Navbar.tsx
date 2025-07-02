@@ -56,7 +56,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <>      <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
+    <>      <header className="fixed inset-x-0 top-0 z-50 glass-frosted border-b border-white/20 dark:border-gray-700/50 shadow-soft">
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between px-4 xs:px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-3 xs:py-4 sm:py-5"
           aria-label="Global navigation"
@@ -116,7 +116,7 @@ export function Navbar() {
             </motion.div>            <motion.div variants={navVariants}>
               <Link
                 href="/contact"
-                className="ml-3 xl:ml-4 inline-flex min-h-[44px] items-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-4 sm:px-6 xl:px-8 py-2.5 xl:py-3 text-sm xl:text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95"
+                className="ml-3 xl:ml-4 btn-gradient hover-lift"
                 aria-label="Contact me"
               >
                 Contact

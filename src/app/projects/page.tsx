@@ -129,38 +129,39 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-indigo-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-900">
+    <main className="min-h-screen bg-gradient-to-br from-white via-indigo-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-20"></div>
       <div className="relative isolate pt-20">
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             {/* Enhanced Header Section */}
-            <div className="card mx-auto max-w-4xl animate-fade-in-up border border-indigo-100 bg-white/80 p-12 text-center shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-600">
+            <div className="card-interactive-premium mx-auto max-w-4xl animate-fade-in-scale p-12 text-center">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-lg animate-pulse-gentle">
                 <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <h2 className="gradient-text mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
+              <h2 className="text-shimmer mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
                 Projects & Publications
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                 Here are some of my key projects and publications, demonstrating my skills in 
-                <span className="font-semibold text-indigo-600 dark:text-indigo-400"> AI/ML</span>, 
-                <span className="font-semibold text-purple-600 dark:text-purple-400"> data analysis</span>, and 
-                <span className="font-semibold text-pink-600 dark:text-pink-400"> software development</span>.
+                <span className="font-semibold text-primary-600 dark:text-primary-400"> AI/ML</span>, 
+                <span className="font-semibold text-secondary-600 dark:text-secondary-400"> data analysis</span>, and 
+                <span className="font-semibold text-accent-600 dark:text-accent-400"> software development</span>.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-4">
-                <div className="flex items-center space-x-2 rounded-full bg-indigo-100 px-3 py-2 sm:px-4 dark:bg-indigo-900/50">
-                  <div className="h-2 w-2 rounded-full bg-indigo-500"></div>
-                  <span className="text-xs font-medium text-indigo-700 dark:text-indigo-300 sm:text-sm">Research Projects</span>
+                <div className="btn-glass flex items-center space-x-2 hover-lift">
+                  <div className="h-2 w-2 rounded-full bg-primary-500 animate-pulse"></div>
+                  <span className="text-xs font-medium text-primary-700 dark:text-primary-300 sm:text-sm">Research Projects</span>
                 </div>
-                <div className="flex items-center space-x-2 rounded-full bg-purple-100 px-3 py-2 sm:px-4 dark:bg-purple-900/50">
-                  <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-                  <span className="text-xs font-medium text-purple-700 dark:text-purple-300 sm:text-sm">Publications</span>
+                <div className="btn-glass flex items-center space-x-2 hover-lift">
+                  <div className="h-2 w-2 rounded-full bg-secondary-500 animate-pulse"></div>
+                  <span className="text-xs font-medium text-secondary-700 dark:text-secondary-300 sm:text-sm">Publications</span>
                 </div>
-                <div className="flex items-center space-x-2 rounded-full bg-pink-100 px-3 py-2 sm:px-4 dark:bg-pink-900/50">
-                  <div className="h-2 w-2 rounded-full bg-pink-500"></div>
-                  <span className="text-xs font-medium text-pink-700 dark:text-pink-300 sm:text-sm">Web Development</span>
+                <div className="btn-glass flex items-center space-x-2 hover-lift">
+                  <div className="h-2 w-2 rounded-full bg-accent-500 animate-pulse"></div>
+                  <span className="text-xs font-medium text-accent-700 dark:text-accent-300 sm:text-sm">Web Development</span>
                 </div>
               </div>
             </div>
