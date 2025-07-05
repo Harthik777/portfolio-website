@@ -120,7 +120,7 @@ export default function Resume() {
                           Student Intern (Team Lead)
                         </h4>
                         <span className="mt-1 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-                          05/2025 - Present
+                          07/2025 - Present
                         </span>
                       </div>
                       <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
