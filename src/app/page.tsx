@@ -159,7 +159,7 @@ function WhatIDoSection() {
               Exploring Machine Learning, Deep Learning, LLMs, and Agentic AI
             </p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
-              {['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn'].map((tech) => (
+              {['Python', 'Scikit-learn'].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200 dark:border-gray-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-700 transition-colors"
