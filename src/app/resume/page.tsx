@@ -15,17 +15,7 @@ export default function Resume() {
     setIsViewing(false);
   };
 
-  const handleDownload = () => {
-    // Direct download approach for mobile
-    const url = '/Harthik_Resume.pdf';
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener noreferrer');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white via-indigo-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-900">
@@ -43,7 +33,7 @@ export default function Resume() {
                 Resume
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                View or download my latest resume below. For more details about my 
+                View my latest resume below. For more details about my 
                 <span className="font-semibold text-indigo-600 dark:text-indigo-400"> experience</span>, 
                 <span className="font-semibold text-purple-600 dark:text-purple-400"> skills</span>, and 
                 <span className="font-semibold text-pink-600 dark:text-pink-400"> projects</span>, feel free to explore the rest of this portfolio or{' '}
@@ -69,7 +59,7 @@ export default function Resume() {
                   <span className="text-xs font-medium text-pink-700 dark:text-pink-300 sm:text-sm">Achievements</span>
                 </div>
               </div>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <div className="mt-8 flex justify-center">
                 <button
                   onClick={handleView}
                   disabled={isViewing}
@@ -80,14 +70,6 @@ export default function Resume() {
                     {isViewing ? 'Opening...' : 'View Resume (PDF)'}
                   </span>
                 </button>
-                <a
-                  href="/Harthik_Resume.pdf"
-                  download="Harthik_Resume.pdf"
-                  className="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-red-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <span className="relative z-10">Download Resume (PDF)</span>
-                </a>
               </div>
             </div>
         
