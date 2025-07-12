@@ -23,7 +23,7 @@ export default function Resume() {
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             {/* Enhanced Header Section */}
-            <div className="card mx-auto max-w-4xl animate-fade-in-up border border-indigo-100 bg-white/80 p-12 text-center shadow-2xl dark:border-indigo-900 dark:bg-gray-900/80">
+            <div className="card-interactive-premium mx-auto max-w-4xl animate-fade-in-scale p-12 text-center">
               <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-600">
                 <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -74,7 +74,7 @@ export default function Resume() {
             </div>
         
             {/* Experience Section */}
-            <div className="card mx-auto mt-16 animate-fade-in-up border border-indigo-100 bg-white/80 p-8 shadow-xl dark:border-indigo-900 dark:bg-gray-900/80">
+            <div className="card-interactive-premium mx-auto mt-16 animate-fade-in-scale p-8">
               <h3 className="gradient-text mb-8 text-2xl font-bold tracking-tight sm:text-3xl">
                 Experience
               </h3>
@@ -146,7 +146,7 @@ export default function Resume() {
             </div>
 
             {/* Certifications Section */}
-            <div className="card mx-auto mt-16 animate-fade-in-up border border-indigo-100 bg-white/80 p-8 shadow-xl dark:border-indigo-900 dark:bg-gray-900/80">
+            <div className="card-interactive-premium mx-auto mt-16 animate-fade-in-scale p-8">
               <h3 className="gradient-text mb-8 text-2xl font-bold tracking-tight sm:text-3xl">
                 Certifications
               </h3>

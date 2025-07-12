@@ -148,48 +148,54 @@ function WhatIDoSection() {
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* AI & Machine Learning */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-500 hover:shadow-xl transition-all duration-300 shadow-lg">
-            <div className="flex items-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg">
-                <span className="text-xl sm:text-2xl">🤖</span>
+          <div className="card-interactive-premium group relative overflow-hidden rounded-3xl border border-indigo-200 bg-white/90 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl dark:border-indigo-800 dark:bg-gray-800/90">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="relative">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg hover-lift">
+                  <span className="text-xl sm:text-2xl">🤖</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">AI & Machine Learning</h3>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">AI & Machine Learning</h3>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
-              Exploring Machine Learning, Deep Learning, LLMs, and Agentic AI
-            </p>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              {['Python', 'Scikit-learn'].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200 dark:border-gray-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-200 dark:hover:border-purple-700 transition-colors"
-                >
-                  {tech}
-                </span>
-              ))}
+              <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
+                Exploring Machine Learning, Deep Learning, LLMs, and Agentic AI
+              </p>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {['Python', 'Scikit-learn'].map((tech) => (
+                  <span
+                    key={tech}
+                    className="btn-glass px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium hover-lift"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Data Science */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl transition-all duration-300 shadow-lg">
-            <div className="flex items-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg">
-                <span className="text-xl sm:text-2xl">📊</span>
+          <div className="card-interactive-premium group relative overflow-hidden rounded-3xl border border-purple-200 bg-white/90 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl dark:border-purple-800 dark:bg-gray-800/90">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-indigo-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="relative">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg hover-lift">
+                  <span className="text-xl sm:text-2xl">📊</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Data Science</h3>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Data Science</h3>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
-              Data analysis, visualization, and statistical modeling
-            </p>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              {['Pandas', 'NumPy', 'Matplotlib', 'Jupyter'].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium border border-gray-200 dark:border-gray-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-700 transition-colors"
-                >
-                  {tech}
-                </span>
-              ))}
+              <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg">
+                Data analysis, visualization, and statistical modeling
+              </p>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {['Pandas', 'NumPy', 'Matplotlib', 'Jupyter'].map((tech) => (
+                  <span
+                    key={tech}
+                    className="btn-glass px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium hover-lift"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
