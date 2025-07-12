@@ -77,7 +77,7 @@ const projects = [
     title:
       'A Machine Learning Framework for Data-Scarce Regression using SMOGN with Joint Hyperparameter Optimization: A Case Study with Cricket Performance Prediction',
     description:
-      'Manuscript Draft Completed, Submitted for Review (IEEE TENCON 2025). This research focuses on applying SMOGN for data augmentation in regression tasks within data-scarce sports analytics, specifically cricket performance prediction, to enhance model accuracy and reliability.',
+      'Manuscript Draft Completed, Submitted for Review. This research focuses on applying SMOGN for data augmentation in regression tasks within data-scarce sports analytics, specifically cricket performance prediction, to enhance model accuracy and reliability.',
     tags: [
       'Publication',
       'SMOGN',

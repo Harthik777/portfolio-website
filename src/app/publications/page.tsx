@@ -5,7 +5,7 @@ const publications = [
     title:
       'A Machine Learning Framework for Data-Scarce Regression using SMOGN with Joint Hyperparameter Optimization: A Case Study with Cricket Performance Prediction',
     description:
-      'Manuscript Draft Completed, Submitted for Review (IEEE TENCON 2025). This work presents a validated ML framework using SMOGN for regression in cricket performance prediction. See the main project for more details.',
+      'Manuscript Draft Completed, Submitted for Review. This work presents a validated ML framework using SMOGN for regression in cricket performance prediction. See the main project for more details.',
     status: 'Pending Review',
     link: '/SMOGN_Cricket_Analytics_Research_Paper.pdf',
     date: '10/2024 - 05/2025',
