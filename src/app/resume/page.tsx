@@ -110,7 +110,7 @@ export default function Resume() {
                       </p>
                       <div className="mt-3 space-y-2">
                         <p className="text-gray-600 dark:text-gray-300">
-                          <strong>Research Project:</strong> XFIA 2.0 - Explainable AI for Fraud Detection with LLM-Enhanced Interpretability
+                          <strong>Research Project:</strong> Explainable AI for Fraud Detection with LLM-Enhanced Interpretability
                         </p>
                         <ul className="list-disc space-y-1 pl-5 text-sm text-gray-600 dark:text-gray-300">
                           <li>Leading a 4-member research team developing an Agentic AI system for interpretable SHAP explanations in financial fraud detection</li>
