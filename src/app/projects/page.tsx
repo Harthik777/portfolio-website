@@ -1,32 +1,11 @@
 import Link from 'next/link';
 
 const projects = [
+
   {
-    title: 'MarketSense - Financial Market Sentiment Analysis Platform (Work in Progress)',
+    title: 'Agentic-XAI: AI-Powered Decision Support Platform',
     description:
-      'Production-grade AI-powered platform for financial market sentiment analysis using TensorFlow.js and real-time financial news from free RSS feeds. Features advanced sentiment analysis with ML models, batch processing capabilities, interactive market dashboard with Chart.js visualizations, and portfolio risk assessment. Built with React 18 + TypeScript, deployed on Vercel with zero API costs using RSS feeds from Yahoo Finance, MarketWatch, CNN Business, and Reuters.',
-    tags: [
-      'TypeScript', 
-      'TensorFlow.js',
-      'Financial Analysis',
-      'Sentiment Analysis',
-      'RSS Feeds',
-      'Chart.js',
-      'Tailwind CSS',
-      'Vite',
-      'Vercel',
-      'Machine Learning'
-    ],
-    link: 'https://project2-ten-iota.vercel.app/',
-    githubLink: 'https://github.com/Harthik777/Project2',
-    date: '07/2025 - Present',
-    status: 'Work in Progress - Financial AI Platform',
-    isResearch: false,
-  },
-  {
-    title: 'Agentic-XAI: Explainable Agentic AI Engine (In Progress)',
-    description:
-      'Architected and engineered a full-stack, interpretable AI platform leveraging Python, FastAPI, React, and TypeScript to solve the "black box" problem in AI decision-making. Developed a novel Explainable AI (XAI) engine to generate feature-importance attributions, step-by-step reasoning traces, and calibrated confidence scores for model outputs. Successfully deployed the production-ready application on Vercel, demonstrating expertise in both applied machine learning and end-to-end software development.',
+      'Architected and developed Agentic-XAI, a full-stack AI-powered decision support platform leveraging Python, FastAPI, React, and TypeScript, and integrating Google Gemini API to deliver structured recommendations, step-by-step reasoning, and dynamic confidence scores for business decisions. Focused on scalable REST API design, robust error handling, and prompt engineering to elicit interpretable outputs from LLMs, with a user-friendly frontend and production deployment on Render and Vercel. Demonstrated expertise in end-to-end software engineering, cloud deployment, explainable AI, and research-oriented system design, emphasizing reliability, explainability, and reproducibility in applied machine learning solutions.',
     tags: [
       'Explainable AI (XAI)',
       'Applied Machine Learning',
@@ -105,6 +84,28 @@ const projects = [
     link: 'https://portfolio-website1-harthik-s-projects.vercel.app/', // Link to the live portfolio
     githubLink: 'https://github.com/Harthik777/portfolio-website', // Link to the GitHub repo
     date: '05/2025', // Adjust date as per your development timeline
+  },
+  {
+    title: 'MarketSense - Financial Market Sentiment Analysis Platform (Work in Progress)',
+    description:
+      'Production-grade AI-powered platform for financial market sentiment analysis using TensorFlow.js and real-time financial news from free RSS feeds. Features advanced sentiment analysis with ML models, batch processing capabilities, interactive market dashboard with Chart.js visualizations, and portfolio risk assessment. Built with React 18 + TypeScript, deployed on Vercel with zero API costs using RSS feeds from Yahoo Finance, MarketWatch, CNN Business, and Reuters.',
+    tags: [
+      'TypeScript', 
+      'TensorFlow.js',
+      'Financial Analysis',
+      'Sentiment Analysis',
+      'RSS Feeds',
+      'Chart.js',
+      'Tailwind CSS',
+      'Vite',
+      'Vercel',
+      'Machine Learning'
+    ],
+    link: 'https://project2-ten-iota.vercel.app/',
+    githubLink: 'https://github.com/Harthik777/Project2',
+    date: '07/2025 - Present',
+    status: 'Work in Progress - Financial AI Platform',
+    isResearch: false,
   },
   {
     title: 'Explainable AI for Fraud Detection with LLM-Enhanced Interpretability',
