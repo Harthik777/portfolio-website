@@ -3,6 +3,15 @@ import Link from 'next/link';
 const publications = [
   {
     title:
+      'Performance Degradation of Machine Learning Models Under Market Volatility: An Inter-Day Stock Trend Comparison',
+    description:
+      'Investigated the performance degradation of machine learning models for stock trend prediction during periods of high market volatility, using inter-day data from 2015-2024. Evaluated and compared the performance of Long Short-Term Memory (LSTM), Dense Neural Networks (DNN), and Gradient Boosting Classifiers (GBC) on both stable and volatile stocks.',
+    status: 'Manuscript Completed and Submitted for Review at IEEE INDICON 2025',
+    link: 'https://drive.google.com/file/d/1PFSfZOt-o_5JtD59ij36Xl4SRr8nbL_6/view?usp=sharing',
+    date: '05/2025 - 08/2025',
+  },
+  {
+    title:
       'A Machine Learning Framework for Data-Scarce Regression using SMOGN with Joint Hyperparameter Optimization: A Case Study with Cricket Performance Prediction',
     description:
       'Manuscript Draft Completed, Submitted for Review. This work presents a validated ML framework using SMOGN for regression in cricket performance prediction. See the main project for more details.',

@@ -92,53 +92,20 @@ export default function Resume() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L7 12.5l2.091 2.091a2.25 2.25 0 01.659 1.591v5.714M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
                         />
                       </svg>
                     </div>
-                    <div className="ml-4 flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                          Student Intern (Team Lead)
-                        </h4>
-                        <span className="mt-1 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-                          07/2025 - Present
-                        </span>
-                      </div>
-                      <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
-                        IEEE Computer Society Bangalore Chapter
+                    <div className="ml-4">
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        Coming Soon
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                        -
                       </p>
-                      <div className="mt-3 space-y-2">
-                        <p className="text-gray-600 dark:text-gray-300">
-                          <strong>Research Project:</strong> Explainable AI for Fraud Detection with LLM-Enhanced Interpretability
-                        </p>
-                        <ul className="list-disc space-y-1 pl-5 text-sm text-gray-600 dark:text-gray-300">
-                          <li>Leading a 4-member research team developing an Agentic AI system for interpretable SHAP explanations in financial fraud detection</li>
-                          <li>Architecting and implementing a novel self-refinement loop using Langchain and lightweight LLMs (Ollama/Gemini API) to enhance clarity and accessibility of XAI summaries</li>
-                          <li>Driving development of high-performance fraud detection models (LightGBM/XGBoost) on IEEE-CIS dataset, conducting deep XAI analysis with SHAP, and spearheading research paper publication</li>
-                          <li>Engineering prompts and orchestrating LLM workflows for automated generation, critique, and refinement of natural language explanations from complex SHAP data</li>
-                        </ul>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
-                            Python
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-200">
-                            LightGBM/XGBoost
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-purple-900/50 dark:text-purple-200">
-                            SHAP/XAI
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-medium text-pink-800 dark:bg-pink-900/50 dark:text-pink-200">
-                            Langchain
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-200">
-                            Ollama/Gemini API
-                          </span>
-                          <span className="inline-flex items-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-200">
-                            Research Leadership
-                          </span>
-                        </div>
-                      </div>
+                      <p className="mt-2 text-gray-600 dark:text-gray-300">
+                        Experience entries will be added here.
+                      </p>
                     </div>
                   </div>
                 </div>
