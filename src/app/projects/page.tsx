@@ -33,15 +33,14 @@ const projects = [
       'CodeCarbon',
       'Explainable AI',
       'SHAP',
-      'LIME',
+      
       'Random Forest',
       'XGBoost',
-      'LSTM',
+      
       'Python',
       'Environmental ML',
       'Carbon Tracking',
     ],
-    githubLink: 'https://github.com/Harthik777/SustainAI',
     date: '10/2025',
   },
   {
