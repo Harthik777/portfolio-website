@@ -44,6 +44,28 @@ const projects = [
     date: '10/2025',
   },
   {
+    title: 'Explainable Radiomics-Based Machine Learning Framework for Multi-Class Cerebrovascular CT Lesion Classification',
+    description:
+      'Developing a comprehensive radiomics-based machine learning framework for multi-class classification of cerebrovascular lesions from CT scans using the Kaggle cerebrovascular dataset (~10K images, 10 classes). Engineered a novel radiomics feature extraction pipeline combining HOG (edge/shape), LBP (local texture), GLCM (co-occurrence), Haralick descriptors (statistical), and Gabor filters (frequency-based). Benchmarking 10+ ML algorithms including Random Forest, XGBoost, SVM, and Bayesian Networks with comprehensive evaluation metrics (Macro-F1, Balanced Accuracy). Implementing SHAP-based explainability to identify clinically meaningful features, calibration analysis (ECE, Temperature Scaling), and robustness testing with perturbed images. Focus on deployability (CPU inference), reliability, and interpretability for clinical decision support. Target publication: IEEE conference proceedings.',
+    tags: [
+      'Medical AI',
+      'Radiomics',
+      'CT Imaging',
+      'Feature Engineering',
+      'Random Forest',
+      'XGBoost',
+      'SHAP',
+      'Explainable AI',
+      'Bayesian Networks',
+      'Model Calibration',
+      'Healthcare ML',
+      'Research',
+    ],
+    date: '10/2025 - Present',
+    status: 'Ongoing Research - Targeting IEEE Publication',
+    isResearch: true,
+  },
+  {
     title: 'Agentic-XAI: AI-Powered Decision Support Platform',
     description:
       'Architected and developed Agentic-XAI, a full-stack AI-powered decision support platform leveraging Python, FastAPI, React, and TypeScript, and integrating Google Gemini API to deliver structured recommendations, step-by-step reasoning, and dynamic confidence scores for business decisions. Focused on scalable REST API design, robust error handling, and prompt engineering to elicit interpretable outputs from LLMs, with a user-friendly frontend and production deployment on Render and Vercel. Demonstrated expertise in end-to-end software engineering, cloud deployment, explainable AI, and research-oriented system design, emphasizing reliability, explainability, and reproducibility in applied machine learning solutions.',
