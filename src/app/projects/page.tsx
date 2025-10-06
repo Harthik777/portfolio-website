@@ -33,15 +33,13 @@ const projects = [
       'CodeCarbon',
       'Explainable AI',
       'SHAP',
-      
       'Random Forest',
-      'XGBoost',
-      
+      'XGBoost',   
       'Python',
       'Environmental ML',
       'Carbon Tracking',
     ],
-    date: '10/2025',
+    date: '08/2025 - Present',
   },
   {
     title: 'Explainable Radiomics-Based Machine Learning Framework for Multi-Class Cerebrovascular CT Lesion Classification',
