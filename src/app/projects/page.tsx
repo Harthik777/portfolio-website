@@ -168,7 +168,7 @@ const projects = [
     date: '05/2025', // Adjust date as per your development timeline
   },
   {
-    title: 'MarketSense - Financial Market Sentiment Analysis Platform (Work in Progress)',
+    title: 'MarketSense - Financial Market Sentiment Analysis Platform',
     description:
       'Production-grade AI-powered platform for financial market sentiment analysis using TensorFlow.js and real-time financial news from free RSS feeds. Features advanced sentiment analysis with ML models, batch processing capabilities, interactive market dashboard with Chart.js visualizations, and portfolio risk assessment. Built with React 18 + TypeScript, deployed on Vercel with zero API costs using RSS feeds from Yahoo Finance, MarketWatch, CNN Business, and Reuters.',
     tags: [
