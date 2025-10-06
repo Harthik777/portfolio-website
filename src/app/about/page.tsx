@@ -92,9 +92,6 @@ export default function About() {
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         First Author - IEEE TENCON 2025
                       </h4>
-                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        05/2025
-                      </p>
                       <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                         First author on publication accepted at IEEE TENCON 2025, the flagship conference of IEEE Region 10 (Asia Pacific), for research on Machine Learning Framework for Data-Scarce Regression using SMOGN.
                       </p>
@@ -108,9 +105,6 @@ export default function About() {
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         RoboRun Competition & TechTatva Selection
                       </h4>
-                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        09/2024 - 10/2024
-                      </p>
                       <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                         Won MAHE Bengaluru's university-wide 'RoboRun' competition and selected for MIT Bengaluru's official TechTatva team.
                       </p>
@@ -124,9 +118,6 @@ export default function About() {
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         MaRRS International Spelling Bee
                       </h4>
-                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        05/2015
-                      </p>
                       <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                         Finalist in the international competition held in Abu Dhabi, UAE.
                       </p>
