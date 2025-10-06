@@ -108,25 +108,7 @@ const projects = [
     status: 'Work in Progress - Financial AI Platform',
     isResearch: false,
   },
-  {
-    title: 'Explainable AI for Fraud Detection with LLM-Enhanced Interpretability',
-    description:
-      'Leading a 4-member research team at IEEE Computer Society Bangalore Chapter developing an innovative Agentic AI system for interpretable SHAP explanations in financial fraud detection. Architecting a novel self-refinement loop using Langchain and lightweight LLMs (Ollama/Gemini API) to enhance clarity and accessibility of XAI summaries. Driving development of high-performance fraud detection models on IEEE-CIS dataset with deep XAI analysis using SHAP, targeting research paper publication.',
-    tags: [
-      'Research Leadership',
-      'Explainable AI',
-      'LightGBM/XGBoost', 
-      'SHAP',
-      'Langchain',
-      'LLMs',
-      'Fraud Detection',
-      'Python'
-    ],
-    link: null, // Research in progress    date: '06/2025 - Present',
-    status: 'In Progress - IEEE Computer Society Bangalore Chapter',
-    isResearch: true,
-    date: '07/2025 - Present',
-  },
+
 ];
 
 export default function Projects() {
