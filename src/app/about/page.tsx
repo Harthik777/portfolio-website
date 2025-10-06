@@ -86,6 +86,22 @@ export default function About() {
                   <div className="space-y-6">
                     <div className="rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 p-4 dark:from-purple-900/20 dark:to-pink-900/20">
                       <div className="mb-2 flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                        <span className="text-xs font-semibold text-green-600 dark:text-green-400">ACCEPTED</span>
+                      </div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                        First Author - IEEE TENCON 2025
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                        05/2025
+                      </p>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                        First author on publication accepted at IEEE TENCON 2025, the flagship conference of IEEE Region 10 (Asia Pacific), for research on Machine Learning Framework for Data-Scarce Regression using SMOGN.
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 p-4 dark:from-purple-900/20 dark:to-pink-900/20">
+                      <div className="mb-2 flex items-center gap-2">
                         <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
                         <span className="text-xs font-semibold text-yellow-600 dark:text-yellow-400">1ST PLACE</span>
                       </div>
