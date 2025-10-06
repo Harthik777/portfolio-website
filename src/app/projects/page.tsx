@@ -82,6 +82,25 @@ const projects = [
     link: 'https://agentic-xai-harthik-s-projects.vercel.app/',
     githubLink: 'https://github.com/Harthik777/Agentic-XAI',
     date: '06/2025 - Present',
+    status: 'Work in Progress',
+  },
+  {
+    title: 'End-to-End Medical DevOps Pipeline',
+    description:
+      'Built a complete, end-to-end data pipeline to ingest and process a large medical imaging dataset (>10,000 CT scans). The system is containerized with Docker and designed for scalability using a master-slave architecture with Apache Spark. The pipeline automates the workflow from ingestion (Python/SQLAlchemy) and storage (PostgreSQL) to distributed processing (PySpark).',
+    tags: [
+      'Python',
+      'Docker',
+      'PostgreSQL',
+      'Apache Spark',
+      'PySpark',
+      'Data Engineering',
+      'DevOps',
+      'MLOps',
+      'ETL',
+    ],
+    githubLink: 'https://github.com/Harthik777/Medical-Devops-Project',
+    date: '09/2025 - Present',
   },
   {
     title: 'Predictive Modelling & Data Augmentation for Cricket Analytics',
