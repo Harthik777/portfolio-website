@@ -139,10 +139,22 @@ export default function About() {
                         <span className="text-xs font-semibold text-green-600 dark:text-green-400">CURRENT</span>
                       </div>
                       <h4 className="font-semibold text-gray-900 dark:text-white">
+                        IEEE Student Branch Vice-Chair
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                        09/2025 - Present
+                      </p>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                        Leading a student branch comprising 11 IEEE technical societies, organizing interdisciplinary events and fostering collaboration among diverse technical chapters.
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg bg-gradient-to-r from-pink-50 to-indigo-50 p-4 dark:from-pink-900/20 dark:to-indigo-900/20">
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
                         IEEE Student Branch Executive
                       </h4>
                       <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        01/2025 - Present
+                        01/2025 - 08/2025
                       </p>
                       <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                         Leading IEEE Student Branch activities and serving as liaison with IEEE CS Society.
@@ -150,15 +162,11 @@ export default function About() {
                     </div>
 
                     <div className="rounded-lg bg-gradient-to-r from-pink-50 to-indigo-50 p-4 dark:from-pink-900/20 dark:to-indigo-900/20">
-                      <div className="mb-2 flex items-center gap-2">
-                        <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                        <span className="text-xs font-semibold text-green-600 dark:text-green-400">CURRENT</span>
-                      </div>
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         Radar Robotics Club - Outreach Head
                       </h4>
                       <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                        10/2024 - Present
+                        10/2024 - 08/2025
                       </p>
                       <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                         Leading 5-person outreach team, securing partnerships and organizing industry visits.
