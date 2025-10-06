@@ -1,7 +1,28 @@
 import Link from 'next/link';
 
 const projects = [
-
+  {
+    title: 'Smart Document Summarizer & Q&A Assistant',
+    description:
+      'Built an advanced NLP-powered application using Transformers (BART, T5) for multi-model document summarization and question-answering with DistilBERT and RoBERTa. Implemented semantic retrieval using BM25 and sentence embeddings, keyword extraction with KeyBERT, and explainable AI using LIME. Features include two-pass summarization for long documents, ROUGE evaluation metrics, wordcloud visualization, and an interactive Gradio interface. Supports PDF and text file processing with optimized CPU inference for production deployment.',
+    tags: [
+      'NLP',
+      'Transformers',
+      'BART',
+      'T5',
+      'Question Answering',
+      'Gradio',
+      'PyTorch',
+      'Sentence Transformers',
+      'KeyBERT',
+      'LIME',
+      'Explainable AI',
+      'ROUGE',
+      'Python',
+    ],
+    githubLink: 'https://github.com/Harthik777/Smart-Document-QA',
+    date: '10/2025 - Present',
+  },
   {
     title: 'Agentic-XAI: AI-Powered Decision Support Platform',
     description:
