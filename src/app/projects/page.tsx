@@ -223,10 +223,6 @@ export default function Projects() {
                   <div className="h-2 w-2 rounded-full bg-secondary-500 animate-pulse"></div>
                   <span className="text-xs font-medium text-secondary-700 dark:text-secondary-300 sm:text-sm">Publications</span>
                 </div>
-                <div className="btn-glass flex items-center space-x-2 hover-lift">
-                  <div className="h-2 w-2 rounded-full bg-accent-500 animate-pulse"></div>
-                  <span className="text-xs font-medium text-accent-700 dark:text-accent-300 sm:text-sm">Web Development</span>
-                </div>
               </div>
             </div>
             
