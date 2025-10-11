@@ -3,6 +3,15 @@ import Link from 'next/link';
 const publications = [
   {
     title:
+      'An Efficient and Explainable Transformer Framework for Unified Summarization and Question Answering',
+    description:
+      'Developed an explainable and resource-efficient transformer framework for unified text summarization and question answering. The system integrates lightweight models such as DistilBART, T5-Small, and MobileBERT, achieving competitive ROUGE and F1 scores with full CPU-only deployment. The framework embeds keyword and sentence-level explainability without external post-hoc computation.',
+    status: 'Manuscript Completed and Submitted for Review at IEEE NQComp-2026',
+    link: 'https://drive.google.com/file/d/19_4ARPEXtCYzC_FRoq6G-zHKPw_VSgbA/view?usp=sharing',
+    date: '06/2025 - 10/2025',
+  },
+  {
+    title:
       'Performance Degradation of Deep and Traditional Machine Learning Models Under Market Volatility: An Inter-Day Stock Trend Comparison',
     description:
       'Investigated the performance degradation of machine learning models for stock trend prediction during periods of high market volatility, using inter-day data from 2015-2024. Evaluated and compared the performance of Long Short-Term Memory (LSTM), Dense Neural Networks (DNN), and Gradient Boosting Classifiers (GBC) on both stable and volatile stocks.',
