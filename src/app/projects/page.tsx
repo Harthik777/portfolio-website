@@ -2,6 +2,30 @@ import Link from 'next/link';
 
 const projects = [
   {
+    title: 'Efficient and Explainable Transformer Framework for Unified Summarization and Question Answering',
+    description:
+      'This project presents a lightweight and explainable natural language processing (NLP) framework that performs text summarization and question answering entirely on CPU hardware, removing the need for GPUs or cloud-based computation. The system integrates compact transformer models such as DistilBART, T5-Small, DistilBERT, MobileBERT, and RoBERTa-Base, achieving competitive accuracy on benchmark datasets while maintaining low latency. To enhance transparency, the framework incorporates built-in explainability mechanisms using KeyBERT for keyword extraction and Sentence-BERT for similarity analysis, allowing users to visualize which parts of the input influenced model outputs without the computational cost of post-hoc explainers like SHAP or LIME.',
+    tags: [
+      'NLP',
+      'Transformers',
+      'DistilBART',
+      'T5-Small',
+      'MobileBERT',
+      'RoBERTa',
+      'Question Answering',
+      'Text Summarization',
+      'Explainable AI',
+      'KeyBERT',
+      'Sentence-BERT',
+      'CPU Inference',
+      'Research',
+      'Python',
+    ],
+    date: '06/2025 - 10/2025',
+    status: 'Research Project - Manuscript Submitted to IEEE NQComp-2026',
+    isResearch: true,
+  },
+  {
     title: 'Smart Document Summarizer & Q&A Assistant',
     description:
       'Built an advanced NLP-powered application using Transformers (BART, T5) for multi-model document summarization and question-answering with DistilBERT and RoBERTa. Implemented semantic retrieval using BM25 and sentence embeddings, keyword extraction with KeyBERT, and explainable AI using LIME. Features include two-pass summarization for long documents, ROUGE evaluation metrics, wordcloud visualization, and an interactive Gradio interface. Supports PDF and text file processing with optimized CPU inference for production deployment.',
