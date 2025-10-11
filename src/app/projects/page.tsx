@@ -21,9 +21,8 @@ const projects = [
       'Research',
       'Python',
     ],
-    date: '06/2025 - 10/2025',
+    date: '10/2025',
     status: 'Research Project - Manuscript Submitted to IEEE NQComp-2026',
-    isResearch: true,
   },
   {
     title: 'Smart Document Summarizer & Q&A Assistant',
