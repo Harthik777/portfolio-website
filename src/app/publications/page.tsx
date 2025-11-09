@@ -15,8 +15,8 @@ const publications = [
       'Performance Degradation of Deep and Traditional Machine Learning Models Under Market Volatility: An Inter-Day Stock Trend Comparison',
     description:
       'Investigated the performance degradation of machine learning models for stock trend prediction during periods of high market volatility, using inter-day data from 2015-2024. Evaluated and compared the performance of Long Short-Term Memory (LSTM), Dense Neural Networks (DNN), and Gradient Boosting Classifiers (GBC) on both stable and volatile stocks.',
-    status: 'Manuscript Completed and Submitted for Review at IEEE INDICON 2025 (the flagship IEEE India Council conference in India)',
-    link: 'https://drive.google.com/file/d/1mw-QaPrieLXO5A9ZV2_kUGL1c90ADquc/view?usp=sharing',
+    status: 'Accepted for Presentation at IEEE INDICON 2025 (the flagship IEEE India Council conference in India)',
+    link: 'https://drive.google.com/file/d/1R5XoQzxthCNheDpmSTBnC4iL0w0IJ7SX/view?usp=drive_link',
     date: '05/2025 - 08/2025',
   },
   {
