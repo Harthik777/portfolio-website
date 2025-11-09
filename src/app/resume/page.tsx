@@ -175,7 +175,7 @@ export default function Resume() {
                             </svg>
                           </div>
                           <p className="ml-2 text-sm text-gray-600 dark:text-gray-300">
-                            <span className="font-semibold text-yellow-600 dark:text-yellow-400">Status:</span> Manuscript completed and submitted for review at{' '}
+                            <span className="font-semibold text-yellow-600 dark:text-yellow-400">Status:</span> Accepted for Presentation at{' '}
                             <span className="font-semibold">IEEE INDICON 2025</span> (the flagship IEEE India Council conference in India)
                           </p>
                         </div>
