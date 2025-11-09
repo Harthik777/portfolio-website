@@ -63,6 +63,8 @@ const projects = [
       'Carbon Tracking',
     ],
     date: '08/2025 - Present',
+    status: 'Ongoing Research - Targeting IEEE Publication',
+    isResearch: true,
   },
   {
     title: 'Explainable Radiomics-Based Machine Learning Framework for Multi-Class Cerebrovascular CT Lesion Classification',
@@ -82,9 +84,7 @@ const projects = [
       'Healthcare ML',
       'Research',
     ],
-    date: '10/2025 - Present',
-    status: 'Ongoing Research - Targeting IEEE Publication',
-    isResearch: true,
+    date: '10/2025',
   },
   {
     title: 'Agentic-XAI: AI-Powered Decision Support Platform',
