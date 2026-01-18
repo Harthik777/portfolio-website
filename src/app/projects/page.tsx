@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'Efficient and Explainable Transformer Framework for Unified Summarization and Question Answering',
+    title: 'An Explainable and Resource-Efficient Transformer Framework for CPU-Based Document Summarisation and Question Answering',
     description:
       'This project presents a lightweight and explainable natural language processing (NLP) framework that performs text summarization and question answering entirely on CPU hardware, removing the need for GPUs or cloud-based computation. The system integrates compact transformer models such as DistilBART, T5-Small, DistilBERT, MobileBERT, and RoBERTa-Base, achieving competitive accuracy on benchmark datasets while maintaining low latency. To enhance transparency, the framework incorporates built-in explainability mechanisms using KeyBERT for keyword extraction and Sentence-BERT for similarity analysis, allowing users to visualize which parts of the input influenced model outputs without the computational cost of post-hoc explainers like SHAP or LIME.',
     tags: [
@@ -22,7 +22,7 @@ const projects = [
       'Python',
     ],
     date: '10/2025',
-    status: 'Research Project - Manuscript Submitted to IEEE NQComp-2026',
+    status: 'Research Project - Manuscript Submitted to IEEE TENSYMP 2026 (flagship conference of IEEE Region 10, Asia Pacific)',
   },
   {
     title: 'Smart Document Summarizer & Q&A Assistant',

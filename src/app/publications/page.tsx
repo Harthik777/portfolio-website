@@ -3,11 +3,11 @@ import Link from 'next/link';
 const publications = [
   {
     title:
-      'An Efficient and Explainable Transformer Framework for Unified Summarization and Question Answering',
+      'An Explainable and Resource-Efficient Transformer Framework for CPU-Based Document Summarisation and Question Answering',
     description:
       'Developed an explainable and resource-efficient transformer framework for unified text summarization and question answering. The system integrates lightweight models such as DistilBART, T5-Small, and MobileBERT, achieving competitive ROUGE and F1 scores with full CPU-only deployment. The framework embeds keyword and sentence-level explainability without external post-hoc computation.',
-    status: 'Manuscript Completed and Submitted for Review at IEEE NQComp-2026',
-    link: 'https://drive.google.com/file/d/19_4ARPEXtCYzC_FRoq6G-zHKPw_VSgbA/view?usp=sharing',
+    status: 'Manuscript Completed and Submitted for Review at IEEE TENSYMP 2026 (flagship conference of IEEE Region 10, Asia Pacific)',
+    link: 'https://drive.google.com/file/d/16tEXXsOtFA1LJhzXH829S8TMVv2sZaUy/view?usp=drive_link',
     date: '10/2025',
   },
   {
