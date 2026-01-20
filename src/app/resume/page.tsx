@@ -228,7 +228,7 @@ export default function Resume() {
                           </div>
                           <p className="ml-2 text-sm text-gray-600 dark:text-gray-300">
                             <span className="font-semibold text-yellow-600 dark:text-yellow-400">Status:</span> Manuscript completed and submitted for review at{' '}
-                            <span className="font-semibold">IEEE NQComp-2026</span>
+                            <span className="font-semibold">IEEE TENSYMP 2026</span>
                           </p>
                         </div>
                       </div>
