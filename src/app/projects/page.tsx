@@ -22,7 +22,7 @@ const projects = [
       'Python',
     ],
     date: '10/2025',
-    status: 'Research Project - Manuscript Submitted to IEEE TENSYMP 2026 (flagship conference of IEEE Region 10, Asia Pacific)',
+    status: 'Research Project - Accepted for Presentation at Second International Conference on Artificial Intelligence, Computation, Communication, and Network Security (AICCoNS 2026)',
   },
   {
     title: 'Smart Document Summarizer & Q&A Assistant',

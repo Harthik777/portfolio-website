@@ -3,12 +3,12 @@ import Link from 'next/link';
 const publications = [
   {
     title:
-      'An Explainable and Resource-Efficient Transformer Framework for CPU-Based Document Summarisation and Question Answering',
+      'An Explainable and Resource-Efficient Transformer Pipeline for CPU-Based Document Summarisation and Question Answering',
     description:
       'Developed an explainable and resource-efficient transformer framework for unified text summarization and question answering. The system integrates lightweight models such as DistilBART, T5-Small, and MobileBERT, achieving competitive ROUGE and F1 scores with full CPU-only deployment. The framework embeds keyword and sentence-level explainability without external post-hoc computation.',
-    status: 'Manuscript Completed and Submitted for Review at IEEE TENSYMP 2026 (flagship conference of IEEE Region 10, Asia Pacific)',
-    link: 'https://drive.google.com/file/d/16tEXXsOtFA1LJhzXH829S8TMVv2sZaUy/view?usp=drive_link',
-    date: '10/2025',
+    status: 'Accepted for Presentation at Second International Conference on Artificial Intelligence, Computation, Communication, and Network Security (AICCoNS 2026)',
+    link: 'https://drive.google.com/file/d/18sE4HxkUeFYuDJ9gtP4r69GMyL4hf2sh/view?usp=sharing',
+    date: '01/2026',
   },
   {
     title:
@@ -17,7 +17,7 @@ const publications = [
       'Investigated the performance degradation of machine learning models for stock trend prediction during periods of high market volatility, using inter-day data from 2015-2024. Evaluated and compared the performance of Long Short-Term Memory (LSTM), Dense Neural Networks (DNN), and Gradient Boosting Classifiers (GBC) on both stable and volatile stocks.',
     status: 'Accepted for Presentation at IEEE INDICON 2025 (the flagship IEEE India Council conference in India)',
     link: 'https://drive.google.com/file/d/1R5XoQzxthCNheDpmSTBnC4iL0w0IJ7SX/view?usp=drive_link',
-    date: '05/2025 - 08/2025',
+    date: '07/2025 - 08/2025',
   },
   {
     title:
@@ -26,7 +26,7 @@ const publications = [
       'First Author on publication accepted at IEEE TENCON 2025 (flagship conference of IEEE Region 10, Asia Pacific). Engineered a joint hyperparameter optimization framework in Python that integrates data augmentation (SMOGN) and model training, demonstrating a significant improvement over traditional sequential methods.',
     status: 'Accepted for Presentation at IEEE TENCON 2025 (flagship conference of IEEE Region 10, Asia Pacific)',
     link: '/SMOGN_Cricket_Analytics_Research_Paper.pdf',
-    date: '10/2024 - 05/2025',
+    date: '10/2024 - 06/2025',
   },
 ];
 
