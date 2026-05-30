@@ -10,8 +10,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-gray-200 bg-white px-4 py-6 dark:border-gray-800 dark:bg-gray-950 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-gray-600 dark:text-gray-400 md:flex-row md:items-center md:justify-between">
+    <footer className="mt-auto border-t border-slate-200 bg-slate-50 px-4 py-6 dark:border-slate-800 dark:bg-slate-950 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-600 dark:text-slate-400 md:flex-row md:items-center md:justify-between">
         <p>&copy; {currentYear} Harthik M V. All rights reserved.</p>
         <div className="flex flex-wrap gap-4">
           {links.map(link => (

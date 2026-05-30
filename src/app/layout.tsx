@@ -1,13 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import './tailwind-fixes.css'; // Import fixes for CSS directives
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import { MobileOptimizer } from '@/components/MobileOptimizer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -101,17 +99,13 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${inter.className} custom-scrollbar theme-transition flex min-h-screen flex-col bg-white font-sans antialiased dark:bg-gray-900`}
+        className={`${inter.className} flex min-h-screen flex-col font-sans antialiased`}
       >
         <ErrorBoundary>
           <ThemeProvider>
-            <MobileOptimizer />
             <div className="flex min-h-screen flex-col">
               <Navbar />
-              <main
-                className="safe-top flex-1 pt-16 sm:pt-20 xs:pt-18"
-                role="main"
-              >
+              <main className="flex-1 pt-16" role="main">
                 {children}
               </main>
               <Footer />

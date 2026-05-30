@@ -221,27 +221,39 @@ const projects: Project[] = [
   },
 ];
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  featured = false,
+}: {
+  project: Project;
+  featured?: boolean;
+}) {
   return (
-    <article className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-gray-800 dark:bg-gray-900 sm:p-6">
+    <article
+      className={`premium-card content-visibility-auto p-5 sm:p-6 ${
+        featured ? 'lg:p-7' : ''
+      }`}
+    >
       <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-md bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
           {project.type}
         </span>
         {project.status && (
-          <span className="rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
-            {project.status}
-          </span>
+          <span className="status-chip">{project.status}</span>
         )}
-        <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+        <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
           {project.date}
         </span>
       </div>
 
-      <h2 className="mt-4 text-xl font-bold leading-7 text-gray-950 dark:text-white">
+      <h2
+        className={`mt-4 font-semibold leading-tight text-slate-950 dark:text-white ${
+          featured ? 'text-2xl sm:text-3xl' : 'text-xl'
+        }`}
+      >
         {project.title}
       </h2>
-      <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
+      <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
         {project.summary}
       </p>
 
@@ -249,9 +261,9 @@ function ProjectCard({ project }: { project: Project }) {
         {project.highlights.map(highlight => (
           <li
             key={highlight}
-            className="flex gap-2 text-sm leading-6 text-gray-700 dark:text-gray-300"
+            className="flex gap-2 text-sm leading-6 text-slate-700 dark:text-slate-300"
           >
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500" />
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500 dark:bg-indigo-300" />
             <span>{highlight}</span>
           </li>
         ))}
@@ -259,10 +271,7 @@ function ProjectCard({ project }: { project: Project }) {
 
       <div className="mt-5 flex flex-wrap gap-2">
         {project.tags.slice(0, 6).map(tag => (
-          <span
-            key={tag}
-            className="rounded-md border border-gray-200 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300"
-          >
+          <span key={tag} className="soft-chip">
             {tag}
           </span>
         ))}
@@ -278,7 +287,7 @@ function ProjectCard({ project }: { project: Project }) {
               rel={
                 link.href.startsWith('http') ? 'noopener noreferrer' : undefined
               }
-              className="inline-flex min-h-10 items-center rounded-md border border-indigo-200 px-3 py-2 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50 dark:border-indigo-800 dark:text-indigo-300 dark:hover:bg-indigo-950/60"
+              className="premium-link"
             >
               {link.label}
             </Link>
@@ -290,27 +299,49 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Projects() {
+  const featuredProjects = projects.slice(0, 3);
+  const additionalProjects = projects.slice(3);
+
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-12 text-gray-950 dark:bg-gray-950 dark:text-white sm:px-6 sm:py-16 lg:px-8">
-      <section className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase text-indigo-700 dark:text-indigo-300">
-            Projects
-          </p>
-          <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
-            Research, AI systems, and applied data products
-          </h1>
-          <p className="mt-4 text-base leading-7 text-gray-600 dark:text-gray-300">
+    <div className="page-surface">
+      <section className="section-shell py-12 sm:py-16">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div>
+            <p className="eyebrow">Projects</p>
+            <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
+              Research, AI systems, and applied data products
+            </h1>
+          </div>
+          <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 lg:justify-self-end">
             A focused view of my strongest AI/ML, data science, research, and
             software engineering work. Each card highlights the purpose,
             strongest proof points, stack, and available links.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-2">
-          {projects.map(project => (
-            <ProjectCard key={project.title} project={project} />
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {featuredProjects.map((project, index) => (
+            <div
+              key={project.title}
+              className={index === 0 ? 'lg:col-span-2 lg:row-span-2' : ''}
+            >
+              <ProjectCard project={project} featured={index === 0} />
+            </div>
           ))}
+        </div>
+
+        <div className="mt-8">
+          <div className="flex items-center gap-4">
+            <h2 className="text-xl font-semibold text-slate-950 dark:text-white">
+              More work
+            </h2>
+            <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800" />
+          </div>
+          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+            {additionalProjects.map(project => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
         </div>
       </section>
     </div>

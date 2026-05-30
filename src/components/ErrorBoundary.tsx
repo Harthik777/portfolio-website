@@ -28,8 +28,8 @@ export class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-900">
-          <div className="mx-auto max-w-md text-center">
+        <div className="page-surface flex min-h-screen items-center justify-center px-4">
+          <div className="premium-panel mx-auto max-w-md p-8 text-center">
             <div className="mx-auto h-12 w-12 text-red-500">
               <svg
                 fill="none"
@@ -45,10 +45,10 @@ export class ErrorBoundary extends Component<Props, State> {
                 />
               </svg>
             </div>
-            <h1 className="mt-4 text-xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mt-4 text-xl font-semibold text-slate-950 dark:text-white">
               Something went wrong
             </h1>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
+            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
               We apologize for the inconvenience. Please try refreshing the
               page.
             </p>
@@ -58,7 +58,7 @@ export class ErrorBoundary extends Component<Props, State> {
                   window.location.reload();
                 }
               }}
-              className="mt-4 rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="premium-button mt-5"
             >
               Refresh Page
             </button>

@@ -1,146 +1,94 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { Moon, Sun, Monitor } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Monitor, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { motion, AnimatePresence } from 'framer-motion';
+
+const themes = [
+  { name: 'Light', value: 'light', icon: Sun },
+  { name: 'Dark', value: 'dark', icon: Moon },
+  { name: 'System', value: 'system', icon: Monitor },
+];
 
 export function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  // Prevent hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
+
+  const activeTheme = themes.find(item => item.value === theme) ?? themes[2];
+  const ActiveIcon = activeTheme.icon;
+
   if (!mounted) {
     return (
-      <div className="h-11 w-11 animate-pulse rounded-full bg-gray-200 dark:bg-gray-700" />
+      <div className="h-10 w-10 rounded-md border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900" />
     );
   }
 
-  const themes = [
-    { name: 'Light', value: 'light', icon: Sun },
-    { name: 'Dark', value: 'dark', icon: Moon },
-    { name: 'System', value: 'system', icon: Monitor },
-  ];
-
-  const currentTheme = themes.find(t => t.value === theme) || themes[2];
-  const CurrentIcon = currentTheme.icon;
-
   return (
     <div className="relative">
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => setShowDropdown(!showDropdown)}
-        className="relative flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-indigo-100 to-purple-100 shadow-lg backdrop-blur-sm transition-all duration-300 hover:from-indigo-200 hover:to-purple-200 hover:shadow-xl dark:border-gray-600/50 dark:from-gray-700 dark:to-gray-600 dark:hover:from-gray-600 dark:hover:to-gray-500 sm:h-10 sm:w-10"
-        aria-label={`Current theme: ${currentTheme.name}. Click to change theme`}
+      <button
+        type="button"
+        onClick={() => setOpen(value => !value)}
+        className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-700 transition duration-200 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900"
+        aria-label={`Theme: ${activeTheme.name}`}
+        aria-expanded={open}
       >
-        <motion.div
-          key={theme}
-          initial={{ rotate: -90, scale: 0 }}
-          animate={{ rotate: 0, scale: 1 }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="relative"
-        >
-          <CurrentIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-        </motion.div>
+        <ActiveIcon className="h-4 w-4" aria-hidden="true" />
+      </button>
 
-        {/* Indicator dot for system theme */}
-        {theme === 'system' && (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className="absolute -right-1 -top-1 h-3 w-3 rounded-full border-2 border-white bg-gradient-to-br from-green-400 to-emerald-500 shadow-sm dark:border-gray-800"
+      {open && (
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-40 cursor-default"
+            aria-label="Close theme menu"
+            onClick={() => setOpen(false)}
           />
-        )}
-      </motion.button>
+          <div className="absolute right-0 top-12 z-50 w-44 overflow-hidden rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-800 dark:bg-slate-950">
+            {themes.map(item => {
+              const Icon = item.icon;
+              const isActive = item.value === theme;
 
-      <AnimatePresence>
-        {showDropdown && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40"
-              onClick={() => setShowDropdown(false)}
-            />
-
-            {/* Dropdown */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: -10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -10 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="absolute right-0 top-12 z-50 w-48 overflow-hidden rounded-xl border border-gray-200/50 bg-white/95 shadow-2xl backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-800/95 sm:top-12 sm:w-48"
-            >
-              <div className="p-2">
-                {themes.map(themeOption => {
-                  const Icon = themeOption.icon;
-                  const isActive = theme === themeOption.value;
-                  const isCurrentResolved =
-                    resolvedTheme === themeOption.value ||
-                    (themeOption.value === 'system' && theme === 'system');
-
-                  return (
-                    <motion.button
-                      key={themeOption.value}
-                      whileHover={{ x: 4 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => {
-                        setTheme(themeOption.value);
-                        setShowDropdown(false);
-                      }}
-                      className={`flex w-full items-center gap-3 rounded-lg px-3 py-3 text-left transition-all duration-200 sm:py-2.5 ${
-                        isActive
-                          ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300'
-                          : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50'
-                      }`}
-                    >
-                      <div className="relative">
-                        <Icon
-                          className={`h-5 w-5 sm:h-4 sm:w-4 ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-500 dark:text-gray-400'}`}
-                        />
-                        {isCurrentResolved && theme === 'system' && (
-                          <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-green-500"
-                          />
-                        )}
-                      </div>
-                      <span className="text-base font-medium sm:text-sm">
-                        {themeOption.name}
-                      </span>
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeTheme"
-                          className="ml-auto h-2 w-2 rounded-full bg-indigo-500"
-                        />
-                      )}
-                    </motion.button>
-                  );
-                })}
-              </div>
-
-              {/* Current resolved theme indicator */}
-              <div className="border-t border-gray-200/50 bg-gray-50/50 px-3 py-2 dark:border-gray-700/50 dark:bg-gray-900/50">
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Currently:{' '}
-                  <span className="font-medium capitalize">
-                    {resolvedTheme}
-                  </span>
-                </p>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+              return (
+                <button
+                  key={item.value}
+                  type="button"
+                  onClick={() => {
+                    setTheme(item.value);
+                    setOpen(false);
+                  }}
+                  className={`flex min-h-10 w-full items-center gap-3 rounded-md px-3 text-sm font-medium transition duration-200 ${
+                    isActive
+                      ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300'
+                      : 'text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900'
+                  }`}
+                >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  <span>{item.name}</span>
+                </button>
+              );
+            })}
+            <div className="border-t border-slate-200 px-3 py-2 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
+              Active: {resolvedTheme}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -38,27 +38,25 @@ const quickLinks = [
 
 export default function Resume() {
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-12 text-gray-950 dark:bg-gray-950 dark:text-white sm:px-6 sm:py-16 lg:px-8">
-      <section className="mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:p-8">
-            <p className="text-sm font-semibold uppercase text-indigo-700 dark:text-indigo-300">
-              Resume
-            </p>
-            <h1 className="mt-3 text-3xl font-bold sm:text-4xl">
+    <div className="page-surface">
+      <section className="section-shell py-12 sm:py-16">
+        <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <aside className="premium-panel p-6 sm:p-8 lg:sticky lg:top-24">
+            <p className="eyebrow">Resume</p>
+            <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
               Research experience, publications, and project work
             </h1>
-            <p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
+            <p className="mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300">
               View my latest resume PDF, or use the quick links below to review
               the portfolio sections most relevant to AI/ML internships,
               research collaborations, and software projects.
             </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
               <a
                 href="/Harthik_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700"
+                className="premium-button"
               >
                 View Resume PDF
               </a>
@@ -66,40 +64,38 @@ export default function Resume() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-900 transition hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800"
+                  className="premium-button-secondary"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-          </div>
+          </aside>
 
           <div className="grid gap-4">
             {experiences.map(experience => (
               <article
                 key={experience.title}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:p-6"
+                className="premium-card p-5 sm:p-6"
               >
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h2 className="text-lg font-semibold text-gray-950 dark:text-white">
-                      {experience.role}
-                    </h2>
-                    <p className="mt-1 text-sm font-medium text-indigo-700 dark:text-indigo-300">
+                    <p className="text-sm font-medium text-indigo-700 dark:text-indigo-300">
                       {experience.organization}
                     </p>
+                    <h2 className="mt-2 text-xl font-semibold text-slate-950 dark:text-white">
+                      {experience.role}
+                    </h2>
                   </div>
-                  <span className="rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
-                    Accepted
-                  </span>
+                  <span className="status-chip w-fit">Accepted</span>
                 </div>
-                <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-4 text-xs font-medium uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                   Supervisor: {experience.supervisor}
                 </p>
-                <p className="mt-4 text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                <p className="mt-4 text-base font-semibold leading-7 text-slate-950 dark:text-white">
                   {experience.title}
                 </p>
-                <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {experience.outcome}
                 </p>
               </article>

@@ -1,30 +1,21 @@
-'use client';
-
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 18 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.4 },
-};
-
-const achievements = [
+const proofPoints = [
   {
-    label: 'IEEE TENCON 2025',
-    title: 'First Author',
+    label: 'First Author',
+    title: 'IEEE TENCON 2025',
     detail:
       'Accepted research on data-scarce regression using SMOGN and joint hyperparameter optimization.',
   },
   {
-    label: 'AICCoNS 2026',
-    title: 'Accepted Research',
+    label: 'Accepted Research',
+    title: 'AICCoNS 2026',
     detail:
       'Explainable transformer framework for CPU-based summarisation and question answering.',
   },
   {
-    label: 'IEEE Student Branch',
-    title: 'Vice-Chair',
+    label: 'Leadership',
+    title: 'IEEE Student Branch Vice-Chair',
     detail:
       'Leading a student branch with 11 IEEE technical societies and interdisciplinary events.',
   },
@@ -36,98 +27,81 @@ const featuredProjects = [
     summary:
       'CPU-optimized NLP application for summarization, question answering, semantic retrieval, explainability, and ROUGE evaluation.',
     tags: ['NLP', 'Transformers', 'Explainable AI', 'Python'],
-    href: '/projects',
   },
   {
     title: 'Agentic-XAI',
     summary:
       'Full-stack decision support platform using FastAPI, React, TypeScript, and Gemini API for structured recommendations.',
     tags: ['Agentic AI', 'FastAPI', 'React', 'Vercel'],
-    href: '/projects',
   },
   {
     title: 'SustainAI',
     summary:
       'Air quality prediction platform with model explainability and carbon footprint tracking using CodeCarbon.',
     tags: ['Sustainable AI', 'SHAP', 'CodeCarbon', 'Python'],
-    href: '/projects',
   },
+];
+
+const focusAreas = [
+  'Explainable AI and model interpretability',
+  'NLP systems for summarisation and question answering',
+  'Data-scarce regression and machine learning research',
+  'Full-stack AI products with reliable deployment',
 ];
 
 function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <motion.div initial="initial" animate="animate" className="max-w-3xl">
-          <motion.p
-            variants={fadeInUp}
-            className="text-sm font-semibold uppercase text-indigo-700 dark:text-indigo-300"
-          >
-            AI/ML Research Intern & Team Lead
-          </motion.p>
-          <motion.h1
-            variants={fadeInUp}
-            className="mt-4 text-4xl font-bold text-gray-950 dark:text-white sm:text-5xl lg:text-6xl"
-          >
-            Harthik M V
-          </motion.h1>
-          <motion.p
-            variants={fadeInUp}
-            className="mt-5 max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300 sm:text-lg"
-          >
-            AI/ML Engineer focused on explainable machine learning, NLP, data
-            science, and research-oriented systems. Currently pursuing B.Tech in
-            Computer Science (AI) at Manipal Institute of Technology (MIT)
-            Bengaluru.
-          </motion.p>
-          <motion.div
-            variants={fadeInUp}
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
-          >
-            <Link
-              href="/projects"
-              className="inline-flex min-h-11 items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              View Projects
-            </Link>
-            <Link
-              href="/resume"
-              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-900 transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800"
-            >
-              View Resume
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex min-h-11 items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50 dark:text-indigo-300 dark:hover:bg-indigo-950/50"
-            >
-              Contact
-            </Link>
-          </motion.div>
-        </motion.div>
+    <section className="section-shell grid min-h-[calc(100svh-4rem)] gap-8 py-12 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-20">
+      <div className="max-w-3xl">
+        <p className="eyebrow">AI/ML Research Intern & Team Lead</p>
+        <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.98] text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+          Harthik M V
+        </h1>
+        <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
+          AI/ML Engineer focused on explainable machine learning, NLP, data
+          science, and research-oriented systems. Currently pursuing B.Tech in
+          Computer Science (AI) at Manipal Institute of Technology (MIT)
+          Bengaluru.
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.1 }}
-          className="grid gap-3"
-        >
-          {achievements.map(item => (
-            <article
-              key={item.label}
-              className="rounded-lg border border-gray-200 bg-white/85 p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900/80"
-            >
-              <p className="text-xs font-semibold uppercase text-indigo-700 dark:text-indigo-300">
-                {item.label}
-              </p>
-              <h2 className="mt-2 text-lg font-semibold text-gray-950 dark:text-white">
-                {item.title}
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link href="/projects" className="premium-button">
+            View Projects
+          </Link>
+          <Link href="/resume" className="premium-button-secondary">
+            View Resume
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex min-h-11 items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50 dark:text-indigo-300 dark:hover:bg-indigo-950/50"
+          >
+            Contact
+          </Link>
+        </div>
+      </div>
+
+      <div className="premium-panel overflow-hidden">
+        <div className="border-b border-slate-200 bg-slate-950 p-5 text-white dark:border-slate-800">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-200">
+            Strongest Signals
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold">Research proof first</h2>
+        </div>
+        <div className="divide-y divide-slate-200 dark:divide-slate-800">
+          {proofPoints.map(item => (
+            <article key={item.title} className="p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <h3 className="text-lg font-semibold text-slate-950 dark:text-white">
+                  {item.title}
+                </h3>
+                <span className="status-chip w-fit">{item.label}</span>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 {item.detail}
               </p>
             </article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -135,43 +109,47 @@ function HeroSection() {
 
 function FeaturedProjectsSection() {
   return (
-    <section className="border-y border-gray-200 bg-white/80 px-4 py-14 dark:border-gray-800 dark:bg-gray-950/35 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-semibold uppercase text-indigo-700 dark:text-indigo-300">
-              Selected Work
-            </p>
-            <h2 className="mt-2 text-2xl font-bold text-gray-950 dark:text-white sm:text-3xl">
-              Research and applied AI projects
+    <section className="border-y border-slate-200 bg-white/75 py-12 dark:border-slate-800 dark:bg-slate-950/75 sm:py-16">
+      <div className="section-shell">
+        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div className="max-w-2xl">
+            <p className="eyebrow">Selected Work</p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white sm:text-4xl">
+              Applied AI with research-grade depth
             </h2>
           </div>
           <Link
             href="/projects"
-            className="text-sm font-semibold text-indigo-700 hover:text-indigo-900 dark:text-indigo-300 dark:hover:text-indigo-200"
+            className="w-fit text-sm font-semibold text-indigo-700 hover:text-indigo-900 dark:text-indigo-300 dark:hover:text-indigo-200"
           >
             Browse all projects
           </Link>
         </div>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
-          {featuredProjects.map(project => (
+          {featuredProjects.map((project, index) => (
             <article
               key={project.title}
-              className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
+              className={`premium-card p-5 sm:p-6 ${
+                index === 0 ? 'lg:col-span-2 lg:row-span-2 lg:p-8' : ''
+              }`}
             >
-              <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                Project
+              </p>
+              <h3
+                className={`mt-3 font-semibold text-slate-950 dark:text-white ${
+                  index === 0 ? 'text-2xl sm:text-3xl' : 'text-xl'
+                }`}
+              >
                 {project.title}
               </h3>
-              <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
+              <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 {project.summary}
               </p>
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {project.tags.map(tag => (
-                  <span
-                    key={tag}
-                    className="rounded-md border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700 dark:border-indigo-900 dark:bg-indigo-950/50 dark:text-indigo-300"
-                  >
+                  <span key={tag} className="soft-chip">
                     {tag}
                   </span>
                 ))}
@@ -185,34 +163,22 @@ function FeaturedProjectsSection() {
 }
 
 function FocusSection() {
-  const items = [
-    'Explainable AI and model interpretability',
-    'NLP systems for summarisation and question answering',
-    'Data-scarce regression and machine learning research',
-    'Full-stack AI products with reliable deployment',
-  ];
-
   return (
-    <section className="px-4 py-14 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div>
-          <p className="text-sm font-semibold uppercase text-indigo-700 dark:text-indigo-300">
-            Focus
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-gray-950 dark:text-white sm:text-3xl">
-            Built around research depth and practical systems
-          </h2>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {items.map(item => (
-            <div
-              key={item}
-              className="rounded-lg border border-gray-200 bg-white/85 p-4 text-sm font-medium text-gray-700 dark:border-gray-800 dark:bg-gray-900/80 dark:text-gray-200"
-            >
+    <section className="section-shell grid gap-8 py-12 sm:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div>
+        <p className="eyebrow">Focus</p>
+        <h2 className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white sm:text-4xl">
+          Clear, practical, research-led engineering
+        </h2>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {focusAreas.map(item => (
+          <div key={item} className="premium-panel-muted p-4">
+            <p className="text-sm font-medium leading-6 text-slate-700 dark:text-slate-200">
               {item}
-            </div>
-          ))}
-        </div>
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -220,20 +186,20 @@ function FocusSection() {
 
 function CTASection() {
   return (
-    <section className="px-4 pb-14 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-5 rounded-lg border border-gray-200 bg-gray-950 p-6 text-white shadow-sm dark:border-gray-800 sm:p-8 md:flex-row md:items-center md:justify-between">
+    <section className="section-shell pb-12 sm:pb-16">
+      <div className="rounded-lg bg-slate-950 p-6 text-white shadow-sm dark:bg-white dark:text-slate-950 sm:p-8 md:flex md:items-center md:justify-between md:gap-8">
         <div>
-          <h2 className="text-2xl font-bold">
+          <h2 className="text-2xl font-semibold">
             Open to internships and research collaborations
           </h2>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-300">
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 dark:text-slate-600">
             I am interested in AI/ML projects, data science work, research
             opportunities, and applied intelligent systems.
           </p>
         </div>
         <Link
           href="/contact"
-          className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-gray-950 transition hover:bg-gray-100"
+          className="mt-6 inline-flex min-h-11 shrink-0 items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-800 md:mt-0"
         >
           Get in Touch
         </Link>
@@ -244,7 +210,7 @@ function CTASection() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-white">
+    <div className="page-surface">
       <HeroSection />
       <FeaturedProjectsSection />
       <FocusSection />
