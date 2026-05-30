@@ -41,12 +41,14 @@ export default function Resume() {
     <div className="page-surface">
       <section className="section-shell py-12 sm:py-16">
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <aside className="premium-panel p-6 sm:p-8 lg:sticky lg:top-24">
-            <p className="eyebrow">Resume</p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
+          <aside className="brand-panel p-6 sm:p-8 lg:sticky lg:top-24">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
+              Resume
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Research experience, publications, and project work
             </h1>
-            <p className="mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300">
+            <p className="mt-5 text-sm leading-6 text-slate-300">
               View my latest resume PDF, or use the quick links below to review
               the portfolio sections most relevant to AI/ML internships,
               research collaborations, and software projects.
@@ -56,7 +58,7 @@ export default function Resume() {
                 href="/Harthik_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="premium-button"
+                className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
               >
                 View Resume PDF
               </a>
@@ -64,7 +66,7 @@ export default function Resume() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="premium-button-secondary"
+                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
                 >
                   {link.label}
                 </Link>
@@ -102,6 +104,7 @@ export default function Resume() {
             ))}
           </div>
         </div>
+        <div className="brand-divider mt-8" />
       </section>
     </div>
   );

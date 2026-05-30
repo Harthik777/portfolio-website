@@ -230,30 +230,44 @@ function ProjectCard({
 }) {
   return (
     <article
-      className={`premium-card content-visibility-auto p-5 sm:p-6 ${
-        featured ? 'lg:p-7' : ''
+      className={`content-visibility-auto p-5 sm:p-6 ${
+        featured ? 'brand-panel lg:p-7' : 'premium-card'
       }`}
     >
       <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-md bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+        <span
+          className={
+            featured
+              ? 'rounded-md border border-white/10 bg-white/10 px-2.5 py-1 text-xs font-semibold text-white'
+              : 'rounded-md bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300'
+          }
+        >
           {project.type}
         </span>
         {project.status && (
           <span className="status-chip">{project.status}</span>
         )}
-        <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+        <span
+          className={`text-xs font-medium ${
+            featured ? 'text-slate-300' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
           {project.date}
         </span>
       </div>
 
       <h2
-        className={`mt-4 font-semibold leading-tight text-slate-950 dark:text-white ${
+        className={`mt-4 font-semibold leading-tight ${
           featured ? 'text-2xl sm:text-3xl' : 'text-xl'
-        }`}
+        } ${featured ? 'text-white' : 'text-slate-950 dark:text-white'}`}
       >
         {project.title}
       </h2>
-      <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+      <p
+        className={`mt-3 text-sm leading-6 ${
+          featured ? 'text-slate-300' : 'text-slate-600 dark:text-slate-300'
+        }`}
+      >
         {project.summary}
       </p>
 
@@ -261,9 +275,15 @@ function ProjectCard({
         {project.highlights.map(highlight => (
           <li
             key={highlight}
-            className="flex gap-2 text-sm leading-6 text-slate-700 dark:text-slate-300"
+            className={`flex gap-2 text-sm leading-6 ${
+              featured ? 'text-slate-200' : 'text-slate-700 dark:text-slate-300'
+            }`}
           >
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500 dark:bg-indigo-300" />
+            <span
+              className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
+                featured ? 'bg-emerald-300' : 'bg-indigo-500 dark:bg-indigo-300'
+              }`}
+            />
             <span>{highlight}</span>
           </li>
         ))}
@@ -271,7 +291,14 @@ function ProjectCard({
 
       <div className="mt-5 flex flex-wrap gap-2">
         {project.tags.slice(0, 6).map(tag => (
-          <span key={tag} className="soft-chip">
+          <span
+            key={tag}
+            className={
+              featured
+                ? 'rounded-md border border-white/10 bg-white/10 px-2.5 py-1 text-xs font-medium text-white'
+                : 'soft-chip'
+            }
+          >
             {tag}
           </span>
         ))}
@@ -287,7 +314,11 @@ function ProjectCard({
               rel={
                 link.href.startsWith('http') ? 'noopener noreferrer' : undefined
               }
-              className="premium-link"
+              className={
+                featured
+                  ? 'inline-flex min-h-10 items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-100'
+                  : 'premium-link'
+              }
             >
               {link.label}
             </Link>
@@ -312,12 +343,27 @@ export default function Projects() {
               Research, AI systems, and applied data products
             </h1>
           </div>
-          <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 lg:justify-self-end">
-            A focused view of my strongest AI/ML, data science, research, and
-            software engineering work. Each card highlights the purpose,
-            strongest proof points, stack, and available links.
-          </p>
+          <div className="premium-panel p-5 lg:justify-self-end">
+            <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
+              A focused view of my strongest AI/ML, data science, research, and
+              software engineering work. Each card highlights the purpose,
+              strongest proof points, stack, and available links.
+            </p>
+            <div className="mt-5 grid grid-cols-3 gap-2 text-center">
+              {['Purpose', 'Proof', 'Links'].map(item => (
+                <div
+                  key={item}
+                  className="rounded-md border border-slate-200 bg-slate-50 px-2 py-3 dark:border-slate-800 dark:bg-slate-950"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+        <div className="brand-divider mt-8" />
 
         <div className="mt-10 grid gap-4 lg:grid-cols-3">
           {featuredProjects.map((project, index) => (

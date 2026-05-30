@@ -89,9 +89,12 @@ export function Navbar() {
         >
           <Link
             href="/"
-            className="rounded-md text-base font-bold text-slate-950 transition hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-white dark:hover:text-indigo-300 dark:focus:ring-offset-slate-950"
+            className="inline-flex items-center gap-2 rounded-md text-base font-bold text-slate-950 transition hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-white dark:hover:text-indigo-300 dark:focus:ring-offset-slate-950"
             aria-label="Harthik M V - Home"
           >
+            <span className="grid h-7 w-7 place-items-center rounded-md bg-slate-950 text-[0.65rem] font-semibold text-white dark:bg-white dark:text-slate-950">
+              HM
+            </span>
             Harthik M V
           </Link>
 
@@ -139,8 +142,11 @@ export function Navbar() {
               <Link
                 href="/"
                 onClick={closeMobileMenu}
-                className="font-bold text-slate-950 dark:text-white"
+                className="inline-flex items-center gap-2 font-bold text-slate-950 dark:text-white"
               >
+                <span className="grid h-7 w-7 place-items-center rounded-md bg-slate-950 text-[0.65rem] font-semibold text-white dark:bg-white dark:text-slate-950">
+                  HM
+                </span>
                 Harthik M V
               </Link>
               <button

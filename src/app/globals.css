@@ -51,17 +51,85 @@
 
 @layer components {
   .page-surface {
-    @apply min-h-screen bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-white;
+    @apply relative isolate min-h-screen overflow-hidden bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-white;
     background-image:
+      linear-gradient(
+        135deg,
+        rgba(79, 70, 229, 0.08) 0 1px,
+        transparent 1px 34px
+      ),
       linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
       linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
-    background-size: 44px 44px;
+    background-size:
+      34px 34px,
+      56px 56px,
+      56px 56px;
   }
 
   .dark .page-surface {
     background-image:
+      linear-gradient(
+        135deg,
+        rgba(129, 140, 248, 0.11) 0 1px,
+        transparent 1px 34px
+      ),
       linear-gradient(rgba(148, 163, 184, 0.075) 1px, transparent 1px),
       linear-gradient(90deg, rgba(148, 163, 184, 0.075) 1px, transparent 1px);
+  }
+
+  .page-surface::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    content: '';
+    background:
+      linear-gradient(
+        115deg,
+        transparent 0 42%,
+        rgba(14, 165, 233, 0.08) 42% 43%,
+        transparent 43% 100%
+      ),
+      linear-gradient(
+        145deg,
+        transparent 0 61%,
+        rgba(16, 185, 129, 0.08) 61% 62%,
+        transparent 62% 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.86),
+        rgba(248, 250, 252, 0.4) 40%,
+        rgba(248, 250, 252, 0.9)
+      );
+    mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 62%,
+      transparent 100%
+    );
+  }
+
+  .dark .page-surface::before {
+    background:
+      linear-gradient(
+        115deg,
+        transparent 0 42%,
+        rgba(56, 189, 248, 0.11) 42% 43%,
+        transparent 43% 100%
+      ),
+      linear-gradient(
+        145deg,
+        transparent 0 61%,
+        rgba(52, 211, 153, 0.1) 61% 62%,
+        transparent 62% 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(2, 6, 23, 0.65),
+        rgba(15, 23, 42, 0.25) 42%,
+        rgba(2, 6, 23, 0.8)
+      );
   }
 
   .section-shell {
@@ -69,15 +137,108 @@
   }
 
   .premium-panel {
-    @apply rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900;
+    @apply rounded-lg border border-slate-200 bg-white/95 shadow-sm dark:border-slate-800 dark:bg-slate-900/95;
   }
 
   .premium-panel-muted {
-    @apply rounded-lg border border-slate-200 bg-slate-100/70 dark:border-slate-800 dark:bg-slate-900/70;
+    @apply rounded-lg border border-slate-200 bg-white/70 dark:border-slate-800 dark:bg-slate-900/70;
   }
 
   .premium-card {
-    @apply rounded-lg border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-700;
+    @apply rounded-lg border border-slate-200 bg-white/95 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/95 dark:hover:border-slate-700;
+  }
+
+  .brand-panel {
+    @apply relative overflow-hidden rounded-lg border border-slate-800 bg-slate-950 text-white shadow-sm dark:border-slate-700;
+    background-image:
+      linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.18) 0 1px,
+        transparent 1px 26px
+      ),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size:
+      26px 26px,
+      52px 52px,
+      52px 52px;
+  }
+
+  .brand-panel::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: '';
+    background:
+      linear-gradient(
+        120deg,
+        transparent 0 50%,
+        rgba(20, 184, 166, 0.16) 50% 51%,
+        transparent 51% 100%
+      ),
+      linear-gradient(
+        150deg,
+        transparent 0 66%,
+        rgba(245, 158, 11, 0.14) 66% 67%,
+        transparent 67% 100%
+      );
+  }
+
+  .brand-panel > * {
+    @apply relative;
+  }
+
+  .signature-mark {
+    @apply relative grid aspect-square place-items-center overflow-hidden rounded-lg border border-white/15 bg-white/[0.06] text-white;
+    background-image:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  .signature-mark::before,
+  .signature-mark::after {
+    position: absolute;
+    inset: 18%;
+    content: '';
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .signature-mark::after {
+    inset: 32%;
+    border-color: rgba(52, 211, 153, 0.55);
+    transform: rotate(45deg);
+  }
+
+  .accent-panel {
+    @apply relative overflow-hidden rounded-lg border border-indigo-200 bg-indigo-950 text-white shadow-sm dark:border-indigo-900;
+    background-image:
+      linear-gradient(
+        135deg,
+        rgba(129, 140, 248, 0.2) 0 1px,
+        transparent 1px 30px
+      ),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+      linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size:
+      30px 30px,
+      60px 60px,
+      60px 60px;
+  }
+
+  .section-band {
+    @apply border-y border-slate-200 bg-white/80 dark:border-slate-800 dark:bg-slate-950/80;
+  }
+
+  .brand-divider {
+    @apply h-px w-full bg-slate-200 dark:bg-slate-800;
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(79, 70, 229, 0.65),
+      rgba(16, 185, 129, 0.55),
+      transparent
+    );
   }
 
   .eyebrow {
@@ -102,6 +263,10 @@
 
   .status-chip {
     @apply rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300;
+  }
+
+  .number-chip {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-md bg-slate-950 text-xs font-semibold text-white dark:bg-white dark:text-slate-950;
   }
 }
 

@@ -45,19 +45,45 @@ export default function About() {
           </div>
 
           <div className="grid gap-4">
-            {highlights.map(item => (
-              <article key={item.title} className="premium-card p-5 sm:p-6">
-                <p className="eyebrow">{item.label}</p>
-                <h2 className="mt-3 text-xl font-semibold text-slate-950 dark:text-white">
+            {highlights.map((item, index) => (
+              <article
+                key={item.title}
+                className={`p-5 sm:p-6 ${
+                  index === 1 ? 'brand-panel' : 'premium-card'
+                }`}
+              >
+                <p
+                  className={
+                    index === 1
+                      ? 'text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200'
+                      : 'eyebrow'
+                  }
+                >
+                  {item.label}
+                </p>
+                <h2
+                  className={`mt-3 text-xl font-semibold ${
+                    index === 1
+                      ? 'text-white'
+                      : 'text-slate-950 dark:text-white'
+                  }`}
+                >
                   {item.title}
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                <p
+                  className={`mt-3 text-sm leading-6 ${
+                    index === 1
+                      ? 'text-slate-300'
+                      : 'text-slate-600 dark:text-slate-300'
+                  }`}
+                >
                   {item.detail}
                 </p>
               </article>
             ))}
           </div>
         </div>
+        <div className="brand-divider mt-8" />
 
         <div className="mt-8 rounded-lg border border-slate-200 bg-slate-950 p-6 text-white dark:border-slate-800 dark:bg-white dark:text-slate-950 sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-200 dark:text-indigo-700">

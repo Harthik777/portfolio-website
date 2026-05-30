@@ -30,9 +30,10 @@ export default function Contact() {
             opportunities.
           </p>
         </div>
+        <div className="brand-divider mx-auto mt-8 max-w-4xl" />
 
         <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
-          {contactLinks.map(link => {
+          {contactLinks.map((link, index) => {
             const Icon = link.icon;
 
             return (
@@ -45,18 +46,44 @@ export default function Contact() {
                     ? 'noopener noreferrer'
                     : undefined
                 }
-                className="premium-card group p-6"
+                className={`group p-6 ${
+                  index === 0 ? 'brand-panel' : 'premium-card'
+                }`}
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-md bg-slate-950 text-white dark:bg-white dark:text-slate-950">
+                <div
+                  className={`flex h-11 w-11 items-center justify-center rounded-md ${
+                    index === 0
+                      ? 'border border-white/10 bg-white/10 text-white'
+                      : 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
+                  }`}
+                >
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <h2 className="mt-5 text-xl font-semibold text-slate-950 dark:text-white">
+                <h2
+                  className={`mt-5 text-xl font-semibold ${
+                    index === 0
+                      ? 'text-white'
+                      : 'text-slate-950 dark:text-white'
+                  }`}
+                >
                   {link.label}
                 </h2>
-                <p className="mt-2 break-words text-sm leading-6 text-slate-600 dark:text-slate-300">
+                <p
+                  className={`mt-2 break-words text-sm leading-6 ${
+                    index === 0
+                      ? 'text-slate-300'
+                      : 'text-slate-600 dark:text-slate-300'
+                  }`}
+                >
                   {link.detail}
                 </p>
-                <p className="mt-5 text-sm font-semibold text-indigo-700 group-hover:text-indigo-900 dark:text-indigo-300 dark:group-hover:text-indigo-200">
+                <p
+                  className={`mt-5 text-sm font-semibold ${
+                    index === 0
+                      ? 'text-emerald-200'
+                      : 'text-indigo-700 group-hover:text-indigo-900 dark:text-indigo-300 dark:group-hover:text-indigo-200'
+                  }`}
+                >
                   Open link
                 </p>
               </a>

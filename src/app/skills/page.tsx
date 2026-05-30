@@ -60,31 +60,55 @@ export default function Skills() {
               Technical range for research and applied systems
             </h1>
           </div>
-          <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 lg:justify-self-end">
-            Technical skills and competencies demonstrated through academic
-            work, AI/ML research, data analysis, and deployed project work.
-          </p>
+          <div className="premium-panel p-5 lg:justify-self-end">
+            <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
+              Technical skills and competencies demonstrated through academic
+              work, AI/ML research, data analysis, and deployed project work.
+            </p>
+          </div>
         </div>
+        <div className="brand-divider mt-8" />
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {skills.map((group, index) => (
             <article
               key={group.category}
-              className={`premium-card p-5 sm:p-6 ${
-                index === 1 ? 'md:col-span-2 xl:col-span-1' : ''
+              className={`p-5 sm:p-6 ${
+                index === 1
+                  ? 'brand-panel md:col-span-2 xl:col-span-1'
+                  : 'premium-card'
               }`}
             >
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-slate-950 text-sm font-semibold text-white dark:bg-white dark:text-slate-950">
+                <div
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-sm font-semibold ${
+                    index === 1
+                      ? 'border border-white/10 bg-white/10 text-white'
+                      : 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
+                  }`}
+                >
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-950 dark:text-white">
+                  <h2
+                    className={`text-lg font-semibold ${
+                      index === 1
+                        ? 'text-white'
+                        : 'text-slate-950 dark:text-white'
+                    }`}
+                  >
                     {group.category}
                   </h2>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {group.items.map(skill => (
-                      <span key={skill} className="soft-chip">
+                      <span
+                        key={skill}
+                        className={
+                          index === 1
+                            ? 'rounded-md border border-white/10 bg-white/10 px-2.5 py-1 text-xs font-medium text-white'
+                            : 'soft-chip'
+                        }
+                      >
                         {skill}
                       </span>
                     ))}
