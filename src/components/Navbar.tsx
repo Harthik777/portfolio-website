@@ -1,39 +1,60 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  navVariants,
-  mobileMenuVariants,
-  staggerContainer,
-} from '@/lib/animations';
 
 const navigation = [
   { name: 'Home', href: '/', ariaLabel: 'Go to home page' },
-  { name: 'About', href: '/about', ariaLabel: 'Learn about me' },
-  { name: 'Projects', href: '/projects', ariaLabel: 'View my projects' },
+  { name: 'Projects', href: '/projects', ariaLabel: 'View projects' },
   {
     name: 'Publications',
     href: '/publications',
-    ariaLabel: 'Read my publications',
+    ariaLabel: 'Read publications',
   },
-  { name: 'Blog', href: '/blog', ariaLabel: 'Read my blog articles' },
-  { name: 'Skills', href: '/skills', ariaLabel: 'See my skills' },
-  { name: 'Resume', href: '/resume', ariaLabel: 'View my resume' },
+  { name: 'Skills', href: '/skills', ariaLabel: 'See skills' },
+  { name: 'Resume', href: '/resume', ariaLabel: 'View resume' },
 ];
+
+function NavLink({
+  href,
+  name,
+  ariaLabel,
+  onClick,
+}: {
+  href: string;
+  name: string;
+  ariaLabel: string;
+  onClick?: () => void;
+}) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
+  return (
+    <Link
+      href={href}
+      aria-label={ariaLabel}
+      aria-current={isActive ? 'page' : undefined}
+      onClick={onClick}
+      className={`rounded-md px-3 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-950 ${
+        isActive
+          ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300'
+          : 'text-gray-700 hover:bg-gray-100 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-gray-900 dark:hover:text-white'
+      }`}
+    >
+      {name}
+    </Link>
+  );
+}
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
 
-  // Close mobile menu on escape key
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
         setMobileMenuOpen(false);
       }
     };
@@ -61,218 +82,101 @@ export function Navbar() {
 
   return (
     <>
-      {' '}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur dark:border-gray-800 dark:bg-gray-950/95">
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-8 sm:py-5 md:px-12 lg:px-16 xl:px-20 2xl:px-24 xs:px-6 xs:py-4"
+          className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
           aria-label="Global navigation"
         >
-          {/* Enhanced Logo with better mobile sizing */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={navVariants}
-            transition={{ duration: 0.5 }}
+          <Link
+            href="/"
+            className="rounded-md text-base font-bold text-gray-950 transition hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-white dark:hover:text-indigo-300 dark:focus:ring-offset-gray-950"
+            aria-label="Harthik M V - Home"
           >
-            {' '}
-            <Link
-              href="/"
-              className="rounded-lg p-1 text-base font-bold tracking-tight text-gray-900 transition-all duration-300 hover:scale-105 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-white dark:hover:text-indigo-400 sm:text-xl md:text-2xl lg:text-xl xl:text-2xl xs:text-lg"
-              aria-label="Harthik M V - Home"
-            >
-              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Harthik M V
-              </span>
-            </Link>
-          </motion.div>{' '}
-          {/* Desktop Navigation */}{' '}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="hidden items-center space-x-1 lg:flex xl:space-x-2"
-          >
+            Harthik M V
+          </Link>
+
+          <div className="hidden items-center gap-1 lg:flex">
             {navigation.map(item => (
-              <motion.div key={item.name} variants={navVariants}>
-                <Link
-                  href={item.href}
-                  className={`relative rounded-lg px-2.5 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 xl:px-3 xl:text-base ${
-                    pathname === item.href
-                      ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300'
-                      : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white'
-                  }`}
-                  aria-label={item.ariaLabel}
-                  aria-current={pathname === item.href ? 'page' : undefined}
-                >
-                  {item.name}
-                  {pathname === item.href && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute inset-0 rounded-lg bg-indigo-100 dark:bg-indigo-900/50"
-                      style={{ zIndex: -1 }}
-                      transition={{
-                        type: 'spring',
-                        bounce: 0.2,
-                        duration: 0.6,
-                      }}
-                    />
-                  )}
-                </Link>
-              </motion.div>
+              <NavLink key={item.href} {...item} />
             ))}
-            <motion.div variants={navVariants} className="ml-4">
+            <div className="ml-2">
               <ThemeToggle />
-            </motion.div>{' '}
-            <motion.div variants={navVariants}>
-              <Link
-                href="/contact"
-                className="ml-3 inline-flex min-h-[44px] items-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-indigo-700 hover:to-purple-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95 sm:px-6 xl:ml-4 xl:px-8 xl:py-3 xl:text-base"
-                aria-label="Contact me"
-              >
-                Contact
-              </Link>
-            </motion.div>
-          </motion.div>{' '}
-          {/* Mobile menu button */}
-          <motion.button
-            initial="hidden"
-            animate="visible"
-            variants={navVariants}
+            </div>
+            <Link
+              href="/contact"
+              className="ml-2 inline-flex min-h-10 items-center rounded-md bg-indigo-600 px-4 text-sm font-semibold text-white transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-950"
+            >
+              Contact
+            </Link>
+          </div>
+
+          <button
             type="button"
-            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md p-2.5 text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white lg:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md text-gray-700 transition hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-300 dark:hover:bg-gray-900 dark:focus:ring-offset-gray-950 lg:hidden"
             onClick={toggleMobileMenu}
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
           >
-            <span className="sr-only">
-              {mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
-            </span>
-            <AnimatePresence mode="wait">
-              {mobileMenuOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
+            {mobileMenuOpen ? (
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            )}
+          </button>
         </nav>
       </header>
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-black/50 lg:hidden"
-              onClick={closeMobileMenu}
-              aria-hidden="true"
-            />{' '}
-            {/* Menu panel */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={mobileMenuVariants}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto border-l border-gray-200 bg-white px-4 py-4 dark:border-gray-700 dark:bg-gray-900 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:sm:ring-gray-700/50 lg:hidden xs:px-6 xs:py-6"
-            >
-              <div className="mb-6 flex items-center justify-between">
-                <Link
-                  href="/"
-                  className="rounded-lg p-1 text-lg font-bold tracking-tight focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 xs:text-xl"
-                  onClick={closeMobileMenu}
-                  aria-label="Harthik M V - Home"
-                >
-                  <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Harthik M V
-                  </span>
-                </Link>
-                <button
-                  type="button"
-                  className="min-h-[44px] min-w-[44px] rounded-md p-2.5 text-gray-700 transition-all duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95 dark:text-gray-300 dark:hover:bg-gray-800"
-                  onClick={closeMobileMenu}
-                  aria-label="Close menu"
-                >
-                  <span className="sr-only">Close menu</span>
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </div>{' '}
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-700">
-                  {' '}
-                  <motion.div
-                    className="space-y-1 py-6"
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    {navigation.map((item, index) => (
-                      <motion.div
-                        key={item.name}
-                        variants={navVariants}
-                        transition={{ delay: index * 0.05 }}
-                      >
-                        <Link
-                          href={item.href}
-                          className={`block flex min-h-[44px] items-center rounded-lg px-4 py-3 text-base font-semibold leading-7 transition-all duration-200 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-[0.98] ${
-                            pathname === item.href
-                              ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300'
-                              : 'text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800'
-                          }`}
-                          onClick={closeMobileMenu}
-                          aria-label={item.ariaLabel}
-                          aria-current={
-                            pathname === item.href ? 'page' : undefined
-                          }
-                        >
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                  <div className="py-6">
-                    <div className="flex flex-col space-y-4">
-                      <div className="flex items-center justify-between py-2">
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                          Theme
-                        </span>
-                        <ThemeToggle />
-                      </div>
-                      <Link
-                        href="/contact"
-                        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-indigo-700 hover:to-purple-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95"
-                        onClick={closeMobileMenu}
-                        aria-label="Contact me"
-                      >
-                        Contact
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 lg:hidden">
+          <button
+            type="button"
+            className="absolute inset-0 h-full w-full bg-gray-950/60"
+            aria-label="Close menu overlay"
+            onClick={closeMobileMenu}
+          />
+          <div className="absolute inset-y-0 right-0 w-full max-w-sm border-l border-gray-200 bg-white p-5 shadow-xl dark:border-gray-800 dark:bg-gray-950">
+            <div className="flex items-center justify-between">
+              <Link
+                href="/"
+                onClick={closeMobileMenu}
+                className="font-bold text-gray-950 dark:text-white"
+              >
+                Harthik M V
+              </Link>
+              <button
+                type="button"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-900"
+                onClick={closeMobileMenu}
+                aria-label="Close menu"
+              >
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+
+            <div className="mt-8 grid gap-2">
+              {navigation.map(item => (
+                <NavLink key={item.href} {...item} onClick={closeMobileMenu} />
+              ))}
+            </div>
+
+            <div className="mt-8 border-t border-gray-200 pt-6 dark:border-gray-800">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Theme
+                </span>
+                <ThemeToggle />
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+              <Link
+                href="/contact"
+                onClick={closeMobileMenu}
+                className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-md bg-indigo-600 px-4 text-sm font-semibold text-white transition hover:bg-indigo-700"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

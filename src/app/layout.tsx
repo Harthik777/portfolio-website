@@ -17,11 +17,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Harthik M V | AI/ML Engineer & Full-Stack Developer',
+    default: 'Harthik M V | AI/ML Research & Engineering Portfolio',
     template: '%s | Harthik M V',
   },
   description:
-    'Portfolio website of Harthik M V - AI/ML Engineer, Full-Stack Developer, and Computer Science student at MIT Bengaluru. Showcasing projects in artificial intelligence, machine learning, and software development.',
+    'Portfolio of Harthik M V, an AI/ML Research Intern and Computer Science (AI) student at MIT Bengaluru, showcasing explainable AI, NLP, data science, publications, and applied software projects.',
   keywords: [
     'Harthik M V',
     'AI Engineer',
@@ -40,10 +40,12 @@ export const metadata: Metadata = {
     'Python',
     'JavaScript',
   ],
-  authors: [{ name: 'Harthik M V', url: 'https://harthikmv.com' }],
+  authors: [
+    { name: 'Harthik M V', url: 'https://portfolio-website1-beta.vercel.app' },
+  ],
   creator: 'Harthik M V',
   publisher: 'Harthik M V',
-  metadataBase: new URL('https://harthikmv.com'),
+  metadataBase: new URL('https://portfolio-website1-beta.vercel.app'),
   alternates: {
     canonical: '/',
   },
@@ -61,31 +63,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://harthikmv.com',
+    url: 'https://portfolio-website1-beta.vercel.app',
     siteName: 'Harthik M V Portfolio',
-    title: 'Harthik M V | AI/ML Engineer & Full-Stack Developer',
+    title: 'Harthik M V | AI/ML Research & Engineering Portfolio',
     description:
-      'Portfolio website showcasing my work in AI/ML, software development, and research projects.',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Harthik M V - AI/ML Engineer Portfolio',
-      },
-    ],
+      'AI/ML portfolio showcasing explainable AI, NLP, data science, publications, and software projects.',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Harthik M V | AI/ML Engineer & Full-Stack Developer',
+    card: 'summary',
+    title: 'Harthik M V | AI/ML Research & Engineering Portfolio',
     description:
-      'Portfolio website showcasing my work in AI/ML, software development, and research projects.',
-    images: ['/og-image.jpg'],
-    creator: '@harthikmv',
-  },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
+      'AI/ML portfolio showcasing explainable AI, NLP, data science, publications, and software projects.',
   },
   category: 'technology',
 };
@@ -111,9 +99,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
       </head>
       <body
         className={`${inter.className} custom-scrollbar theme-transition flex min-h-screen flex-col bg-white font-sans antialiased dark:bg-gray-900`}

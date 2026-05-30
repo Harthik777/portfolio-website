@@ -11,7 +11,7 @@
     "lint:fix": "eslint . --fix",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:css:fix": "stylelint \"src/**/*.css\" --fix",
-    "type-check": "tsc --noEmit --incremental false",
+    "type-check": "tsc --noEmit --incremental false -p tsconfig.type-check.json",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "rm -rf .next out dist"
