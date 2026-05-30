@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { MotionEnhancer } from '@/components/MotionEnhancer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -103,6 +104,7 @@ export default function RootLayout({
       >
         <ErrorBoundary>
           <ThemeProvider>
+            <MotionEnhancer />
             <div className="flex min-h-screen flex-col">
               <Navbar />
               <main className="flex-1 pt-16" role="main">

@@ -52,7 +52,7 @@ const focusAreas = [
 function HeroSection() {
   return (
     <section className="section-shell grid min-h-[calc(100svh-4rem)] gap-8 py-10 sm:py-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-20">
-      <div className="max-w-4xl">
+      <div className="max-w-4xl" data-reveal="left">
         <div className="inline-flex items-center gap-3 rounded-md border border-slate-200 bg-white/80 px-3 py-2 dark:border-slate-800 dark:bg-slate-900/80">
           <span className="h-2 w-2 rounded-sm bg-emerald-500" />
           <p className="eyebrow">AI/ML Research Intern & Team Lead</p>
@@ -98,7 +98,7 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="brand-panel scan-surface p-5 sm:p-6">
+      <div className="brand-panel scan-surface p-5 sm:p-6" data-reveal="scale">
         <div className="grid gap-4 sm:grid-cols-[0.62fr_1fr] sm:items-stretch">
           <div className="ai-visual min-h-64 sm:min-h-full">
             <span className="signal-line left-[18%] top-[29%] w-[55%] rotate-[-4deg]" />
@@ -170,7 +170,10 @@ function FeaturedProjectsSection() {
   return (
     <section className="section-band py-12 sm:py-16">
       <div className="section-shell">
-        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div
+          className="flex flex-col justify-between gap-5 md:flex-row md:items-end"
+          data-reveal
+        >
           <div className="max-w-2xl">
             <p className="eyebrow">Selected Work</p>
             <h2 className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white sm:text-4xl">
@@ -185,10 +188,11 @@ function FeaturedProjectsSection() {
           </Link>
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+        <div className="reveal-grid mt-8 grid gap-4 lg:grid-cols-3">
           {featuredProjects.map((project, index) => (
             <article
               key={project.title}
+              data-reveal="scale"
               className={`p-5 sm:p-6 ${
                 index === 0
                   ? 'accent-panel lg:col-span-2 lg:row-span-2 lg:p-8'
@@ -269,7 +273,7 @@ function BrandSystemSection() {
   return (
     <section className="section-shell py-12 sm:py-16">
       <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="brand-panel scan-surface p-6 sm:p-8">
+        <div className="brand-panel scan-surface p-6 sm:p-8" data-reveal="left">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
             Portfolio System
           </p>
@@ -290,9 +294,9 @@ function BrandSystemSection() {
           </div>
         </div>
 
-        <div className="grid gap-3">
+        <div className="reveal-grid grid gap-3">
           {systems.map((item, index) => (
-            <article key={item.title} className="premium-card p-5">
+            <article key={item.title} className="premium-card p-5" data-reveal>
               <div className="flex items-start gap-4">
                 <span className="number-chip">
                   {String(index + 1).padStart(2, '0')}
@@ -318,15 +322,15 @@ function BrandSystemSection() {
 function FocusSection() {
   return (
     <section className="section-shell grid gap-8 py-12 sm:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-      <div>
+      <div data-reveal="left">
         <p className="eyebrow">Focus</p>
         <h2 className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white sm:text-4xl">
           Clear, practical, research-led engineering
         </h2>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="reveal-grid grid gap-3 sm:grid-cols-2">
         {focusAreas.map(item => (
-          <div key={item} className="premium-panel-muted p-4">
+          <div key={item} className="premium-panel-muted p-4" data-reveal>
             <p className="text-sm font-medium leading-6 text-slate-700 dark:text-slate-200">
               {item}
             </p>
@@ -340,7 +344,10 @@ function FocusSection() {
 function CTASection() {
   return (
     <section className="section-shell pb-12 sm:pb-16">
-      <div className="rounded-lg bg-slate-950 p-6 text-white shadow-sm dark:bg-white dark:text-slate-950 sm:p-8 md:flex md:items-center md:justify-between md:gap-8">
+      <div
+        className="rounded-lg bg-slate-950 p-6 text-white shadow-sm dark:bg-white dark:text-slate-950 sm:p-8 md:flex md:items-center md:justify-between md:gap-8"
+        data-reveal="scale"
+      >
         <div>
           <h2 className="text-2xl font-semibold">
             Open to internships and research collaborations

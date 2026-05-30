@@ -230,6 +230,7 @@ function ProjectCard({
 }) {
   return (
     <article
+      data-reveal="scale"
       className={`content-visibility-auto p-5 sm:p-6 ${
         featured ? 'brand-panel lg:p-7' : 'premium-card'
       }`}
@@ -349,7 +350,10 @@ export default function Projects() {
   return (
     <div className="page-surface">
       <section className="section-shell py-12 sm:py-16">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div
+          className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end"
+          data-reveal
+        >
           <div>
             <p className="eyebrow">Projects</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
@@ -378,7 +382,7 @@ export default function Projects() {
         </div>
         <div className="brand-divider mt-8" />
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+        <div className="reveal-grid mt-10 grid gap-4 lg:grid-cols-3">
           {featuredProjects.map((project, index) => (
             <div
               key={project.title}
@@ -396,7 +400,7 @@ export default function Projects() {
             </h2>
             <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800" />
           </div>
-          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+          <div className="reveal-grid mt-5 grid gap-4 lg:grid-cols-2">
             {additionalProjects.map(project => (
               <ProjectCard key={project.title} project={project} />
             ))}

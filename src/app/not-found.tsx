@@ -11,7 +11,10 @@ export default function NotFound() {
   return (
     <div className="page-surface flex min-h-screen items-center">
       <section className="section-shell py-12 sm:py-16">
-        <div className="premium-panel mx-auto max-w-2xl p-8 text-center sm:p-12">
+        <div
+          className="premium-panel mx-auto max-w-2xl p-8 text-center sm:p-12"
+          data-reveal="scale"
+        >
           <p className="eyebrow">404</p>
           <h1 className="mt-4 text-4xl font-semibold text-slate-950 dark:text-white sm:text-5xl">
             Page not found

@@ -37,7 +37,10 @@ export default function Publications() {
   return (
     <div className="page-surface">
       <section className="section-shell py-12 sm:py-16">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div
+          className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end"
+          data-reveal
+        >
           <div>
             <p className="eyebrow">Publications</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
@@ -57,10 +60,11 @@ export default function Publications() {
         </div>
         <div className="brand-divider mt-8" />
 
-        <div className="mt-10 grid gap-4">
+        <div className="reveal-grid mt-10 grid gap-4">
           {publications.map((pub, index) => (
             <article
               key={pub.title}
+              data-reveal="scale"
               className={`grid gap-5 p-5 sm:p-6 lg:grid-cols-[0.22fr_1fr] ${
                 index === 0 ? 'brand-panel' : 'premium-card'
               }`}

@@ -53,7 +53,10 @@ export default function Skills() {
   return (
     <div className="page-surface">
       <section className="section-shell py-12 sm:py-16">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div
+          className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end"
+          data-reveal
+        >
           <div>
             <p className="eyebrow">Skills</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
@@ -69,10 +72,11 @@ export default function Skills() {
         </div>
         <div className="brand-divider mt-8" />
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="reveal-grid mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {skills.map((group, index) => (
             <article
               key={group.category}
+              data-reveal="scale"
               className={`p-5 sm:p-6 ${
                 index === 1
                   ? 'brand-panel md:col-span-2 xl:col-span-1'

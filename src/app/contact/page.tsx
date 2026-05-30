@@ -19,7 +19,7 @@ export default function Contact() {
   return (
     <div className="page-surface">
       <section className="section-shell py-12 sm:py-16">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-4xl text-center" data-reveal>
           <p className="eyebrow">Contact</p>
           <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
             Let&apos;s talk about AI/ML projects, research, or internships
@@ -32,7 +32,7 @@ export default function Contact() {
         </div>
         <div className="brand-divider mx-auto mt-8 max-w-4xl" />
 
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
+        <div className="reveal-grid mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
           {contactLinks.map((link, index) => {
             const Icon = link.icon;
 
@@ -46,6 +46,7 @@ export default function Contact() {
                     ? 'noopener noreferrer'
                     : undefined
                 }
+                data-reveal="scale"
                 className={`group p-6 ${
                   index === 0 ? 'brand-panel' : 'premium-card'
                 }`}

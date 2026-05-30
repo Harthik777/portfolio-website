@@ -41,7 +41,10 @@ export default function Resume() {
     <div className="page-surface">
       <section className="section-shell py-12 sm:py-16">
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <aside className="brand-panel p-6 sm:p-8 lg:sticky lg:top-24">
+          <aside
+            className="brand-panel p-6 sm:p-8 lg:sticky lg:top-24"
+            data-reveal="left"
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
               Resume
             </p>
@@ -74,10 +77,11 @@ export default function Resume() {
             </div>
           </aside>
 
-          <div className="grid gap-4">
+          <div className="reveal-grid grid gap-4">
             {experiences.map(experience => (
               <article
                 key={experience.title}
+                data-reveal="scale"
                 className="premium-card p-5 sm:p-6"
               >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">

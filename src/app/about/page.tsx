@@ -30,7 +30,7 @@ export default function About() {
     <div className="page-surface">
       <section className="section-shell py-12 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div>
+          <div data-reveal="left">
             <p className="eyebrow">About</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
               AI/ML Research Intern & Team Lead
@@ -44,10 +44,11 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid gap-4">
+          <div className="reveal-grid grid gap-4">
             {highlights.map((item, index) => (
               <article
                 key={item.title}
+                data-reveal="scale"
                 className={`p-5 sm:p-6 ${
                   index === 1 ? 'brand-panel' : 'premium-card'
                 }`}
@@ -85,14 +86,18 @@ export default function About() {
         </div>
         <div className="brand-divider mt-8" />
 
-        <div className="mt-8 rounded-lg border border-slate-200 bg-slate-950 p-6 text-white dark:border-slate-800 dark:bg-white dark:text-slate-950 sm:p-8">
+        <div
+          className="mt-8 rounded-lg border border-slate-200 bg-slate-950 p-6 text-white dark:border-slate-800 dark:bg-white dark:text-slate-950 sm:p-8"
+          data-reveal="scale"
+        >
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-200 dark:text-indigo-700">
             Additional Signals
           </p>
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
+          <div className="reveal-grid mt-5 grid gap-3 md:grid-cols-3">
             {achievements.map(item => (
               <div
                 key={item}
+                data-reveal
                 className="rounded-md border border-white/10 bg-white/5 p-4 dark:border-slate-200 dark:bg-slate-50"
               >
                 <p className="text-sm font-medium leading-6">{item}</p>
