@@ -34,11 +34,15 @@ export class Analytics {
   // Track performance metrics
   trackPerformance() {
     if (typeof window !== 'undefined' && 'performance' in window) {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      
+      const navigation = performance.getEntriesByType(
+        'navigation'
+      )[0] as PerformanceNavigationTiming;
+
       const metrics = {
         loadTime: navigation.loadEventEnd - navigation.loadEventStart,
-        domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+        domContentLoaded:
+          navigation.domContentLoadedEventEnd -
+          navigation.domContentLoadedEventStart,
         firstPaint: this.getFirstPaint(),
         firstContentfulPaint: this.getFirstContentfulPaint(),
       };
@@ -55,7 +59,9 @@ export class Analytics {
 
   private getFirstContentfulPaint(): number | null {
     const paintEntries = performance.getEntriesByType('paint');
-    const firstContentfulPaint = paintEntries.find(entry => entry.name === 'first-contentful-paint');
+    const firstContentfulPaint = paintEntries.find(
+      entry => entry.name === 'first-contentful-paint'
+    );
     return firstContentfulPaint ? firstContentfulPaint.startTime : null;
   }
 
@@ -83,4 +89,4 @@ export function trackEvent(name: string, data?: any) {
 
 export function trackPerformance() {
   analytics.trackPerformance();
-} 
+}

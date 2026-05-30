@@ -8,22 +8,24 @@ export function CustomCursor() {
   const [isPointer, setIsPointer] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [clicked, setClicked] = useState(false);
-  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
+  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>(
+    []
+  );
   const [isMobile, setIsMobile] = useState(false);
   const [isLowPerformance, setIsLowPerformance] = useState(false);
-  
+
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
-  
+
   // Adjust spring config based on device performance capabilities
-  const springConfig = { 
-    damping: isLowPerformance ? 40 : 25, 
-    stiffness: isLowPerformance ? 400 : 700, 
-    restDelta: isLowPerformance ? 0.01 : 0.001 
+  const springConfig = {
+    damping: isLowPerformance ? 40 : 25,
+    stiffness: isLowPerformance ? 400 : 700,
+    restDelta: isLowPerformance ? 0.01 : 0.001,
   };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
-  
+
   const { resolvedTheme } = useTheme();
   const trailIdRef = useRef(0);
   const throttleRef = useRef<number>(0);
@@ -34,25 +36,33 @@ export function CustomCursor() {
     const checkDeviceCapabilities = () => {
       // Only run on client side
       if (typeof window === 'undefined') return;
-      
+
       // Check if mobile
-      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
-        || window.innerWidth < 768 
-        || ('ontouchstart' in window);
+      const isMobileDevice =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        ) ||
+        window.innerWidth < 768 ||
+        'ontouchstart' in window;
       setIsMobile(isMobileDevice);
-        // Check for low performance device
-      const isLowEnd = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
-      const isOlderBrowser = !window.requestAnimationFrame || !window.IntersectionObserver;
-      const isLowRAM = 'deviceMemory' in navigator && (navigator as any).deviceMemory < 4;
-      
-      setIsLowPerformance(isLowEnd || isOlderBrowser || isLowRAM || window.innerWidth < 1024);
+      // Check for low performance device
+      const isLowEnd =
+        navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
+      const isOlderBrowser =
+        !window.requestAnimationFrame || !window.IntersectionObserver;
+      const isLowRAM =
+        'deviceMemory' in navigator && (navigator as any).deviceMemory < 4;
+
+      setIsLowPerformance(
+        isLowEnd || isOlderBrowser || isLowRAM || window.innerWidth < 1024
+      );
     };
 
     checkDeviceCapabilities();
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', checkDeviceCapabilities);
     }
-    
+
     return () => {
       if (typeof window !== 'undefined') {
         window.removeEventListener('resize', checkDeviceCapabilities);
@@ -63,13 +73,13 @@ export function CustomCursor() {
   useEffect(() => {
     // Don't render custom cursor on mobile devices
     if (isMobile) return;
-    
+
     const updateCursor = (e: MouseEvent) => {
       // Throttle cursor updates for performance
       const now = Date.now();
       if (throttleRef.current && now - throttleRef.current < throttleMs) return;
       throttleRef.current = now;
-      
+
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
 
@@ -79,12 +89,15 @@ export function CustomCursor() {
       const trailLength = isLowPerformance ? 5 : 10;
       setTrail(prev => [
         ...prev.slice(-trailLength), // Keep only last few points
-        { x: e.clientX, y: e.clientY, id: trailIdRef.current }
+        { x: e.clientX, y: e.clientY, id: trailIdRef.current },
       ]);
 
       // Check if hovering over interactive elements
       const target = e.target as HTMLElement;
-      const isInteractive = target.closest('a, button, [role="button"], input, textarea, select') !== null;
+      const isInteractive =
+        target.closest(
+          'a, button, [role="button"], input, textarea, select'
+        ) !== null;
       setIsPointer(isInteractive);
     };
 
@@ -106,7 +119,7 @@ export function CustomCursor() {
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
     };
-  }, [cursorX, cursorY]);
+  }, [cursorX, cursorY, isLowPerformance, isMobile, throttleMs]);
 
   // Clean up old trail points
   useEffect(() => {
@@ -120,24 +133,27 @@ export function CustomCursor() {
   const cursorVariants = {
     default: {
       scale: 1,
-      backgroundColor: resolvedTheme === 'dark' 
-        ? 'rgba(139, 92, 246, 0.8)' 
-        : 'rgba(79, 70, 229, 0.8)',
+      backgroundColor:
+        resolvedTheme === 'dark'
+          ? 'rgba(139, 92, 246, 0.8)'
+          : 'rgba(79, 70, 229, 0.8)',
       border: '2px solid rgba(255, 255, 255, 0.8)',
     },
     pointer: {
       scale: 1.5,
-      backgroundColor: resolvedTheme === 'dark' 
-        ? 'rgba(236, 72, 153, 0.9)' 
-        : 'rgba(219, 39, 119, 0.9)',
+      backgroundColor:
+        resolvedTheme === 'dark'
+          ? 'rgba(236, 72, 153, 0.9)'
+          : 'rgba(219, 39, 119, 0.9)',
       border: '2px solid rgba(255, 255, 255, 1)',
     },
     clicked: {
       scale: 0.8,
-      backgroundColor: resolvedTheme === 'dark' 
-        ? 'rgba(34, 197, 94, 0.9)' 
-        : 'rgba(22, 163, 74, 0.9)',
-    }
+      backgroundColor:
+        resolvedTheme === 'dark'
+          ? 'rgba(34, 197, 94, 0.9)'
+          : 'rgba(22, 163, 74, 0.9)',
+    },
   };
   if (typeof window === 'undefined' || isMobile) return null;
 
@@ -148,7 +164,12 @@ export function CustomCursor() {
           body {
             cursor: none !important;
           }
-          a, button, [role="button"], input, textarea, select {
+          a,
+          button,
+          [role='button'],
+          input,
+          textarea,
+          select {
             cursor: none !important;
           }
         }
@@ -156,7 +177,7 @@ export function CustomCursor() {
 
       {/* Main Cursor */}
       <motion.div
-        className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="pointer-events-none fixed left-0 top-0 z-[9999] h-6 w-6 rounded-full mix-blend-difference"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -165,48 +186,55 @@ export function CustomCursor() {
         }}
         variants={cursorVariants}
         animate={
-          isHidden ? 'hidden' :
-          clicked ? 'clicked' :
-          isPointer ? 'pointer' : 'default'
+          isHidden
+            ? 'hidden'
+            : clicked
+              ? 'clicked'
+              : isPointer
+                ? 'pointer'
+                : 'default'
         }
         transition={{ type: 'spring', stiffness: 500, damping: 28 }}
       />
 
       {/* Cursor Trail - Optimized to render conditionally based on performance */}
-      {!isLowPerformance && trail.map((point, index) => (
-        <motion.div
-          key={point.id}
-          className="fixed w-2 h-2 rounded-full pointer-events-none z-[9998]"
-          style={{
-            left: point.x,
-            top: point.y,
-            translateX: '-50%',
-            translateY: '-50%',
-            backgroundColor: resolvedTheme === 'dark' 
-              ? `rgba(139, 92, 246, ${0.6 - index * 0.05})` 
-              : `rgba(79, 70, 229, ${0.4 - index * 0.03})`,
-          }}
-          initial={{ scale: 0, opacity: 1 }}
-          animate={{ 
-            scale: 1 - index * 0.1, 
-            opacity: 1 - index * 0.1 
-          }}
-          exit={{ scale: 0, opacity: 0 }}
-          transition={{ duration: 0.2 }}
-        />
-      ))}
+      {!isLowPerformance &&
+        trail.map((point, index) => (
+          <motion.div
+            key={point.id}
+            className="pointer-events-none fixed z-[9998] h-2 w-2 rounded-full"
+            style={{
+              left: point.x,
+              top: point.y,
+              translateX: '-50%',
+              translateY: '-50%',
+              backgroundColor:
+                resolvedTheme === 'dark'
+                  ? `rgba(139, 92, 246, ${0.6 - index * 0.05})`
+                  : `rgba(79, 70, 229, ${0.4 - index * 0.03})`,
+            }}
+            initial={{ scale: 0, opacity: 1 }}
+            animate={{
+              scale: 1 - index * 0.1,
+              opacity: 1 - index * 0.1,
+            }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          />
+        ))}
 
       {/* Outer Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 rounded-full border pointer-events-none z-[9997]"
+        className="pointer-events-none fixed left-0 top-0 z-[9997] h-12 w-12 rounded-full border"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
-          borderColor: resolvedTheme === 'dark' 
-            ? 'rgba(139, 92, 246, 0.3)' 
-            : 'rgba(79, 70, 229, 0.3)',
+          borderColor:
+            resolvedTheme === 'dark'
+              ? 'rgba(139, 92, 246, 0.3)'
+              : 'rgba(79, 70, 229, 0.3)',
           borderWidth: '1px',
         }}
         animate={{
@@ -218,15 +246,16 @@ export function CustomCursor() {
 
       {/* Glow Effect */}
       <motion.div
-        className="fixed top-0 left-0 w-20 h-20 rounded-full pointer-events-none z-[9996] blur-xl"
+        className="pointer-events-none fixed left-0 top-0 z-[9996] h-20 w-20 rounded-full blur-xl"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
-          backgroundColor: resolvedTheme === 'dark' 
-            ? 'rgba(139, 92, 246, 0.1)' 
-            : 'rgba(79, 70, 229, 0.1)',
+          backgroundColor:
+            resolvedTheme === 'dark'
+              ? 'rgba(139, 92, 246, 0.1)'
+              : 'rgba(79, 70, 229, 0.1)',
         }}
         animate={{
           scale: isPointer ? 2 : clicked ? 0.5 : 1,

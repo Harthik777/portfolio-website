@@ -6,7 +6,11 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
-import { navVariants, mobileMenuVariants, staggerContainer } from '@/lib/animations';
+import {
+  navVariants,
+  mobileMenuVariants,
+  staggerContainer,
+} from '@/lib/animations';
 
 const navigation = [
   { name: 'Home', href: '/', ariaLabel: 'Go to home page' },
@@ -56,9 +60,11 @@ export function Navbar() {
   }, []);
 
   return (
-    <>      <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
+    <>
+      {' '}
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between px-4 xs:px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-3 xs:py-4 sm:py-5"
+          className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-8 sm:py-5 md:px-12 lg:px-16 xl:px-20 2xl:px-24 xs:px-6 xs:py-4"
           aria-label="Global navigation"
         >
           {/* Enhanced Logo with better mobile sizing */}
@@ -67,26 +73,30 @@ export function Navbar() {
             animate="visible"
             variants={navVariants}
             transition={{ duration: 0.5 }}
-          >            <Link
+          >
+            {' '}
+            <Link
               href="/"
-              className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 transition-all duration-300 hover:text-indigo-600 hover:scale-105 dark:text-white dark:hover:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 rounded-lg p-1"
+              className="rounded-lg p-1 text-base font-bold tracking-tight text-gray-900 transition-all duration-300 hover:scale-105 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-white dark:hover:text-indigo-400 sm:text-xl md:text-2xl lg:text-xl xl:text-2xl xs:text-lg"
               aria-label="Harthik M V - Home"
             >
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Harthik M V
               </span>
             </Link>
-          </motion.div>          {/* Desktop Navigation */}          <motion.div
+          </motion.div>{' '}
+          {/* Desktop Navigation */}{' '}
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="hidden items-center space-x-1 xl:space-x-2 lg:flex"
+            className="hidden items-center space-x-1 lg:flex xl:space-x-2"
           >
             {navigation.map(item => (
               <motion.div key={item.name} variants={navVariants}>
                 <Link
                   href={item.href}
-                  className={`relative rounded-lg px-2.5 xl:px-3 py-2 text-sm xl:text-base font-medium transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 ${
+                  className={`relative rounded-lg px-2.5 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 xl:px-3 xl:text-base ${
                     pathname === item.href
                       ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300'
                       : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white'
@@ -110,25 +120,26 @@ export function Navbar() {
                 </Link>
               </motion.div>
             ))}
-
             <motion.div variants={navVariants} className="ml-4">
               <ThemeToggle />
-            </motion.div>            <motion.div variants={navVariants}>
+            </motion.div>{' '}
+            <motion.div variants={navVariants}>
               <Link
                 href="/contact"
-                className="ml-3 xl:ml-4 inline-flex min-h-[44px] items-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-4 sm:px-6 xl:px-8 py-2.5 xl:py-3 text-sm xl:text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95"
+                className="ml-3 inline-flex min-h-[44px] items-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-indigo-700 hover:to-purple-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95 sm:px-6 xl:ml-4 xl:px-8 xl:py-3 xl:text-base"
                 aria-label="Contact me"
               >
                 Contact
               </Link>
             </motion.div>
-          </motion.div>          {/* Mobile menu button */}
+          </motion.div>{' '}
+          {/* Mobile menu button */}
           <motion.button
             initial="hidden"
             animate="visible"
             variants={navVariants}
             type="button"
-            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white lg:hidden transition-all duration-200 active:scale-95"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md p-2.5 text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white lg:hidden"
             onClick={toggleMobileMenu}
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
@@ -162,7 +173,6 @@ export function Navbar() {
           </motion.button>
         </nav>
       </header>
-
       {/* Mobile menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
@@ -175,19 +185,20 @@ export function Navbar() {
               className="fixed inset-0 z-40 bg-black/50 lg:hidden"
               onClick={closeMobileMenu}
               aria-hidden="true"
-            />            {/* Menu panel */}
+            />{' '}
+            {/* Menu panel */}
             <motion.div
               initial="hidden"
               animate="visible"
               exit="exit"
               variants={mobileMenuVariants}
               transition={{ duration: 0.2 }}
-              className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-4 xs:px-6 py-4 xs:py-6 dark:bg-gray-900 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:sm:ring-gray-700/50 lg:hidden border-l border-gray-200 dark:border-gray-700"
+              className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto border-l border-gray-200 bg-white px-4 py-4 dark:border-gray-700 dark:bg-gray-900 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:sm:ring-gray-700/50 lg:hidden xs:px-6 xs:py-6"
             >
-              <div className="flex items-center justify-between mb-6">
+              <div className="mb-6 flex items-center justify-between">
                 <Link
                   href="/"
-                  className="text-lg xs:text-xl font-bold tracking-tight focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 rounded-lg p-1"
+                  className="rounded-lg p-1 text-lg font-bold tracking-tight focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 xs:text-xl"
                   onClick={closeMobileMenu}
                   aria-label="Harthik M V - Home"
                 >
@@ -197,15 +208,18 @@ export function Navbar() {
                 </Link>
                 <button
                   type="button"
-                  className="rounded-md p-2.5 min-h-[44px] min-w-[44px] text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95"
+                  className="min-h-[44px] min-w-[44px] rounded-md p-2.5 text-gray-700 transition-all duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95 dark:text-gray-300 dark:hover:bg-gray-800"
                   onClick={closeMobileMenu}
                   aria-label="Close menu"
                 >
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
-              </div>              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-700">                  <motion.div 
+              </div>{' '}
+              <div className="mt-6 flow-root">
+                <div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-700">
+                  {' '}
+                  <motion.div
                     className="space-y-1 py-6"
                     variants={staggerContainer}
                     initial="hidden"
@@ -219,7 +233,7 @@ export function Navbar() {
                       >
                         <Link
                           href={item.href}
-                          className={`block rounded-lg px-4 py-3 text-base font-semibold leading-7 transition-all duration-200 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-[0.98] min-h-[44px] flex items-center ${
+                          className={`block flex min-h-[44px] items-center rounded-lg px-4 py-3 text-base font-semibold leading-7 transition-all duration-200 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-[0.98] ${
                             pathname === item.href
                               ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300'
                               : 'text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800'
@@ -235,16 +249,17 @@ export function Navbar() {
                       </motion.div>
                     ))}
                   </motion.div>
-
                   <div className="py-6">
                     <div className="flex flex-col space-y-4">
                       <div className="flex items-center justify-between py-2">
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Theme</span>
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                          Theme
+                        </span>
                         <ThemeToggle />
                       </div>
                       <Link
                         href="/contact"
-                        className="w-full inline-flex min-h-[48px] items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95"
+                        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-indigo-700 hover:to-purple-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95"
                         onClick={closeMobileMenu}
                         aria-label="Contact me"
                       >

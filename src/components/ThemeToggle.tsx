@@ -114,7 +114,9 @@ export function ThemeToggle() {
                           />
                         )}
                       </div>
-                      <span className="font-medium text-base sm:text-sm">{themeOption.name}</span>
+                      <span className="text-base font-medium sm:text-sm">
+                        {themeOption.name}
+                      </span>
                       {isActive && (
                         <motion.div
                           layoutId="activeTheme"

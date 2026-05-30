@@ -11,21 +11,27 @@ if (typeof window !== 'undefined') {
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis>();
-  
+
   useEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined') return;
 
     // Enhanced device detection with more accurate performance checks
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
-      || window.innerWidth < 768;
+    const isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      ) || window.innerWidth < 768;
     const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-    const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
-    const hasReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
+    const isLowEndDevice =
+      navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
+    const hasReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
     // Completely disable animations for very low-end devices
-    const shouldDisableAllAnimations = (isLowEndDevice && isMobile) || hasReducedMotion;
-    
+    const shouldDisableAllAnimations =
+      (isLowEndDevice && isMobile) || hasReducedMotion;
+
     // Disable smooth scroll on mobile/low-end devices for better performance
     if (isMobile || isLowEndDevice || hasReducedMotion) {
       // Enable lightweight scroll animations without Lenis
@@ -37,27 +43,34 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
           });
           return;
         }
-        
+
         // Use simplified animations for low-end devices
-        const animationsConfig = isLowEndDevice || isMobile ? {
-          opacity: { from: 0, to: 1 },
-          y: { from: 10, to: 0 }, // Minimal movement for better performance
-          duration: 0.3, // Very fast animation
-          ease: "power1.out", // Simpler easing
-          stagger: 0, // No staggering for better performance
-          batchSize: 10 // Process elements in batches
-        } : {
-          opacity: { from: 0, to: 1 },
-          y: { from: 30, to: 0 },
-          duration: 0.6,
-          ease: "power2.out",
-          stagger: 0.05,
-          batchSize: 5
-        };
-        
+        const animationsConfig =
+          isLowEndDevice || isMobile
+            ? {
+                opacity: { from: 0, to: 1 },
+                y: { from: 10, to: 0 }, // Minimal movement for better performance
+                duration: 0.3, // Very fast animation
+                ease: 'power1.out', // Simpler easing
+                stagger: 0, // No staggering for better performance
+                batchSize: 10, // Process elements in batches
+              }
+            : {
+                opacity: { from: 0, to: 1 },
+                y: { from: 30, to: 0 },
+                duration: 0.6,
+                ease: 'power2.out',
+                stagger: 0.05,
+                batchSize: 5,
+              };
+
         gsap.utils.toArray('[data-reveal]').forEach((element: any) => {
-          gsap.fromTo(element, 
-            { opacity: animationsConfig.opacity.from, y: animationsConfig.y.from },
+          gsap.fromTo(
+            element,
+            {
+              opacity: animationsConfig.opacity.from,
+              y: animationsConfig.y.from,
+            },
             {
               opacity: animationsConfig.opacity.to,
               y: animationsConfig.y.to,
@@ -65,26 +78,27 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
               ease: animationsConfig.ease,
               scrollTrigger: {
                 trigger: element,
-                start: "top 90%",
-                toggleActions: "play none none reverse"
-              }
+                start: 'top 90%',
+                toggleActions: 'play none none reverse',
+              },
             }
           );
         });
 
         // Lightweight text reveals for mobile
         gsap.utils.toArray('[data-text-reveal]').forEach((element: any) => {
-          gsap.fromTo(element, 
+          gsap.fromTo(
+            element,
             { opacity: 0, y: 20 },
             {
               opacity: 1,
               y: 0,
               duration: 0.8,
-              ease: "power2.out",
+              ease: 'power2.out',
               scrollTrigger: {
                 trigger: element,
-                start: "top 85%",
-              }
+                start: 'top 85%',
+              },
             }
           );
         });
@@ -92,10 +106,10 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 
       initBasicAnimations();
       return;
-    }    // Initialize Lenis with device-optimized settings
+    } // Initialize Lenis with device-optimized settings
     const lenis = new Lenis({
       duration: isTablet ? 1.0 : 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       touchMultiplier: isTablet ? 1.5 : 2,
       wheelMultiplier: isTablet ? 0.8 : 1,
       infinite: false,
@@ -121,19 +135,20 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
         const speed = element.dataset.parallax || 0.5;
         gsap.to(element, {
           yPercent: -50 * speed,
-          ease: "none",
+          ease: 'none',
           scrollTrigger: {
             trigger: element,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
         });
       });
 
       // Reveal animations
       gsap.utils.toArray('[data-reveal]').forEach((element: any) => {
-        gsap.fromTo(element, 
+        gsap.fromTo(
+          element,
           {
             opacity: 0,
             y: 100,
@@ -146,13 +161,13 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
             scale: 1,
             rotationX: 0,
             duration: 1.2,
-            ease: "power3.out",
+            ease: 'power3.out',
             scrollTrigger: {
               trigger: element,
-              start: "top 80%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse"
-            }
+              start: 'top 80%',
+              end: 'bottom 20%',
+              toggleActions: 'play none none reverse',
+            },
           }
         );
       });
@@ -160,11 +175,15 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       // Text reveal animations
       gsap.utils.toArray('[data-text-reveal]').forEach((element: any) => {
         const chars = element.textContent.split('');
-        element.innerHTML = chars.map((char: string) => 
-          `<span style="display: inline-block;">${char === ' ' ? '&nbsp;' : char}</span>`
-        ).join('');
+        element.innerHTML = chars
+          .map(
+            (char: string) =>
+              `<span style="display: inline-block;">${char === ' ' ? '&nbsp;' : char}</span>`
+          )
+          .join('');
 
-        gsap.fromTo(element.children, 
+        gsap.fromTo(
+          element.children,
           {
             opacity: 0,
             y: 50,
@@ -175,20 +194,21 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
             y: 0,
             rotationX: 0,
             duration: 0.8,
-            ease: "back.out(1.7)",
+            ease: 'back.out(1.7)',
             stagger: 0.02,
             scrollTrigger: {
               trigger: element,
-              start: "top 75%",
-              toggleActions: "play none none reverse"
-            }
+              start: 'top 75%',
+              toggleActions: 'play none none reverse',
+            },
           }
         );
       });
 
       // Scale animations for cards
       gsap.utils.toArray('[data-scale]').forEach((element: any) => {
-        gsap.fromTo(element,
+        gsap.fromTo(
+          element,
           {
             scale: 0.8,
             opacity: 0,
@@ -199,12 +219,12 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
             opacity: 1,
             rotationY: 0,
             duration: 1,
-            ease: "power2.out",
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: element,
-              start: "top 85%",
-              toggleActions: "play none none reverse"
-            }
+              start: 'top 85%',
+              toggleActions: 'play none none reverse',
+            },
           }
         );
       });
@@ -214,12 +234,12 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
         gsap.to(element, {
           morphSVG: element.dataset.morph,
           duration: 2,
-          ease: "elastic.out(1, 0.3)",
+          ease: 'elastic.out(1, 0.3)',
           scrollTrigger: {
             trigger: element,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
         });
       });
 
@@ -232,26 +252,34 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
           const boundBox = magnetic.getBoundingClientRect();
           const magneticStrength = 40;
           const magneticTextStrength = 80;
-          
-          const newX = ((event.clientX - boundBox.left) / magnetic.offsetWidth - 0.5) * magneticStrength;
-          const newY = ((event.clientY - boundBox.top) / magnetic.offsetHeight - 0.5) * magneticStrength;
-          
+
+          const newX =
+            ((event.clientX - boundBox.left) / magnetic.offsetWidth - 0.5) *
+            magneticStrength;
+          const newY =
+            ((event.clientY - boundBox.top) / magnetic.offsetHeight - 0.5) *
+            magneticStrength;
+
           gsap.to(magnetic, {
             duration: 1,
             x: newX,
             y: newY,
-            ease: "power4.out"
+            ease: 'power4.out',
           });
 
           if (magneticText) {
-            const textX = ((event.clientX - boundBox.left) / magnetic.offsetWidth - 0.5) * magneticTextStrength;
-            const textY = ((event.clientY - boundBox.top) / magnetic.offsetHeight - 0.5) * magneticTextStrength;
-            
+            const textX =
+              ((event.clientX - boundBox.left) / magnetic.offsetWidth - 0.5) *
+              magneticTextStrength;
+            const textY =
+              ((event.clientY - boundBox.top) / magnetic.offsetHeight - 0.5) *
+              magneticTextStrength;
+
             gsap.to(magneticText, {
               duration: 1,
               x: textX,
               y: textY,
-              ease: "power4.out"
+              ease: 'power4.out',
             });
           }
         };
@@ -261,7 +289,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
             duration: 1,
             x: 0,
             y: 0,
-            ease: "elastic.out(1, 0.3)"
+            ease: 'elastic.out(1, 0.3)',
           });
 
           if (magneticText) {
@@ -269,7 +297,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
               duration: 1,
               x: 0,
               y: 0,
-              ease: "elastic.out(1, 0.3)"
+              ease: 'elastic.out(1, 0.3)',
             });
           }
         };

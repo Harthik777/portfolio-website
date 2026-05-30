@@ -7,21 +7,21 @@ export const performanceConfig = {
   particleCount: {
     mobile: 300,
     tablet: 800,
-    desktop: 1500
+    desktop: 1500,
   },
-  
+
   // Frame rate control
   frameRateLimit: {
     mobile: 30,
     tablet: 45,
-    desktop: 60
+    desktop: 60,
   },
-  
+
   // Loading optimizations
   loading: {
     mobileTimeReduce: 0.4, // 40% faster loading on mobile
-    mobileStepsReduce: 0.25 // 25% fewer loading steps on mobile
-  }
+    mobileStepsReduce: 0.25, // 25% fewer loading steps on mobile
+  },
 };
 
 // Default export for compatibility

@@ -2,7 +2,8 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'An Explainable and Resource-Efficient Transformer Framework for CPU-Based Document Summarisation and Question Answering',
+    title:
+      'An Explainable and Resource-Efficient Transformer Framework for CPU-Based Document Summarisation and Question Answering',
     description:
       'This project presents a lightweight and explainable natural language processing (NLP) framework that performs text summarization and question answering entirely on CPU hardware, removing the need for GPUs or cloud-based computation. The system integrates compact transformer models such as DistilBART, T5-Small, DistilBERT, MobileBERT, and RoBERTa-Base, achieving competitive accuracy on benchmark datasets while maintaining low latency. To enhance transparency, the framework incorporates built-in explainability mechanisms using KeyBERT for keyword extraction and Sentence-BERT for similarity analysis, allowing users to visualize which parts of the input influenced model outputs without the computational cost of post-hoc explainers like SHAP or LIME.',
     tags: [
@@ -22,7 +23,8 @@ const projects = [
       'Python',
     ],
     date: '10/2025',
-    status: 'Research Project - Accepted for Presentation at Second International Conference on Artificial Intelligence, Computation, Communication, and Network Security (AICCoNS 2026)',
+    status:
+      'Research Project - Accepted for Presentation at Second International Conference on Artificial Intelligence, Computation, Communication, and Network Security (AICCoNS 2026)',
   },
   {
     title: 'Smart Document Summarizer & Q&A Assistant',
@@ -57,7 +59,7 @@ const projects = [
       'Explainable AI',
       'SHAP',
       'Random Forest',
-      'XGBoost',   
+      'XGBoost',
       'Python',
       'Environmental ML',
       'Carbon Tracking',
@@ -67,7 +69,8 @@ const projects = [
     isResearch: true,
   },
   {
-    title: 'Explainable Radiomics-Based Machine Learning Framework for Multi-Class Cerebrovascular CT Lesion Classification',
+    title:
+      'Explainable Radiomics-Based Machine Learning Framework for Multi-Class Cerebrovascular CT Lesion Classification',
     description:
       'Developing a comprehensive radiomics-based machine learning framework for multi-class classification of cerebrovascular lesions from CT scans using the Kaggle cerebrovascular dataset (~10K images, 10 classes). Engineered a novel radiomics feature extraction pipeline combining HOG (edge/shape), LBP (local texture), GLCM (co-occurrence), Haralick descriptors (statistical), and Gabor filters (frequency-based). Benchmarking 10+ ML algorithms including Random Forest, XGBoost, SVM, and Bayesian Networks with comprehensive evaluation metrics (Macro-F1, Balanced Accuracy). Implementing SHAP-based explainability to identify clinically meaningful features, calibration analysis (ECE, Temperature Scaling), and robustness testing with perturbed images. Focus on deployability (CPU inference), reliability, and interpretability for clinical decision support. Target publication: IEEE conference proceedings.',
     tags: [
@@ -195,7 +198,7 @@ const projects = [
     description:
       'Production-grade AI-powered platform for financial market sentiment analysis using TensorFlow.js and real-time financial news from free RSS feeds. Features advanced sentiment analysis with ML models, batch processing capabilities, interactive market dashboard with Chart.js visualizations, and portfolio risk assessment. Built with React 18 + TypeScript, deployed on Vercel with zero API costs using RSS feeds from Yahoo Finance.',
     tags: [
-      'TypeScript', 
+      'TypeScript',
       'TensorFlow.js',
       'Financial Analysis',
       'Sentiment Analysis',
@@ -203,7 +206,7 @@ const projects = [
       'Tailwind CSS',
       'Vite',
       'Vercel',
-      'Machine Learning'
+      'Machine Learning',
     ],
     link: 'https://project2-ten-iota.vercel.app/',
     githubLink: 'https://github.com/Harthik777/Project2',
@@ -211,51 +214,77 @@ const projects = [
     status: 'Work in Progress - Financial AI Platform',
     isResearch: false,
   },
-
 ];
 
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-indigo-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-20"></div>
+    <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-indigo-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-900">
+      <div className="bg-grid absolute inset-0 opacity-20"></div>
       <div className="relative isolate pt-20">
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             {/* Enhanced Header Section */}
-            <div className="card-interactive-premium mx-auto max-w-4xl animate-fade-in-scale p-12 text-center">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full gradient-primary shadow-lg animate-pulse-gentle">
-                <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            <div className="card-interactive-premium animate-fade-in-scale mx-auto max-w-4xl p-12 text-center">
+              <div className="gradient-primary animate-pulse-gentle mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full shadow-lg">
+                <svg
+                  className="h-8 w-8 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
                 </svg>
               </div>
               <h2 className="text-shimmer mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
                 Projects & Publications
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                Here are some of my key projects and publications, demonstrating my skills in 
-                <span className="font-semibold text-primary-600 dark:text-primary-400"> AI/ML</span>, 
-                <span className="font-semibold text-secondary-600 dark:text-secondary-400"> data analysis</span>, and 
-                <span className="font-semibold text-accent-600 dark:text-accent-400"> software development</span>.
+                Here are some of my key projects and publications, demonstrating
+                my skills in
+                <span className="font-semibold text-primary-600 dark:text-primary-400">
+                  {' '}
+                  AI/ML
+                </span>
+                ,
+                <span className="font-semibold text-secondary-600 dark:text-secondary-400">
+                  {' '}
+                  data analysis
+                </span>
+                , and
+                <span className="font-semibold text-accent-600 dark:text-accent-400">
+                  {' '}
+                  software development
+                </span>
+                .
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-4">
-                <div className="btn-glass flex items-center space-x-2 hover-lift">
-                  <div className="h-2 w-2 rounded-full bg-primary-500 animate-pulse"></div>
-                  <span className="text-xs font-medium text-primary-700 dark:text-primary-300 sm:text-sm">Research Projects</span>
+                <div className="btn-glass hover-lift flex items-center space-x-2">
+                  <div className="h-2 w-2 animate-pulse rounded-full bg-primary-500"></div>
+                  <span className="text-xs font-medium text-primary-700 dark:text-primary-300 sm:text-sm">
+                    Research Projects
+                  </span>
                 </div>
-                <div className="btn-glass flex items-center space-x-2 hover-lift">
-                  <div className="h-2 w-2 rounded-full bg-secondary-500 animate-pulse"></div>
-                  <span className="text-xs font-medium text-secondary-700 dark:text-secondary-300 sm:text-sm">Publications</span>
+                <div className="btn-glass hover-lift flex items-center space-x-2">
+                  <div className="h-2 w-2 animate-pulse rounded-full bg-secondary-500"></div>
+                  <span className="text-xs font-medium text-secondary-700 dark:text-secondary-300 sm:text-sm">
+                    Publications
+                  </span>
                 </div>
               </div>
             </div>
-            
+
             <div className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:mt-24 lg:mx-0 lg:max-w-none lg:grid-cols-3">
               {projects.map((project, idx) => (
                 <article
                   key={project.title}
                   className={`group relative overflow-hidden rounded-3xl border shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl ${
-                    project.isResearch 
-                      ? 'border-yellow-200 bg-gradient-to-br from-yellow-50/90 to-orange-50/90 dark:border-yellow-800 dark:from-yellow-900/20 dark:to-orange-900/20 dark:bg-gray-800/90' 
+                    project.isResearch
+                      ? 'border-yellow-200 bg-gradient-to-br from-yellow-50/90 to-orange-50/90 dark:border-yellow-800 dark:bg-gray-800/90 dark:from-yellow-900/20 dark:to-orange-900/20'
                       : 'border-indigo-200 bg-white/90 dark:border-indigo-800 dark:bg-gray-800/90'
                   } p-8`}
                   style={{ animationDelay: `${idx * 0.1}s` }}
@@ -284,10 +313,22 @@ export default function Projects() {
                         )}
                       </h3>
                       <div className="mt-2 flex items-center gap-2">
-                        <svg className="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V7a1 1 0 00-1 1v9a1 1 0 001 1h6a1 1 0 001-1V8a1 1 0 00-1-1" />
+                        <svg
+                          className="h-4 w-4 text-gray-500"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V7a1 1 0 00-1 1v9a1 1 0 001 1h6a1 1 0 001-1V8a1 1 0 00-1-1"
+                          />
                         </svg>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">{project.date}</span>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">
+                          {project.date}
+                        </span>
                       </div>
                       {project.status && (
                         <div className="mt-2 rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 p-3 dark:from-indigo-900/20 dark:to-purple-900/20">

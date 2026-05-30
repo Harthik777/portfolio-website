@@ -225,4 +225,3 @@ The theme system supports:
 ---
 
 Made with ❤️ by Harthik
-

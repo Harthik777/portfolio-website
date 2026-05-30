@@ -5,6 +5,7 @@ This document outlines the performance optimizations implemented to improve the 
 ## Mobile Optimizations
 
 ### 3D Components
+
 - **ParticleSystem**: Reduced particle count by 40%, implemented frame skipping, lowered rendering precision
 - **HolographicSkills**: Reduced animation intensity, lowered spring stiffness values
 - **FuturisticLoader**: Completely rewritten with extensive optimizations:
@@ -20,16 +21,19 @@ This document outlines the performance optimizations implemented to improve the 
 - **CustomCursor**: Optimized with conditional rendering based on device capability
 
 ### CSS Improvements
+
 - **Fixed CSS Errors**: Resolved unknown @apply directive issues with tailwind-fixes.css
 - **Optimized Styles**: Improved CSS loading and processing efficiency
 - **Reduced Animation Complexity**: Lower CSS animation complexity on mobile
 
 ### Animations
+
 - **Reduced Motion**: Automatically detects and respects user's reduced motion preferences
 - **Adaptive Animations**: Less intense animations on mobile/low-end devices
 - **Batched Animations**: Process animations in batches to reduce CPU spikes
 
 ### Rendering
+
 - **Lower Precision**: Using lower precision for WebGL rendering on mobile
 - **Reduced Antialiasing**: Disabled antialiasing on mobile devices
 - **Optimized Gradients**: Simplified gradient animations to reduce GPU load

@@ -116,14 +116,17 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body
-        className={`${inter.className} custom-scrollbar theme-transition flex min-h-screen flex-col bg-white dark:bg-gray-900 font-sans antialiased`}
+        className={`${inter.className} custom-scrollbar theme-transition flex min-h-screen flex-col bg-white font-sans antialiased dark:bg-gray-900`}
       >
         <ErrorBoundary>
           <ThemeProvider>
             <MobileOptimizer />
             <div className="flex min-h-screen flex-col">
               <Navbar />
-              <main className="flex-1 pt-16 xs:pt-18 sm:pt-20 safe-top" role="main">
+              <main
+                className="safe-top flex-1 pt-16 sm:pt-20 xs:pt-18"
+                role="main"
+              >
                 {children}
               </main>
               <Footer />

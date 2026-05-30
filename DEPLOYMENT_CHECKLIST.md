@@ -5,11 +5,13 @@ This document provides a checklist to ensure your portfolio website is fully rea
 ## Pre-Deployment Tasks
 
 ### ✅ Configuration Fixes
+
 - [x] Fixed `next.config.js` to remove experimental flags no longer needed in Next.js 15
 - [x] Removed `swcMinify: true` as it's enabled by default in Next.js 15
 - [x] Ensured proper Stylelint configuration for Tailwind CSS directives
 
 ### ✅ Performance Optimizations
+
 - [x] Added device-specific optimizations in `FuturisticLoader` component
 - [x] Implemented responsive design with mobile-first approach
 - [x] Added `prefers-reduced-motion` support for accessibility
@@ -17,12 +19,14 @@ This document provides a checklist to ensure your portfolio website is fully rea
 - [x] Added proper CSS fixes for Tailwind directives
 
 ### ✅ Documentation
+
 - [x] Updated documentation for CSS fixes and performance optimizations
 - [x] Created detailed responsive implementation docs
 - [x] Documented dark mode enhancements
 - [x] Compiled final implementation summary
 
 ### ✅ Responsive Testing
+
 - [x] Created device testing tools with `test-devices.js`
 - [x] Implemented `MobileOptimizer` component for mobile-specific enhancements
 - [x] Added proper viewport meta tags and touch handling
@@ -30,11 +34,13 @@ This document provides a checklist to ensure your portfolio website is fully rea
 ## Final Deployment Steps
 
 ### Production Build
+
 1. Run a clean build: `npm run clean && npm run build`
 2. Test the production build locally: `npm run start`
 3. Verify all pages load correctly and animations work as expected
 
 ### Final Checks
+
 - [ ] Test on actual mobile devices (Android and iOS)
 - [ ] Verify dark/light mode works correctly across all pages
 - [ ] Check loading performance on low-end devices
@@ -45,6 +51,7 @@ This document provides a checklist to ensure your portfolio website is fully rea
 - [ ] Test with reduced motion preferences enabled
 
 ### Deployment
+
 - [ ] Deploy to your chosen hosting platform (Vercel recommended for Next.js)
 - [ ] Set up proper environment variables if needed
 - [ ] Configure custom domain if applicable

@@ -62,9 +62,7 @@ export function ResponsiveContainer({
         variants={fadeInUp}
         id={id}
       >
-        <Component className={containerClasses}>
-          {children}
-        </Component>
+        <Component className={containerClasses}>{children}</Component>
       </motion.div>
     );
   }
@@ -106,14 +104,14 @@ export function ResponsiveGrid({
 }: ResponsiveGridProps) {
   const getGridCols = () => {
     const colClasses = [];
-    
+
     if (cols.xs) colClasses.push(`grid-cols-${cols.xs}`);
     if (cols.sm) colClasses.push(`sm:grid-cols-${cols.sm}`);
     if (cols.md) colClasses.push(`md:grid-cols-${cols.md}`);
     if (cols.lg) colClasses.push(`lg:grid-cols-${cols.lg}`);
     if (cols.xl) colClasses.push(`xl:grid-cols-${cols.xl}`);
     if (cols['2xl']) colClasses.push(`2xl:grid-cols-${cols['2xl']}`);
-    
+
     return colClasses.join(' ');
   };
 
@@ -170,9 +168,12 @@ interface ResponsiveButtonProps {
 }
 
 const buttonVariants = {
-  primary: 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-purple-600 hover:to-pink-600',
-  secondary: 'bg-white/80 text-gray-900 border border-gray-300 hover:bg-white dark:bg-gray-800/80 dark:text-white dark:border-gray-600',
-  outline: 'border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white dark:border-indigo-400 dark:text-indigo-400',
+  primary:
+    'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-purple-600 hover:to-pink-600',
+  secondary:
+    'bg-white/80 text-gray-900 border border-gray-300 hover:bg-white dark:bg-gray-800/80 dark:text-white dark:border-gray-600',
+  outline:
+    'border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white dark:border-indigo-400 dark:text-indigo-400',
 };
 
 const buttonSizes = {
@@ -218,5 +219,6 @@ export function ResponsiveButton({
       className={baseClasses}
     >
       {children}
-    </button>  );
+    </button>
+  );
 }

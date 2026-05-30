@@ -13,15 +13,17 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
   const sceneRef = useRef<THREE.Scene>();
   const rendererRef = useRef<THREE.WebGLRenderer>();
   const animationIdRef = useRef<number>();
-  const { theme, resolvedTheme } = useTheme();const particleSystem = useMemo(() => {
+  const { resolvedTheme } = useTheme();
+  const particleSystem = useMemo(() => {
     // Responsive particle count based on device capabilities
     const getParticleCount = () => {
       if (typeof window === 'undefined') return 1000;
-      
+
       const isMobile = window.innerWidth < 768;
       const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-      const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
-      
+      const isLowEndDevice =
+        navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
+
       // Further reduce particles for extremely low-end devices
       if (isLowEndDevice && isMobile) return 300;
       if (isMobile) return 500; // Reduced for mobile
@@ -37,7 +39,7 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
 
     for (let i = 0; i < particleCount; i++) {
       const i3 = i * 3;
-      
+
       // Position
       positions[i3] = (Math.random() - 0.5) * 2000;
       positions[i3 + 1] = (Math.random() - 0.5) * 2000;
@@ -52,17 +54,17 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
       const colorVariant = Math.random();
       if (colorVariant < 0.3) {
         // Cyan/Blue - AI/Tech
-        colors[i3] = 0.2 + Math.random() * 0.3;     // R
+        colors[i3] = 0.2 + Math.random() * 0.3; // R
         colors[i3 + 1] = 0.6 + Math.random() * 0.4; // G
         colors[i3 + 2] = 0.8 + Math.random() * 0.2; // B
       } else if (colorVariant < 0.6) {
         // Purple/Magenta - AI/ML
-        colors[i3] = 0.6 + Math.random() * 0.4;     // R
+        colors[i3] = 0.6 + Math.random() * 0.4; // R
         colors[i3 + 1] = 0.3 + Math.random() * 0.3; // G
         colors[i3 + 2] = 0.9 + Math.random() * 0.1; // B
       } else {
         // Orange/Gold - Innovation
-        colors[i3] = 0.9 + Math.random() * 0.1;     // R
+        colors[i3] = 0.9 + Math.random() * 0.1; // R
         colors[i3 + 1] = 0.6 + Math.random() * 0.3; // G
         colors[i3 + 2] = 0.2 + Math.random() * 0.3; // B
       }
@@ -76,7 +78,8 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
   }, []);
 
   useEffect(() => {
-    if (!mountRef.current || typeof window === 'undefined') return;
+    const mount = mountRef.current;
+    if (!mount || typeof window === 'undefined') return;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -89,22 +92,24 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
       1,
       5000
     );
-    camera.position.z = 1000;    // Responsive renderer settings
-    const renderer = new THREE.WebGLRenderer({ 
-      alpha: true, 
+    camera.position.z = 1000; // Responsive renderer settings
+    const renderer = new THREE.WebGLRenderer({
+      alpha: true,
       antialias: window.innerWidth > 768, // Disable antialiasing on mobile for performance
-      powerPreference: window.innerWidth > 768 ? "high-performance" : "low-power",
-      precision: window.innerWidth < 768 ? "lowp" : "mediump" // Lower precision on mobile for better performance
+      powerPreference:
+        window.innerWidth > 768 ? 'high-performance' : 'low-power',
+      precision: window.innerWidth < 768 ? 'lowp' : 'mediump', // Lower precision on mobile for better performance
     });
-    
+
     // Responsive pixel ratio and size
-    const pixelRatio = window.innerWidth < 768 ? 1 : Math.min(window.devicePixelRatio, 2);
+    const pixelRatio =
+      window.innerWidth < 768 ? 1 : Math.min(window.devicePixelRatio, 2);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(pixelRatio);
     // Disable shadow maps for better performance
     renderer.shadowMap.enabled = false;
     rendererRef.current = renderer;
-    mountRef.current.appendChild(renderer.domElement);
+    mount.appendChild(renderer.domElement);
 
     // Shader Material for advanced particle effects
     const vertexShader = `
@@ -170,19 +175,20 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
       uniforms: {
         time: { value: 0 },
         mouseX: { value: 0 },
-        mouseY: { value: 0 }
+        mouseY: { value: 0 },
       },
       vertexColors: true,
       transparent: true,
       blending: THREE.AdditiveBlending,
-      depthTest: false
+      depthTest: false,
     });
 
     // Create particle system
     const particles = new THREE.Points(particleSystem.geometry, material);
-    scene.add(particles);    // Responsive interaction handling (mouse + touch)
-    let mouseX = 0, mouseY = 0;
-    
+    scene.add(particles); // Responsive interaction handling (mouse + touch)
+    let mouseX = 0,
+      mouseY = 0;
+
     const updateInteraction = (clientX: number, clientY: number) => {
       mouseX = (clientX / window.innerWidth) * 2000 - 1000;
       mouseY = -(clientY / window.innerHeight) * 2000 + 1000;
@@ -208,21 +214,22 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
-      
+
       // Responsive pixel ratio update
-      const pixelRatio = window.innerWidth < 768 ? 1 : Math.min(window.devicePixelRatio, 2);
+      const pixelRatio =
+        window.innerWidth < 768 ? 1 : Math.min(window.devicePixelRatio, 2);
       renderer.setPixelRatio(pixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    window.addEventListener('resize', handleResize);    // Animation loop
+    window.addEventListener('resize', handleResize); // Animation loop
     const animate = (time: number) => {
       material.uniforms.time.value = time;
 
       // Skip frames on mobile for better performance
       const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
       const frameSkipRate = isMobile ? 2 : 1; // Skip every other frame on mobile
-      
+
       if (time % frameSkipRate === 0) {
         // Rotate the entire particle system (slower on mobile)
         particles.rotation.x += isMobile ? 0.0002 : 0.0005;
@@ -235,7 +242,7 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
 
         renderer.render(scene, camera);
       }
-      
+
       animationIdRef.current = requestAnimationFrame(animate);
     };
 
@@ -246,12 +253,13 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
       if (typeof window !== 'undefined') {
         window.removeEventListener('mousemove', handleMouseMove);
         window.removeEventListener('resize', handleResize);
+        window.removeEventListener('touchmove', handleTouchMove);
       }
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
       }
-      if (mountRef.current && renderer.domElement) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (renderer.domElement.parentNode === mount) {
+        mount.removeChild(renderer.domElement);
       }
       renderer.dispose();
       material.dispose();
@@ -269,12 +277,12 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
     for (let i = 0; i < colors.length; i += 3) {
       if (isDark) {
         // Brighter, more vibrant colors for dark theme
-        colors[i] *= 1.2;     // R
+        colors[i] *= 1.2; // R
         colors[i + 1] *= 1.2; // G
         colors[i + 2] *= 1.2; // B
       } else {
         // Softer colors for light theme
-        colors[i] *= 0.8;     // R
+        colors[i] *= 0.8; // R
         colors[i + 1] *= 0.8; // G
         colors[i + 2] *= 0.8; // B
       }
@@ -284,13 +292,14 @@ export function ParticleSystem({ className = '' }: ParticleSystemProps) {
   }, [resolvedTheme, particleSystem]);
 
   return (
-    <div 
-      ref={mountRef} 
-      className={`fixed inset-0 pointer-events-none z-0 ${className}`}
+    <div
+      ref={mountRef}
+      className={`pointer-events-none fixed inset-0 z-0 ${className}`}
       style={{
-        background: resolvedTheme === 'dark' 
-          ? 'radial-gradient(ellipse at center, rgba(10, 10, 30, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%)'
-          : 'radial-gradient(ellipse at center, rgba(240, 245, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%)'
+        background:
+          resolvedTheme === 'dark'
+            ? 'radial-gradient(ellipse at center, rgba(10, 10, 30, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%)'
+            : 'radial-gradient(ellipse at center, rgba(240, 245, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%)',
       }}
     />
   );

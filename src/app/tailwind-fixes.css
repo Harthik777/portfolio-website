@@ -9,8 +9,12 @@
 
 /* Re-apply @layer functionality for environments where @apply isn't recognized */
 :root {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --transition-colors: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --transition-colors:
+    background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   --touch-target-size: 44px;
 }
 
@@ -37,19 +41,23 @@ html.dark body {
 /* Focus styles for accessibility */
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #6366f1, 0 0 0 4px #fff;
+  box-shadow:
+    0 0 0 2px #6366f1,
+    0 0 0 4px #fff;
 }
 
 html.dark *:focus-visible {
-  box-shadow: 0 0 0 2px #6366f1, 0 0 0 4px #1a1a1a;
+  box-shadow:
+    0 0 0 2px #6366f1,
+    0 0 0 4px #1a1a1a;
 }
 
 /* Mobile optimizations */
 @media (max-width: 640px) {
-  button, 
-  a[role="button"],
-  input[type="button"],
-  input[type="submit"],
+  button,
+  a[role='button'],
+  input[type='button'],
+  input[type='submit'],
   .btn,
   .button {
     min-height: var(--touch-target-size);
@@ -60,12 +68,19 @@ html.dark *:focus-visible {
 
 /* keyframes for loader animations */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Fix for @apply gradient-text utility */
@@ -78,15 +93,29 @@ html.dark *:focus-visible {
 
 /* Responsive text utilities */
 @media (max-width: 640px) {
-  .text-4xl { font-size: 1.5rem; line-height: 2rem; }
-  .text-5xl { font-size: 1.875rem; line-height: 2.25rem; }
-  .text-6xl { font-size: 2.25rem; line-height: 2.5rem; }
-  .text-7xl { font-size: 3rem; line-height: 1; }
+  .text-4xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .text-5xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .text-6xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .text-7xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 /* Performance optimizations for animations */
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

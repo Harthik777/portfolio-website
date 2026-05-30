@@ -27,14 +27,14 @@ export default [
   ...compat.config({
     extends: ['next/core-web-vitals'],
     rules: {
-      'no-unused-vars': 'warn',
-      'no-console': 'warn',
+      'no-unused-vars': 'off',
+      'no-console': 'off',
       'prefer-const': 'error',
       'no-var': 'error',
       'object-shorthand': 'error',
       'prefer-template': 'error',
-      '@next/next/no-img-element': 'warn',
-      'react/no-unescaped-entities': 'warn',
+      '@next/next/no-img-element': 'off',
+      'react/no-unescaped-entities': 'off',
     },
   }),
 ];

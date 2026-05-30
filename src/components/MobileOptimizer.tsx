@@ -22,12 +22,12 @@ export function MobileOptimizer() {
     };
 
     // Add touch event listeners
-    document.addEventListener('touchend', preventZoom, { passive: false });    // Optimize scroll behavior for mobile
+    document.addEventListener('touchend', preventZoom, { passive: false }); // Optimize scroll behavior for mobile
     const optimizeScrolling = () => {
       const body = document.body as any;
       body.style.webkitOverflowScrolling = 'touch';
       body.style.overflowScrolling = 'touch';
-    };    // Set viewport meta tag for optimal mobile experience
+    }; // Set viewport meta tag for optimal mobile experience
     const setViewportMeta = () => {
       let viewport = document.querySelector('meta[name="viewport"]');
       if (!viewport) {
@@ -35,11 +35,19 @@ export function MobileOptimizer() {
         viewport.setAttribute('name', 'viewport');
         document.head.appendChild(viewport);
       }
-      
+
       // Use a slightly different viewport setting based on device type
-      const isMobileDevice = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      const isTablet = /iPad/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 0 && typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1200);
-      
+      const isMobileDevice =
+        /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+      const isTablet =
+        /iPad/i.test(navigator.userAgent) ||
+        (navigator.maxTouchPoints > 0 &&
+          typeof window !== 'undefined' &&
+          window.innerWidth >= 768 &&
+          window.innerWidth < 1200);
+
       if (isMobileDevice) {
         // Mobile phones - optimize for speed
         viewport.setAttribute(
@@ -54,25 +62,25 @@ export function MobileOptimizer() {
         );
       } else {
         // Desktop - standard
-        viewport.setAttribute(
-          'content',
-          'width=device-width, initial-scale=1'
-        );
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1');
       }
     };
 
     // Add mobile-specific CSS classes to html element
     const addMobileClasses = () => {
       const html = document.documentElement;
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
-      const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-      
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+      const isTouch =
+        typeof window !== 'undefined' &&
+        ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
       if (isMobile) {
         html.classList.add('is-mobile');
       }
-      
+
       if (isTouch) {
         html.classList.add('is-touch');
       }
@@ -86,7 +94,7 @@ export function MobileOptimizer() {
     // Optimize images for mobile
     const optimizeImages = () => {
       const images = document.querySelectorAll('img[data-mobile-optimize]');
-      images.forEach((img) => {
+      images.forEach(img => {
         const imageElement = img as HTMLImageElement;
         imageElement.loading = 'lazy';
         imageElement.decoding = 'async';
@@ -115,7 +123,10 @@ export function MobileOptimizer() {
     return () => {
       document.removeEventListener('touchend', preventZoom);
       if (typeof window !== 'undefined') {
-        window.removeEventListener('orientationchange', handleOrientationChange);
+        window.removeEventListener(
+          'orientationchange',
+          handleOrientationChange
+        );
       }
     };
   }, []);
@@ -132,10 +143,10 @@ export function useIsMobile() {
     const checkIsMobile = () => {
       return window.innerWidth < 768;
     };
-    
+
     const isMobile = checkIsMobile();
     const html = document.documentElement;
-    
+
     if (isMobile) {
       html.classList.add('mobile-view');
     } else {
@@ -175,7 +186,10 @@ export function MobileOptimizedImage({
   desktopSrc,
 }: MobileOptimizedImageProps) {
   // Default to desktop/regular src during SSR
-  const imageSrc = typeof window !== 'undefined' && window.innerWidth < 768 && mobileSrc ? mobileSrc : desktopSrc || src;
+  const imageSrc =
+    typeof window !== 'undefined' && window.innerWidth < 768 && mobileSrc
+      ? mobileSrc
+      : desktopSrc || src;
 
   return (
     <img

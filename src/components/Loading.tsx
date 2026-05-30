@@ -8,7 +8,11 @@ interface LoadingProps {
   fullScreen?: boolean;
 }
 
-export function Loading({ size = 'md', text, fullScreen = false }: LoadingProps) {
+export function Loading({
+  size = 'md',
+  text,
+  fullScreen = false,
+}: LoadingProps) {
   const sizeClasses = {
     sm: 'h-6 w-6',
     md: 'h-8 w-8',
@@ -42,13 +46,7 @@ export function Loading({ size = 'md', text, fullScreen = false }: LoadingProps)
 }
 
 export function PageLoader() {
-  return (
-    <Loading
-      size="lg"
-      text="Loading..."
-      fullScreen
-    />
-  );
+  return <Loading size="lg" text="Loading..." fullScreen />;
 }
 
 export function SkeletonCard() {
@@ -65,4 +63,4 @@ export function SkeletonCard() {
       </div>
     </div>
   );
-} 
+}

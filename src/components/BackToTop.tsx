@@ -29,7 +29,7 @@ export function BackToTop() {
   const scrollToTop = () => {
     // Only run on client side
     if (typeof window === 'undefined') return;
-    
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -43,9 +43,10 @@ export function BackToTop() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          whileHover={{ scale: 1.1 }}          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 xs:bottom-8 xs:right-8 z-50 flex h-12 w-12 xs:h-14 xs:w-14 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-90 touch-target"
+          className="touch-target fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg transition-all duration-300 hover:from-indigo-700 hover:to-purple-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-90 sm:h-12 sm:w-12 xs:bottom-8 xs:right-8 xs:h-14 xs:w-14"
           aria-label="Back to top"
         >
           <ArrowUpIcon className="h-5 w-5 xs:h-6 xs:w-6" />
@@ -53,4 +54,4 @@ export function BackToTop() {
       )}
     </AnimatePresence>
   );
-} 
+}

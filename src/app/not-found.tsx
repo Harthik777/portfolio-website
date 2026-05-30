@@ -62,7 +62,7 @@ export default function NotFound() {
               { name: 'Projects', href: '/projects' },
               { name: 'Skills', href: '/skills' },
               { name: 'Contact', href: '/contact' },
-            ].map((link) => (
+            ].map(link => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -76,4 +76,4 @@ export default function NotFound() {
       </div>
     </main>
   );
-} 
+}

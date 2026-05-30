@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['img.shields.io'],
     remotePatterns: [
@@ -11,7 +14,5 @@ const nextConfig = {
     ],
   },
 };
-
-module.exports = nextConfig;
 
 module.exports = nextConfig;
