@@ -234,6 +234,19 @@ function ProjectCard({
         featured ? 'brand-panel lg:p-7' : 'premium-card'
       }`}
     >
+      <div className="project-visual scan-surface">
+        <span className="project-node left-[18%] top-[28%]" />
+        <span className="project-node right-[18%] top-[24%] bg-indigo-300" />
+        <span className="project-node bottom-[22%] left-[44%] bg-sky-300" />
+        <div className="absolute inset-x-5 bottom-5 flex items-center justify-between">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
+            {project.type}
+          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
+            {project.tags[0]}
+          </p>
+        </div>
+      </div>
       <div className="flex flex-wrap items-center gap-2">
         <span
           className={

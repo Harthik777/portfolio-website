@@ -98,14 +98,28 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="brand-panel p-5 sm:p-6">
+      <div className="brand-panel scan-surface p-5 sm:p-6">
         <div className="grid gap-4 sm:grid-cols-[0.62fr_1fr] sm:items-stretch">
-          <div className="signature-mark min-h-56 sm:min-h-full">
-            <div className="relative z-10 text-center">
-              <p className="text-5xl font-semibold tracking-tight">AI</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-200">
-                XAI / ML
-              </p>
+          <div className="ai-visual min-h-64 sm:min-h-full">
+            <span className="signal-line left-[18%] top-[29%] w-[55%] rotate-[-4deg]" />
+            <span className="signal-line left-[42%] top-[66%] w-[42%] rotate-[8deg]" />
+            <span className="signal-line left-[22%] top-[43%] w-[35%] rotate-[33deg]" />
+            <div className="absolute left-[14%] top-[20%] rounded-md border border-emerald-300/30 bg-emerald-300/10 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-emerald-100">
+              Input
+            </div>
+            <div className="absolute right-[10%] top-[14%] rounded-md border border-indigo-300/30 bg-indigo-300/10 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-indigo-100">
+              Model
+            </div>
+            <div className="absolute bottom-[14%] left-[35%] rounded-md border border-sky-300/30 bg-sky-300/10 px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-sky-100">
+              Explain
+            </div>
+            <div className="relative z-10 grid h-full min-h-64 place-items-center text-center">
+              <div>
+                <p className="text-5xl font-semibold tracking-tight">AI</p>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-200">
+                  AI / ML / XAI
+                </p>
+              </div>
             </div>
           </div>
           <div className="flex flex-col justify-between gap-5 rounded-lg border border-white/10 bg-white/[0.06] p-5">
@@ -230,6 +244,77 @@ function FeaturedProjectsSection() {
   );
 }
 
+function BrandSystemSection() {
+  const systems = [
+    {
+      label: 'Research',
+      title: 'Accepted work and manuscripts',
+      detail:
+        'Research signals are placed early so recruiters see proof before browsing details.',
+    },
+    {
+      label: 'Systems',
+      title: 'Applied AI products',
+      detail:
+        'Projects are framed as systems with purpose, stack, highlights, and available links.',
+    },
+    {
+      label: 'Explainability',
+      title: 'Readable decisions',
+      detail:
+        'The visual language supports the portfolio theme: structured, interpretable, and precise.',
+    },
+  ];
+
+  return (
+    <section className="section-shell py-12 sm:py-16">
+      <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="brand-panel scan-surface p-6 sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
+            Portfolio System
+          </p>
+          <h2 className="mt-4 max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
+            A sharper visual identity without heavy runtime effects.
+          </h2>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {['Static-first', 'CSS-only', 'Responsive'].map(item => (
+              <div
+                key={item}
+                className="rounded-md border border-white/10 bg-white/10 px-3 py-4 text-center"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-200">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid gap-3">
+          {systems.map((item, index) => (
+            <article key={item.title} className="premium-card p-5">
+              <div className="flex items-start gap-4">
+                <span className="number-chip">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <p className="eyebrow">{item.label}</p>
+                  <h3 className="mt-2 text-lg font-semibold text-slate-950 dark:text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    {item.detail}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FocusSection() {
   return (
     <section className="section-shell grid gap-8 py-12 sm:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -281,6 +366,7 @@ export default function Home() {
     <div className="page-surface">
       <HeroSection />
       <FeaturedProjectsSection />
+      <BrandSystemSection />
       <FocusSection />
       <CTASection />
     </div>
