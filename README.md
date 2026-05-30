@@ -206,13 +206,6 @@ The theme system supports:
 4. Run tests and linting
 5. Submit a pull request
 
-## 👨‍💻 Author
-
-**Harthik M V**
-
-- Portfolio: [harthikmv.com](https://harthikmv.com)
-- LinkedIn: [linkedin.com/in/harthik-mv](https://linkedin.com/in/harthik-mv)
-- Email: harthik7777@gmail.com
 
 ## 🙏 Acknowledgments
 
