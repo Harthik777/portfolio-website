@@ -14,8 +14,7 @@
     "type-check": "tsc --noEmit --incremental false",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean": "rm -rf .next out dist",
-    "test:devices": "node test-devices.js"
+    "clean": "rm -rf .next out dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
