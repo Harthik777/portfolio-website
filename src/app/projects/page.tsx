@@ -48,17 +48,17 @@ const projects: Project[] = [
   },
   {
     title: 'SustainAI: Carbon-Aware Air Quality Prediction Platform',
-    type: 'Ongoing Research',
+    type: 'Accepted Research',
     date: '08/2025 - Present',
-    status: 'Targeting IEEE Publication',
+    status: 'IEEE CONECCT 2026',
     summary:
-      'Machine learning platform for air quality prediction with explainability and carbon footprint tracking.',
+      'Carbon-aware air quality modeling framework for PM2.5 prediction, explainability, emissions, and uncertainty calibration.',
     highlights: [
-      'Implemented Random Forest, XGBoost, and LSTM models for air quality prediction.',
-      'Added SHAP and LIME interpretability dashboards.',
-      'Tracks training and inference emissions with CodeCarbon.',
+      'Compared Ridge, Random Forest, ExtraTrees, LightGBM, and XGBoost for PM2.5 nowcasting and residual forecasting.',
+      'Measured code-level emissions for Pareto analysis of accuracy-carbon tradeoffs.',
+      'Combined Consensus Importance Score and split-conformal prediction for interpretability stability and calibrated uncertainty.',
     ],
-    tags: ['Sustainable AI', 'CodeCarbon', 'SHAP', 'XGBoost', 'Python'],
+    tags: ['Sustainable AI', 'PM2.5', 'CodeCarbon', 'SHAP', 'LightGBM'],
   },
   {
     title: 'End-to-End Medical DevOps Pipeline',

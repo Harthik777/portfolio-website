@@ -1,6 +1,22 @@
 import Link from 'next/link';
 
-const publications = [
+type Publication = {
+  title: string;
+  description: string;
+  status: string;
+  date: string;
+  link?: string;
+};
+
+const publications: Publication[] = [
+  {
+    title:
+      'Bridging the Accuracy-Sustainability-Explainability Trilemma in Air Quality Informatics: A Carbon-Aware Consensus Framework',
+    description:
+      'Proposes the Carbon-Aware Consensus Evaluation (CACE) framework for spatio-temporal PM2.5 modeling, jointly evaluating accuracy, carbon emissions, explainability, and uncertainty calibration. The study compares Ridge, Random Forest, ExtraTrees, LightGBM, and XGBoost across PM2.5 nowcasting and one-step residual forecasting, using code-level emissions profiling, Pareto analysis, Consensus Importance Score, and split-conformal prediction.',
+    status: 'Accepted at IEEE CONECCT 2026',
+    date: '2026',
+  },
   {
     title:
       'An Explainable and Resource-Efficient Transformer Pipeline for CPU-Based Document Summarisation and Question Answering',
@@ -117,22 +133,24 @@ export default function Publications() {
                 >
                   {pub.description}
                 </p>
-                <Link
-                  href={pub.link}
-                  target={pub.link.startsWith('http') ? '_blank' : undefined}
-                  rel={
-                    pub.link.startsWith('http')
-                      ? 'noopener noreferrer'
-                      : undefined
-                  }
-                  className={
-                    index === 0
-                      ? 'mt-5 inline-flex min-h-10 items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-100'
-                      : 'premium-link mt-5'
-                  }
-                >
-                  View Paper
-                </Link>
+                {pub.link && (
+                  <Link
+                    href={pub.link}
+                    target={pub.link.startsWith('http') ? '_blank' : undefined}
+                    rel={
+                      pub.link.startsWith('http')
+                        ? 'noopener noreferrer'
+                        : undefined
+                    }
+                    className={
+                      index === 0
+                        ? 'mt-5 inline-flex min-h-10 items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-100'
+                        : 'premium-link mt-5'
+                    }
+                  >
+                    View Paper
+                  </Link>
+                )}
               </div>
             </article>
           ))}
