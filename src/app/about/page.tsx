@@ -9,7 +9,7 @@ const highlights = [
     label: 'Research',
     title: 'First Author - IEEE TENCON 2025',
     detail:
-      'First author on publication accepted at IEEE TENCON 2025 for research on Machine Learning Framework for Data-Scarce Regression using SMOGN.',
+      'First author on conference paper accepted at IEEE TENCON 2025 for research on Machine Learning Framework for Data-Scarce Regression using SMOGN.',
   },
   {
     label: 'Leadership',

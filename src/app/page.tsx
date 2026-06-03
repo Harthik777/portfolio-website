@@ -5,7 +5,7 @@ const proofPoints = [
     label: 'First Author',
     title: 'IEEE TENCON 2025',
     detail:
-      'Accepted research on data-scarce regression using SMOGN and joint hyperparameter optimization.',
+      'Accepted conference paper on data-scarce regression using SMOGN and joint hyperparameter optimization.',
   },
   {
     label: 'Accepted Research',

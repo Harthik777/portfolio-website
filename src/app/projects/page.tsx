@@ -15,7 +15,7 @@ const projects: Project[] = [
   {
     title:
       'Explainable Transformer Framework for CPU-Based Document Summarisation and Question Answering',
-    type: 'Accepted Research',
+    type: 'Conference Paper',
     date: '10/2025',
     status: 'AICCoNS 2026',
     summary:
@@ -48,7 +48,7 @@ const projects: Project[] = [
   },
   {
     title: 'SustainAI: Carbon-Aware Air Quality Prediction Platform',
-    type: 'Accepted Research',
+    type: 'Conference Paper',
     date: '08/2025 - Present',
     status: 'IEEE CONECCT 2026',
     summary:
@@ -94,7 +94,7 @@ const projects: Project[] = [
     tags: ['SMOGN', 'Regression', 'Feature Engineering', 'Python'],
     links: [
       {
-        label: 'Paper',
+        label: 'Conference Paper',
         href: '/SMOGN_Cricket_Analytics_Research_Paper.pdf',
       },
     ],
@@ -120,20 +120,26 @@ const projects: Project[] = [
   },
   {
     title: 'Machine Learning Framework for Data-Scarce Regression using SMOGN',
-    type: 'Publication',
+    type: 'Conference Paper',
     date: '10/2024 - 05/2025',
     status: 'IEEE TENCON 2025',
     summary:
-      'Accepted paper on SMOGN-based data augmentation and joint hyperparameter optimization for cricket performance prediction.',
+      'Accepted conference paper on SMOGN-based data augmentation and joint hyperparameter optimization for cricket performance prediction.',
     highlights: [
       'Accepted at IEEE TENCON 2025, flagship conference of IEEE Region 10.',
       'Focuses on data-scarce regression in sports analytics.',
       'Uses LaTeX, machine learning, SMOGN, and regression modelling.',
     ],
-    tags: ['Publication', 'SMOGN', 'Regression', 'Machine Learning', 'LaTeX'],
+    tags: [
+      'Conference Paper',
+      'SMOGN',
+      'Regression',
+      'Machine Learning',
+      'LaTeX',
+    ],
     links: [
       {
-        label: 'Paper',
+        label: 'Conference Paper',
         href: '/SMOGN_Cricket_Analytics_Research_Paper.pdf',
       },
     ],

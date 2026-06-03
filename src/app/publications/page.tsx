@@ -4,6 +4,7 @@ type Publication = {
   title: string;
   description: string;
   status: string;
+  category: string;
   date: string;
   link?: string;
 };
@@ -15,6 +16,7 @@ const publications: Publication[] = [
     description:
       'Proposes the Carbon-Aware Consensus Evaluation (CACE) framework for spatio-temporal PM2.5 modeling, jointly evaluating accuracy, carbon emissions, explainability, and uncertainty calibration. The study compares Ridge, Random Forest, ExtraTrees, LightGBM, and XGBoost across PM2.5 nowcasting and one-step residual forecasting, using code-level emissions profiling, Pareto analysis, Consensus Importance Score, and split-conformal prediction.',
     status: 'Accepted at IEEE CONECCT 2026',
+    category: 'Conference Paper',
     date: '2026',
   },
   {
@@ -24,6 +26,7 @@ const publications: Publication[] = [
       'Developed an explainable and resource-efficient transformer framework for unified text summarization and question answering. The system integrates lightweight models such as DistilBART, T5-Small, and MobileBERT, achieving competitive ROUGE and F1 scores with full CPU-only deployment. The framework embeds keyword and sentence-level explainability without external post-hoc computation.',
     status:
       'Accepted for Presentation at Second International Conference on Artificial Intelligence, Computation, Communication, and Network Security (AICCoNS 2026)',
+    category: 'Conference Paper',
     link: 'https://drive.google.com/file/d/18sE4HxkUeFYuDJ9gtP4r69GMyL4hf2sh/view?usp=sharing',
     date: '01/2026',
   },
@@ -34,6 +37,7 @@ const publications: Publication[] = [
       'Investigated the performance degradation of machine learning models for stock trend prediction during periods of high market volatility, using inter-day data from 2015-2024. Evaluated and compared the performance of Long Short-Term Memory (LSTM), Dense Neural Networks (DNN), and Gradient Boosting Classifiers (GBC) on both stable and volatile stocks.',
     status:
       'Accepted for Presentation at IEEE INDICON 2025 (the flagship IEEE India Council conference in India)',
+    category: 'Conference Paper',
     link: 'https://drive.google.com/file/d/1R5XoQzxthCNheDpmSTBnC4iL0w0IJ7SX/view?usp=drive_link',
     date: '07/2025 - 08/2025',
   },
@@ -41,9 +45,10 @@ const publications: Publication[] = [
     title:
       'A Machine Learning Framework for Data-Scarce Regression using SMOGN with Joint Hyperparameter Optimization: A Case Study with Cricket Performance Prediction',
     description:
-      'First Author on publication accepted at IEEE TENCON 2025 (flagship conference of IEEE Region 10, Asia Pacific). Engineered a joint hyperparameter optimization framework in Python that integrates data augmentation (SMOGN) and model training, demonstrating a significant improvement over traditional sequential methods.',
+      'First Author on conference paper accepted at IEEE TENCON 2025 (flagship conference of IEEE Region 10, Asia Pacific). Engineered a joint hyperparameter optimization framework in Python that integrates data augmentation (SMOGN) and model training, demonstrating a significant improvement over traditional sequential methods.',
     status:
       'Accepted for Presentation at IEEE TENCON 2025 (flagship conference of IEEE Region 10, Asia Pacific)',
+    category: 'Conference Paper',
     link: '/SMOGN_Cricket_Analytics_Research_Paper.pdf',
     date: '10/2024 - 06/2025',
   },
@@ -60,7 +65,7 @@ export default function Publications() {
           <div>
             <p className="eyebrow">Publications</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-5xl">
-              Accepted research and academic manuscripts
+              Accepted conference papers and academic manuscripts
             </h1>
           </div>
           <div className="accent-panel p-5 lg:justify-self-end">
@@ -68,7 +73,7 @@ export default function Publications() {
               Research Archive
             </p>
             <p className="mt-3 max-w-2xl text-base leading-7 text-indigo-100">
-              Academic publications and research manuscripts showcasing
+              Conference papers and research manuscripts showcasing
               contributions to AI/ML research, explainable systems, and applied
               machine learning.
             </p>
@@ -102,7 +107,7 @@ export default function Publications() {
                       : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
                   }`}
                 >
-                  Paper {index + 1}
+                  {pub.category} {index + 1}
                 </span>
               </div>
               <div>
@@ -148,7 +153,7 @@ export default function Publications() {
                         : 'premium-link mt-5'
                     }
                   >
-                    View Paper
+                    View {pub.category}
                   </Link>
                 )}
               </div>

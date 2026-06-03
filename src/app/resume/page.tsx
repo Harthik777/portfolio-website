@@ -8,7 +8,7 @@ const experiences = [
     title:
       'Bridging the Accuracy-Sustainability-Explainability Trilemma in Air Quality Informatics: A Carbon-Aware Consensus Framework',
     outcome:
-      'Accepted at IEEE CONECCT 2026. Proposed the Carbon-Aware Consensus Evaluation framework for PM2.5 modeling across accuracy, emissions, explainability, and uncertainty calibration.',
+      'Conference paper accepted at IEEE CONECCT 2026. Proposed the Carbon-Aware Consensus Evaluation framework for PM2.5 modeling across accuracy, emissions, explainability, and uncertainty calibration.',
   },
   {
     role: 'Research Intern',
@@ -17,7 +17,7 @@ const experiences = [
     title:
       'A Machine Learning Framework for Data-Scarce Regression using SMOGN with Joint Hyperparameter Optimization: A Case Study with Cricket Performance Prediction',
     outcome:
-      'First Author on publication accepted at IEEE TENCON 2025, the flagship conference of IEEE Region 10, Asia Pacific.',
+      'First Author on conference paper accepted at IEEE TENCON 2025, the flagship conference of IEEE Region 10, Asia Pacific.',
   },
   {
     role: 'Research Intern',
@@ -26,7 +26,7 @@ const experiences = [
     title:
       'Performance Degradation of Deep and Traditional Machine Learning Models Under Market Volatility: An Inter-Day Stock Trend Comparison',
     outcome:
-      'Accepted for Presentation at IEEE INDICON 2025, the flagship IEEE India Council conference in India.',
+      'Conference paper accepted for presentation at IEEE INDICON 2025, the flagship IEEE India Council conference in India.',
   },
   {
     role: 'Research Intern',
@@ -35,7 +35,7 @@ const experiences = [
     title:
       'An Efficient and Explainable Transformer Framework for Unified Summarization and Question Answering',
     outcome:
-      'Accepted for Presentation at Second International Conference on Artificial Intelligence, Computation, Communication, and Network Security (AICCoNS 2026).',
+      'Conference paper accepted for presentation at Second International Conference on Artificial Intelligence, Computation, Communication, and Network Security (AICCoNS 2026).',
   },
 ];
 
