@@ -4,6 +4,15 @@ const experiences = [
   {
     role: 'Research Intern',
     organization: 'Manipal Institute of Technology (MIT) Bengaluru',
+    supervisor: 'Dr. Vishnu Srinivasa Murthy Y and Dr. Gauri Kalnoor',
+    title:
+      'Bridging the Accuracy-Sustainability-Explainability Trilemma in Air Quality Informatics: A Carbon-Aware Consensus Framework',
+    outcome:
+      'Accepted at IEEE CONECCT 2026. Proposed the Carbon-Aware Consensus Evaluation framework for PM2.5 modeling across accuracy, emissions, explainability, and uncertainty calibration.',
+  },
+  {
+    role: 'Research Intern',
+    organization: 'Manipal Institute of Technology (MIT) Bengaluru',
     supervisor: 'Dr. Usha Moorthy',
     title:
       'A Machine Learning Framework for Data-Scarce Regression using SMOGN with Joint Hyperparameter Optimization: A Case Study with Cricket Performance Prediction',
@@ -96,7 +105,10 @@ export default function Resume() {
                   <span className="status-chip w-fit">Accepted</span>
                 </div>
                 <p className="mt-4 text-xs font-medium uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
-                  Supervisor: {experience.supervisor}
+                  {experience.supervisor.includes(' and ')
+                    ? 'Supervisors'
+                    : 'Supervisor'}
+                  : {experience.supervisor}
                 </p>
                 <p className="mt-4 text-base font-semibold leading-7 text-slate-950 dark:text-white">
                   {experience.title}
