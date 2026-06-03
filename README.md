@@ -206,7 +206,6 @@ The theme system supports:
 4. Run tests and linting
 5. Submit a pull request
 
-
 ## 🙏 Acknowledgments
 
 - Next.js team for the amazing framework

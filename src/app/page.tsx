@@ -29,10 +29,10 @@ const featuredProjects = [
     tags: ['NLP', 'Transformers', 'Explainable AI', 'Python'],
   },
   {
-    title: 'Agentic-XAI',
+    title: 'Predictive Modelling & Data Augmentation',
     summary:
-      'Full-stack decision support platform using FastAPI, React, TypeScript, and Gemini API for structured recommendations.',
-    tags: ['Agentic AI', 'FastAPI', 'React', 'Vercel'],
+      'Machine learning pipeline for sparse WPL cricket analytics data using SMOGN and feature engineering.',
+    tags: ['SMOGN', 'Regression', 'Feature Engineering', 'Python'],
   },
   {
     title: 'SustainAI',

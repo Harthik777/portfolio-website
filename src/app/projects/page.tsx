@@ -61,46 +61,6 @@ const projects: Project[] = [
     tags: ['Sustainable AI', 'CodeCarbon', 'SHAP', 'XGBoost', 'Python'],
   },
   {
-    title: 'Radiomics-Based CT Lesion Classification Framework',
-    type: 'Research',
-    date: '10/2025',
-    summary:
-      'Explainable radiomics pipeline for multi-class cerebrovascular CT lesion classification.',
-    highlights: [
-      'Built feature extraction using HOG, LBP, GLCM, Haralick descriptors, and Gabor filters.',
-      'Benchmarks Random Forest, XGBoost, SVM, Bayesian Networks, and other ML algorithms.',
-      'Includes SHAP explainability, calibration analysis, robustness tests, and CPU deployability focus.',
-    ],
-    tags: [
-      'Medical AI',
-      'Radiomics',
-      'SHAP',
-      'Model Calibration',
-      'Healthcare ML',
-    ],
-  },
-  {
-    title: 'Agentic-XAI: AI-Powered Decision Support Platform',
-    type: 'Full-Stack AI',
-    date: '06/2025 - Present',
-    status: 'Work in Progress',
-    summary:
-      'Full-stack decision support system for structured recommendations, reasoning, and confidence scores.',
-    highlights: [
-      'Built with Python, FastAPI, React, TypeScript, and Google Gemini API.',
-      'Focused on scalable REST API design, robust error handling, and prompt engineering.',
-      'Deployed frontend and backend using Vercel and Render.',
-    ],
-    tags: ['Agentic AI', 'FastAPI', 'React', 'TypeScript', 'Vercel'],
-    links: [
-      {
-        label: 'Live',
-        href: 'https://agentic-xai-harthik-s-projects.vercel.app/',
-      },
-      { label: 'GitHub', href: 'https://github.com/Harthik777/Agentic-XAI' },
-    ],
-  },
-  {
     title: 'End-to-End Medical DevOps Pipeline',
     type: 'Data Engineering',
     date: '09/2025 - Present',
